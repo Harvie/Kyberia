@@ -1,0 +1,11 @@
+BODY { font-family:verdana,sans-serif; font-size:10pt}
+TD { font-family:verdana,sans-serif; font-size:10pt}
+P { font-family:verdana,sans-serif; font-size:10pt}
+LI { font-family:verdana,sans-serif; font-size:10pt}
+UL { margin-top:0; margin-bottom:0}
+H1 { font-family:verdana,sans-serif; font-size:16pt}
+A { color:black; text-decoration:none; }
+A:visited { color:black; }
+A:active { color:black; }
+A:hover { color:#ffde00; background-color:black; text-decoration:underline }
+

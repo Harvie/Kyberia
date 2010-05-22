@@ -1,0 +1,31 @@
+INSERT INTO dennik_user VALUES (1,'Reach','Kosice','zwyerua','Wecz','reach@zion.sk','reach','q');
+INSERT INTO dennik_user VALUES (31,'Exebege','BB/BA','Zlatý Beloch','List','miroslavv@centrum.sk','exebege','hartipa');
+INSERT INTO dennik_user VALUES (30,'fiona','++++++++++++++++++++++++++++++++++++++++++++++++++','anti.loop','little fluffy cloud','','fiona','apple');
+INSERT INTO dennik_user VALUES (13,'c00l s3ri4lz','','','','','podvodnik','mazatma');
+INSERT INTO dennik_user VALUES (6,'andrej','ghetto/lúky>petralka','trúbe¾ka bitrofabídna','¾  f  a iné písmená','andrej@zion.sk','ach','achzion');
+INSERT INTO dennik_user VALUES (7,'al-nilrem','damask','velmi krotke','magicke zelene bobule','zdrava.figura.je@paranormal.sk','merlin','frank');
+INSERT INTO dennik_user VALUES (8,'Tomá','Koice','abuse','pirohy','subtalk@zion.sk','subtalk','t220683');
+INSERT INTO dennik_user VALUES (9,'ninique','','','','ondrej@zion.sk','omietka','851asd');
+INSERT INTO dennik_user VALUES (10,'janka hoffmann','blava','bobina','chupachups bananove :)','dopedoll@pobox.sk','dopedoll','matrix');
+INSERT INTO dennik_user VALUES (11,'Na Chrbát','Abu Dabi','skákajúca gazela','5m long penis','gejmer@ramclan.sk','gejmer','biker');
+INSERT INTO dennik_user VALUES (12,'M|KE_X','Surany','pes ;-)','kniha','michal2@szm.sk','mike_x','8005056928');
+INSERT INTO dennik_user VALUES (14,'_euro_','Koice','èrievièka','poste¾','infinit@host.sk','_euro_','oyreww');
+INSERT INTO dennik_user VALUES (15,'milan','preov','hedgehog','','charms@stonline.sk','milan','montypython');
+INSERT INTO dennik_user VALUES (20,'Niko','New York','lenochod','mobilny telefon','niko@2600.sk','niko','piko');
+INSERT INTO dennik_user VALUES (17,'JazzIt','Bratislava','computerova mys','vec','jazzit@europe.com','jazzit','robo1');
+INSERT INTO dennik_user VALUES (18,'MaRmAR','Pezinok','tiger','bakelit','marmar@marmar.sk','marmar','11296');
+INSERT INTO dennik_user VALUES (19,'mio','ahanovce','meho kodro','remote control','strbskepleso@zion.sk','mio','katka');
+INSERT INTO dennik_user VALUES (21,'hurahura','Bratislava','hroch','','hurahura@post.sk','hurahura','1230hura');
+INSERT INTO dennik_user VALUES (22,'jan hulvat','','','','','hulvat','ggg');
+INSERT INTO dennik_user VALUES (23,'tii','','','','','tii','nttiiko');
+INSERT INTO dennik_user VALUES (24,'blur','humenne','lobo','gitara','blur@hippy.cz','blur','nemam');
+INSERT INTO dennik_user VALUES (25,'Peter','','','','','clubber','6143');
+INSERT INTO dennik_user VALUES (26,'-J-','sabakagrad','holub','tehla','','-J-','podhubie');
+INSERT INTO dennik_user VALUES (27,'Mons. Alojz Tkac','Kosice','ovecka','pismo svate','tkac@zion.sk','knaz','t220683');
+INSERT INTO dennik_user VALUES (28,'Jaro Herda','Herdovce','svina','maliarska sada painterset','herda-opilec@neda-sa.sk','herda','opilec');
+INSERT INTO dennik_user VALUES (29,'Timothy Dalton','London','Babkoherec','Shakespearen company','nemam','Vrhac ostepov','summa');
+INSERT INTO dennik_user VALUES (32,'Matko','BB','','','vetron@gmx.de','aween','ocean');
+INSERT INTO dennik_user VALUES (34,'3riZ','ba::ke','','tien','','gnd','fucked2');
+INSERT INTO dennik_user VALUES (38,'hromi','praha','tinda bradac','zlty vrtulnicek s vrtulkami na zotrvacnik','hromi@kyberia.sk','hromi','Pacrewk0');
+
+    

@@ -1,0 +1,8 @@
+LALALAL
+{$error}
+{if $permissions.r neq true} you don't have permissions for viewing this data node{/if}
+{if $user_id eq false}
+<table><tr><td>login::</td><td> <input tabindex=1 accesskey=l type='text' name='login'></td>
+<tr><td>heslo::</td><td><input tabindex=2 accesskey=p type='password' name='password'></td>
+<tr><td colspan='2' align='center'><input tabindex=3 type='submit' name='event' value='login'></td></tr></table>
+{/if}

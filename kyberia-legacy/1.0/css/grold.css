@@ -1,0 +1,27 @@
+a           { color: white; font-size: 8pt;font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none;  }
+a:hover     {color: red; font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none; }
+
+
+body      { color: #6dae42; font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none; background-color: black; margin: 0pt; scrollbar-face-color: #8E967F;
+                                        scrollbar-shadow-color: #C6CDB3;
+                                        scrollbar-highlight-color: #C6CDB3;
+                                        scrollbar-3dlight-color: #656B5A;
+                                        scrollbar-darkshadow-color: #656B5A;
+                                        scrollbar-track-color: #727866;
+                                        scrollbar-arrow-color: #727866;}
+td { color: #6dae42; font-size: 9pt; font-family: Monaco,Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none }
+.border      { padding: 2pt; border: solid 1pt #687c68 }
+.noborder       { color: rgb(218,218,185); border: dotted 1pt }
+.menu   { color: white; font-weight: bold; font-size: 8pt; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; background-color: #687c68 }
+.white   { color: white; font-size: 8pt; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; background-color: rgb(87,117,94) }
+.pulldown    { color: black; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: rgb(218,218,185) }
+th { color: #6dae42; font-size: 9pt; font-family: Monaco,Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none }
+input        { height:20 pt; width: 120 pt; background-color: black; color: white; font-size: 9 pt; font-family: Arial, Helvetica; border: solid 1pt #6dae42 }
+input.noborder { border-color: black; }
+select     { color: #6dae42; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: black; border: solid 1pt #6dae42 }
+textarea     { width: 350 pt; background-color: black; color: white; font-size: 8pt; font-family: Verdana, Arial, Helvetica;  border: solid 1pt #6dae42 }
+img { border: 0pt }
+table.box { border: solid 1pt #6dae42; padding: 0pt }
+table.redbox { border: solid 0pt red; padding: 0pt }
+pre { color: #6dae42; font-size: 9pt; font-family: Monaco,Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none }
+p { text-indent: 70 pt; }

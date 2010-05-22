@@ -1,0 +1,89 @@
+a {
+	font: bold 12px arial, helvetica;
+	color: #FF8100;
+}
+
+a:hover {
+	color: #999999;
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration:underline;
+	color: red;
+}
+
+.heading {
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	}
+
+.date {
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	text-align: right;
+	}
+
+.heading {
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	}
+	
+.backcolor {
+	background-color: #FF8100;
+	}
+	
+.searchColor {
+	background-color: #FFFFFF;
+	}
+
+.componentHeading {
+	font: bold 12px  Arial, Helvetica, sans-serif;
+	color: #333333;
+	text-align: left;
+	}
+
+.footer {
+	font: 11px Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+}
+
+.button {
+	font-family: Arial, Helvetica;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 9px;
+	color: #FFFFFF;
+	background-color: #666699;
+}
+
+.articlehead{
+	font-family: arial, helvetica;
+	font-size: 14px;
+	font-weight: bold;
+	text-color: #000000;
+; color: #333333
+}
+
+.post {
+	font-family: arial,helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	text-color: #666666;
+	bacground: #FFFFFF;
+	}
+	
+.bold {
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color: #666666;
+	}
+	
+.subhead {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #666666;
+	text-align: center;
+	}	.small {  font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #FF8302; font-weight: normal}
+.newsarticle {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #333333; text-align: left}
+td {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #333333}
+.poll {  font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #666666; line-height: 14px}
+li {  list-style-image: url(../images/orangeArrow.gif); list-style-type: none}

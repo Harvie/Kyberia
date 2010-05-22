@@ -1,0 +1,14 @@
+<center>
+<a href='/id/1/'>main</a> -----
+<a href='/id/19'>bookmarks</a> -----
+<a href='/id/24'>posta</a> -----
+<a href='/id/23/;1;103'>posledne</a> -----
+<a href='/id/15/;1;103'>k</a> -----
+<a href='/id/27/;1;103'>ludia</a> -----
+<a href='/id/20/;1;103'>clanky</a> -----
+<a href='/id/21'>denniky</a> -----
+<a href='/id/29'>news</a> -----
+<a href='/chat'>chat</a> -----
+<a href='/id/{$user_id}/configure'>nastavenie</a> -----
+<input type='submit' value='logout' name='event'>
+</center>

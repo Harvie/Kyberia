@@ -1,0 +1,7 @@
+{get_nodes_by_type type=$type listing_amount=$listing_amount offset=$offset vector=';1;102'}
+{foreach from=$get_nodes_by_type item=child}
+<table class='bordered' width='100%' height='100%'>
+<tr>
+<td>{$child.node_content|truncate:320|stripslashes}</td></tr>
+</table>
+{/foreach}

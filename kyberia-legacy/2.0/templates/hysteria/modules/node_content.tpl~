@@ -1,0 +1,3 @@
+<table width='100%' class='bordered'><tr><td>
+{$node.node_content}
+</td></tr></table><br><br>

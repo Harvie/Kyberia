@@ -1,0 +1,7 @@
+<table align='center'><td>
+{get_node_userlist}
+{foreach from=$userlist item=node_visitor}
+<td><a href='/id/{$node_visitor.user_id}/'><img hspace='0' vspace='0' width='50' height='50' border='0' align='left' name='{$node_visitor.login}' alt='{$node_visitor.login}' src='{get_image_link id=$node_visitor.user_id}'></a></td>
+{/foreach}
+</tr></table>
+<br>

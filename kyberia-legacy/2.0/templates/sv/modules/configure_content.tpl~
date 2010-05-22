@@ -1,0 +1,5 @@
+<textarea style='width: 666px;' name='node_content'>
+{$node.node_content}
+</textarea><br>
+<br><center><input type='submit' name='event' value='configure_content'></center>
+<br><br><br>

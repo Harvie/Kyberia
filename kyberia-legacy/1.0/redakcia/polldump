@@ -1,0 +1,23 @@
+# MySQL dump 8.16
+#
+# Host: localhost    Database: activa
+#--------------------------------------------------------
+# Server version	3.23.44-log
+
+#
+# Table structure for table 'polls'
+#
+
+CREATE TABLE polls (
+  id_poll int(11) NOT NULL auto_increment,
+  time timestamp(14) NOT NULL,
+  question varchar(255) default NULL,
+  responses int(11) default NULL,
+  active set('yes','no') default 'no',
+  id_rubrika int(11) default NULL,
+  PRIMARY KEY  (id_poll)
+) TYPE=MyISAM;
+
+#
+# Dumping data for table 'polls'
+#

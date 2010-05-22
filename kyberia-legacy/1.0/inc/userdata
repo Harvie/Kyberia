@@ -1,0 +1,77 @@
+# MySQL dump 7.1
+#
+# Host: localhost    Database: kyberia
+#--------------------------------------------------------
+# Server version	3.23.47
+
+#
+# Table structure for table 'user'
+#
+CREATE TABLE user (
+  id int(3) NOT NULL auto_increment,
+  meno varchar(100),
+  mesto varchar(50),
+  zviera varchar(50),
+  vec varchar(50),
+  email varchar(50),
+  login varchar(20),
+  password varchar(20),
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'user'
+#
+
+INSERT INTO user VALUES (1,'Reach','Kosice','zwyerua','Wecz','reach@zion.sk','reach','q');
+INSERT INTO user VALUES (31,'Exebege','BB/BA','Zlatý Beloch','List','miroslavv@centrum.sk','exebege','ha\nrtipa');
+INSERT INTO user VALUES (30,'fiona','++++++++++++++++++++++++++++++++++++++++++++++++++','anti.loop','li\nttle fluffy cloud','','fiona','apple');
+INSERT INTO user VALUES (13,'c00l s3ri4lz','','','','','podvodnik','mazatma');
+INSERT INTO user VALUES (6,'andrej','ghetto/lúky>petralka','trúbe¾ka bitrofabídna','¾  f  a iné písmená','andrej@zion.sk','ach','achzion');
+INSERT INTO user VALUES (7,'al-nilrem','damask','velmi krotke','magicke zelene bobule','zdrava.figura.je\n@paranormal.sk','merlin','frank');
+INSERT INTO user VALUES (8,'Tomá','Koice','abuse','pirohy','subtalk@zion.sk','subtalk','t220683');
+INSERT INTO user VALUES (9,'ninique','','','','ondrej@zion.sk','omietka','851asd');
+INSERT INTO user VALUES (10,'janka hoffmann','blava','bobina','chupachups bananove :)','dopedoll@pobox.s\nk','dopedoll','matrix');
+INSERT INTO user VALUES (11,'Na Chrbát','Abu Dabi','skákajúca gazela','5m long penis','gejmer@ramclan.sk\n','gejmer','biker');
+INSERT INTO user VALUES (12,'M|KE_X','Surany','pes ;-)','kniha','michal2@szm.sk','mike_x','8005056928');
+INSERT INTO user VALUES (14,'_euro_','Koice','èrievièka','poste¾','infinit@host.sk','_euro_','oyreww');
+INSERT INTO user VALUES (15,'milan','preov','hedgehog','','charms@stonline.sk','milan','montypython');
+INSERT INTO user VALUES (20,'Niko','New York','lenochod','mobilny telefon','niko@2600.sk','niko','piko');
+INSERT INTO user VALUES (17,'JazzIt','Bratislava','computerova mys','vec','jazzit@europe.com','jazzit','\nrobo1');
+INSERT INTO user VALUES (18,'MaRmAR','Pezinok','tiger','bakelit','marmar@marmar.sk','marmar','11296');
+INSERT INTO user VALUES (19,'mio','ahanovce','meho kodro','remote control','strbskepleso@zion.sk','mio','katka');
+INSERT INTO user VALUES (21,'hurahura','Bratislava','hroch','','hurahura@post.sk','hurahura','1230hura');
+INSERT INTO user VALUES (22,'jan hulvat','','','','','hulvat','ggg');
+INSERT INTO user VALUES (23,'tii','','','','','tii','nttiiko');
+INSERT INTO user VALUES (24,'blur','humenne','lobo','gitara','blur@hippy.cz','blur','nemam');
+INSERT INTO user VALUES (25,'Peter','','','','','clubber','6143');
+INSERT INTO user VALUES (26,'-J-','sabakagrad','holub','tehla','','-J-','podhubie');
+INSERT INTO user VALUES (27,'Mons. Alojz Tkac','Kosice','ovecka','pismo svate','tkac@zion.sk','knaz','t2\n20683');
+INSERT INTO user VALUES (28,'Jaro Herda','Herdovce','svina','maliarska sada painterset','herda-opilec@ne\nda-sa.sk','herda','opilec');
+INSERT INTO user VALUES (29,'Timothy Dalton','London','Babkoherec','Shakespearen company','nemam','Vrhac\n ostepov','summa');
+INSERT INTO user VALUES (32,'Matko','BB','','','vetron@gmx.de','aween','ocean');
+INSERT INTO user VALUES (34,'3riZ','ba::ke','','tien','','gnd','fucked2');
+INSERT INTO user VALUES (38,'hromi','praha','tinda bradac','zlty vrtulnicek s vrtulkami na zotrvacnik','\nhromi@kyberia.sk','hromi','Pacrewk0');
+INSERT INTO user VALUES (39,'lasenic','BA','','','','lasenic','cvecek');
+INSERT INTO user VALUES (40,'evad','prg','','','evad@wanadoo.sk','evad','vzjmmz');
+INSERT INTO user VALUES (41,'fat^boy','banovce nad bebravou','','','fatboy@dnb.sk','fat^boy','trustnoone');
+INSERT INTO user VALUES (42,'Bloody','','','','bloody@europe.com','bloody','monster');
+INSERT INTO user VALUES (43,'yerythoo','','','','yer@jungle.sk','yerythoo','aaaaaa');
+INSERT INTO user VALUES (44,'wicked','praha','','','wicked@host.sk','wicked','Ackey1');
+INSERT INTO user VALUES (45,'pABLo','','','','','pABLo','76430snif');
+INSERT INTO user VALUES (46,'zix','ba','hromi','...jogurty?','zix@stonline.sk','zix','hammer');
+INSERT INTO user VALUES (47,'vlado','devinska nova ves','','','raver@post.sk','vlado','warrafkos');
+INSERT INTO user VALUES (48,'Livia Kellyova','Snina','moj pes Bud s ktorym spavam','zubna kefka Sasi Hirjakovej','kellyoval@atlas.sk','livia','ukraina');
+INSERT INTO user VALUES (49,'dadka','ba','vevericka','vec','dadush@inmail.sk','dadka','heslicko');
+INSERT INTO user VALUES (50,'Beejbi','Praha','tortoise','???','xbals03@vse.cz','Beejbi','Bludisko');
+INSERT INTO user VALUES (51,'Overdrive','Olomouc/Opava','krysa','mozek','overdrive@email.cz','overdrive','5517296');
+INSERT INTO user VALUES (52,'cuco','my.java','zirafa','caj!!!!','cuco@jungle.sk','cuco','muftjv');
+INSERT INTO user VALUES (53,'efe','ba','cica','efe-kty','','efe','radioaktiv');
+INSERT INTO user VALUES (54,'reefer','praha','surikata','kost','reefer@quick.cz','reefer','journaux');
+INSERT INTO user VALUES (55,'hmmu','','','','','ummh','3692');
+INSERT INTO user VALUES (56,'majo','praha','ftak dodo','','mayo_l@kiwwi.sk','svetlonos','akiram');
+INSERT INTO user VALUES (57,'svetlonos','praha','ftak dodo','ceruza','mayo_l@kiwwi.sk','majo','akiram');
+INSERT INTO user VALUES (58,'trip0trip','bs','grandmother','zoshit','trip@kiwwi.sk','trip','audio');
+INSERT INTO user VALUES (59,'alian.phreak','malacky','pes','comp','phreak.4.666@seznam.cz','alian.phreak','system');
+INSERT INTO user VALUES (60,'shimon','neurcite','supinate','latentna','shimoon@post.sk','shimoon','frank');
+

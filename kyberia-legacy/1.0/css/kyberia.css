@@ -1,0 +1,11 @@
+body { font-size: 8 pt; background-color: #000000; font-family:helvetica; }
+a.nazev { font-size: 10 pt; color: #6dae42; font-family:serif; font-weight:bold; }
+a { font-size: 8 pt; color: #6dae42; font-family:tahoma,arial,serif; }
+td { border-width: 0; color: #6dae42; border-color: black; font-size: 9 pt; font-family: serif;}
+th { border-width: 0; color: #6dae42; border-color: black; font-size: 9 pt; font-family: serif;}
+input        { width: 120 pt; background-color: black; color: white; font-size: 8pt; font-family: Verdana, Arial, Helvetica; border: solid 1pt #6dae42 }
+input.noborder { border-width: 0 pt; border-color: black; }
+table.box { border-color: #6dae42; }
+table.noborder {border-color: black; }
+select { background-color: black; }
+option { background-color: black; font-color: #6dae42; }

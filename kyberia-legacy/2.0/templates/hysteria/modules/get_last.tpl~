@@ -1,0 +1,18 @@
+{get_last vector=$vector listing_amount=$listing_amount offset=$offset}
+{foreach from=$get_last item=child}
+<table>
+<tr>
+<td width='100' valign='top' rowspan='2'><a href='/id/{$child.node_creator}'><img border=0 hspace='5' src='{get_image_link id=$child.node_creator}'></a>&nbsp;</td>
+<td style='width: 100%' valign='top'>
+<table width=100%><tr class='header' width=100%>
+<td>
+parent: <a href='/id/{$child.node_parent}'>{$child.parent_name}</a><br>
+author: <a href='/{$child.login}'>{$child.login}</a>
+{if $child.user_action neq false}
+&nbsp;[lokacia :: <a href='/id/{$child.user_action_id}/'>{$child.user_action}</a>]
+{/if}
+&nbsp;&nbsp;{$child.node_created|date_format:"%H:%M:%S - %d.%m.%Y"}&nbsp;
+<tr><td>{$child.node_content|stripslashes|nl2br|imagestrip}</td></tr>
+</table>
+</table>
+{/foreach}

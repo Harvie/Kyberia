@@ -1,0 +1,7 @@
+<textarea class='small' name='masterlist'>{$masters}</textarea>
+<br>
+<center><input type='submit' name='event' value='masterlist'></center>
+<br>
+{include file="modules/ownerlist.tpl"}
+
+

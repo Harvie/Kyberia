@@ -1,0 +1,33 @@
+# MySQL dump 8.16
+#
+# Host: localhost    Database: activa
+#--------------------------------------------------------
+# Server version	3.23.44-log
+
+#
+# Table structure for table 'poll_options'
+#
+
+CREATE TABLE poll_options (
+  id_option int(11) NOT NULL auto_increment,
+  id_poll int(11) default NULL,
+  text varchar(255) default NULL,
+  number int(11) default NULL,
+  PRIMARY KEY  (id_option)
+) TYPE=MyISAM;
+
+#
+# Dumping data for table 'poll_options'
+#
+
+INSERT INTO poll_options VALUES (1,1,'vsichni',2);
+INSERT INTO poll_options VALUES (2,1,'jenom muzsky',3);
+INSERT INTO poll_options VALUES (3,1,'jenom dadka',1);
+INSERT INTO poll_options VALUES (4,1,'jenom ja',4);
+INSERT INTO poll_options VALUES (5,1,'nikto',3);
+INSERT INTO poll_options VALUES (6,2,'no trava',0);
+INSERT INTO poll_options VALUES (7,2,'no extaze',0);
+INSERT INTO poll_options VALUES (8,2,'no lsd',0);
+INSERT INTO poll_options VALUES (9,2,'dmt, dmt, uletel mi deekel',0);
+INSERT INTO poll_options VALUES (10,2,'pernicek nas kazdodenny',0);
+

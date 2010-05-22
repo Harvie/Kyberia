@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns="http://my.netscape.com/rdf/simple/0.9/">
+
+<channel>
+<title>Nanodot: Nanodot: News and Discussion of EmergingTechnologies</title>
+<link>http://nanodot.org/</link>
+<description>News and Discussion of EmergingTechnologies</description>
+</channel>
+
+<image>
+<title>Nanodot</title>
+<url>http://nanodot.org/images/topics/topicslash.gif</url>
+<link>http://nanodot.org/</link>
+</image>
+
+<item>
+<title>ON/OFF switch for a molecular motor</title>
+<link>http://nanodot.org/article.pl?sid=02/11/05/0955221</link>
+</item>
+
+<item>
+<title>Carbon nanotubes 30 cm long</title>
+<link>http://nanodot.org/article.pl?sid=02/11/05/0826243</link>
+</item>
+
+<item>
+<title>NEMS pump for potassium ion</title>
+<link>http://nanodot.org/article.pl?sid=02/11/05/0643212</link>
+</item>
+
+<item>
+<title>Conference showcases nanodevices progress</title>
+<link>http://nanodot.org/article.pl?sid=02/11/03/055252</link>
+</item>
+
+<item>
+<title>Investors proclaim interest in nanotechnology</title>
+<link>http://nanodot.org/article.pl?sid=02/11/03/0345206</link>
+</item>
+
+<item>
+<title>Time magazine on the nanotechnology industry</title>
+<link>http://nanodot.org/article.pl?sid=02/11/03/0140237</link>
+</item>
+
+<item>
+<title>Call on Fox News to support  nanotechnology research</title>
+<link>http://nanodot.org/article.pl?sid=02/10/31/0341202</link>
+</item>
+
+<item>
+<title>2nd stage funding for Nanotech startups</title>
+<link>http://nanodot.org/article.pl?sid=02/10/31/033237</link>
+</item>
+
+<item>
+<title>Carbon nanotube space elevator planned</title>
+<link>http://nanodot.org/article.pl?sid=02/10/31/028221</link>
+</item>
+
+<item>
+<title>Nanotechnology - a trillion dollar market within a decade?</title>
+<link>http://nanodot.org/article.pl?sid=02/10/29/0439217</link>
+</item>
+
+</rdf:RDF>

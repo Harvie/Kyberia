@@ -1,0 +1,12 @@
+<table class='bordered'>
+<tr><td colspan='2' align='center' class='important'>Anketa / Poll</td></tr>
+<tr>
+	<td  class='important'>Otazka::</td>
+	<td><input type='text' name='question'></td>
+</tr>
+<tr>
+	<td  class='important'>Moznosti::</td>
+	<td><textarea name='options'></textarea><br><i>do ramceka zadaj lubovolne mnozstvo moznosti oddelene bodkociarkou (napr. ano;nie;mozno)</i>
+</tr>
+</table>
+<br><br>

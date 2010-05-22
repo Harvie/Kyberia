@@ -1,0 +1,5 @@
+<form method='post' enctype="multipart/form-data" action='/id/{$node.node_id}/'>
+<textarea class=node_content name='node_content'>{$node.node_content|escape:"html"}</textarea><br>
+<center><input type='submit' name='event' value='configure_content'></center>
+</form>
+<br><br>

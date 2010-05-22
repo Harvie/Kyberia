@@ -1,0 +1,44 @@
+<!--
+This program is free software. It comes without any warranty, to
+the extent permitted by applicable law. You can redistribute it
+and/or modify it under the terms of the Do What The Fuck You Want
+To Public License, Version 2, as published by Sam Hocevar. See
+http://sam.zoy.org/wtfpl/COPYING for more details.
+-->
+
+{if $template_event eq 'preview'}
+<table>
+<tr>
+<td valign='top' rowspan='2' ><img hspace='5' src='{get_image_link id=$user_id}'></td>
+<td width='100%' valign='top'>
+<table width='100%'><tr class='header'>
+<td align='center'>PREVIEW
+
+<tr><td>{$post_vars.node_content|preview}</td></tr>
+</table>
+</table>
+{* end of preview *}
+
+{elseif $template_event eq 'filter_by'}
+{get_threaded_children listing_amount=23232322323 offset=$offset types=$children_types search_type=$post_vars.search_type search=$post_vars.node_content}
+{elseif $node.node_user_subchild_count eq true}
+{get_threaded_children listing_amount=$node.node_user_subchild_count time=$node.last_visit offset=$offset types=$children_types}
+{else}
+{get_threaded_children listing_amount=$listing_amount offset=$offset types=$children_types}
+{/if}
+
+{foreach from=$get_threaded_children item=child}
+<table>
+<tr>
+<td width='{math equation="(x-y)" x=$child.depth y=$node.vector_depth}%'></td>
+<td valign='top' rowspan='2'><img width='50' hspace='5' src='{get_image_link id=$child.node_creator}'></td>
+<td width='{math equation="100-(x-y)" x=$child.depth y=$node.vector_depth}%'>
+<table width='100%'><tr class="BgTitleContent">
+<td>
+&nbsp;{$child.login}
+&nbsp;&nbsp;{$child.node_created|date_format:"%d.%m.%Y. - %H:%M:%S"}
+<tr><td>{$child.node_content|stripslashes}</td></tr>
+</table>
+</table>
+<br>
+{/foreach}

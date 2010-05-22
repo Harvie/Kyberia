@@ -1,0 +1,20 @@
+a { color: #8833FF; font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none } 
+a:hover { font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none } 
+body { color: black; font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none; background-color: #000000; margin: 0pt; scrollbar-3dlight-color: #96AABD; scrollbar-arrow-color: 606D79; scrollbar-darkshadow-color: #96AABD; scrollbar-face-color: #D0E1F0; scrollbar-highlight-color: #FFFFFF; scrollbar-shadow-color: #D8E2E7; scrollbar-track-color: #C2CDD8 } 
+td { color: white; font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none } 
+.border { padding: 2pt; border: solid 1pt #330099} 
+.noborder { color: #330099; border: dotted 1pt } 
+.menu { color: black; font-weight: bold; font-size: 8pt; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; background-color: #330099 } 
+.white { color: white; font-size: 8pt; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; background-color: #330099 } 
+.pulldown { color: blue; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: #555555 } 
+input { color: blue; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: #000000; border: solid 1pt #330099 } 
+select { color: black; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: #FFFFFF; border: solid 1pt #330099 } 
+textarea { color: black; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: #FFFFFF; border: solid 1pt #330099 } 
+img { border: 0pt } 
+.new { color: red; font-weight: 500 } 
+.red { color: red } 
+.icon { background-color: #000000; vertical-align: top; margin: 1px; padding: 0pt; border: 0pt; width: 40px; height: 50px } 
+.sicon { background-color: #000000; vertical-align: top; margin: 1px; padding: 0pt; border: 0pt; width: 20px; height: 25px } 
+.level { margin: 1pt; border: 0pt; width: 40px; height: 6px } 
+.image { width: 87px; height: 33px } 
+table { padding: 0pt }

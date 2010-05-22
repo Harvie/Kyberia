@@ -1,0 +1,7 @@
+<table>
+{* getting and showing links for user node_type subtemplates *}
+{get_user_children_types}
+{foreach from=$get_user_children_types item=children_type}
+	<tr><td align='center'><a href='/id/{$node.node_id}/{$children_type}'>{$types[$children_type]}s</a></td></tr>
+{/foreach}
+</table>

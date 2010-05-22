@@ -1,0 +1,21 @@
+<img src=http://kyberia.sk/images/loogin.jpg border=0>
+<table width=100% cellpadding="1" cellspacing="0" class=box align="center">
+<tr><td colspan=2><center><font color=white>Prihlasenie sa</font></center></td></tr>
+<form action=http://kyberia.sk/login.php method=post>
+    <tr> 
+      <td><font class=nazov>Login:</font>
+      <td> 
+        <input type=text class=form size=10 name=login>
+    <tr> 
+      <td><font class=nazov>Heslo:</font>
+      <td> 
+        <input type=password class=form size=10 name=password>
+    <tr> 
+      <td colspan="2" height=5>
+    </tr>
+
+    <tr> 
+      <th colspan=2> 
+        <input type=submit name=submit value=log.in! >
+  </table>
+</form>

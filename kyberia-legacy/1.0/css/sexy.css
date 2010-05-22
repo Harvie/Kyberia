@@ -1,0 +1,27 @@
+
+a           { color: rgb(182,48,105); font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none }
+a:hover     { font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none }
+body      { color: black; font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none; background-color: rgb(255,185,250); margin: 0pt; scrollbar-face-color: #8E967F;
+                                        scrollbar-shadow-color: #C6CDB3;
+                                        scrollbar-highlight-color: #C6CDB3;
+                                        scrollbar-3dlight-color: #656B5A;
+                                        scrollbar-darkshadow-color: #656B5A;
+                                        scrollbar-track-color: #727866;
+                                        scrollbar-arrow-color: #727866;}
+td { color: rgb(182,48,105); font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none }
+.border      { padding: 2pt; border: solid 1pt #687c68 }
+.noborder       { color: rgb(218,218,185); border: dotted 1pt }
+.menu   { color: white; font-weight: bold; font-size: 8pt; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; background-color: rgb(182,48,105) }
+.white   { color: white; font-size: 8pt; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; background-color: rgb(182,48,105) }
+.pulldown    { color: white; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: rgb(182,48,105) }
+input        { color: white; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: rgb(182,48,105); border: solid 1pt #687c68 }
+select     { color: white; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: #a3b79f; border: solid 1pt #687c68 }
+textarea     { color: rgb(182,48,105); font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: rgb(248,193,249); border: solid 1pt #687c68 }
+img { border: 0pt }
+.new  { color: red; font-weight: 500 }
+.red  { color: red}
+.icon    { background-color: #687c68; vertical-align: top; margin: 1px; padding: 0pt; border: 0pt; width: 40px; height: 50px }
+.sicon   { background-color: #687c68; vertical-align: top; margin: 1px; padding: 0pt; border: 0pt; width: 20px; height: 25px }
+.level  { margin: 1pt; border: 0pt; width: 40px; height: 6px }
+.image { width: 87px; height: 33px }
+table { padding: 0pt }

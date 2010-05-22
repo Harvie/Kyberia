@@ -1,0 +1,104 @@
+H3 {
+	color: #666666;
+	font: bold 14px Arial, Helvetica, sans-serif;
+}
+
+H1 {
+	color: #990000;
+	font : 16px;
+	font-family : Arial, Helvetica, sans-serif;
+}
+
+INPUT {
+	font : 12px Arial, Helvetica, sans-serif;
+}
+
+P {
+	font : 12px Arial, Helvetica, sans-serif;
+	text-align : left;
+}
+
+SELECT {
+	font : 12px;
+	font-family : Arial, Helvetica, sans-serif;
+}
+
+TD {
+	font : 12px Arial, Helvetica, sans-serif;
+}
+
+.bolding {
+	font : bold 12 px Arial, Helvetica, sans-serif;
+	}
+
+TEXTAREA {
+	font : 12px Arial, Helvetica, sans-serif;
+}
+
+.forumname {
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color: blue;
+	}
+	
+.menuspace {
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color: #666666;
+	text-align: center;
+	padding-top : 2px;
+	}
+	
+.forumheading {
+	font: bold 15px Arial, Helvetica, sans-serif;
+	color: #ffffff;
+	}
+
+.buttons {  
+	font-family: Geneva, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	background-color: #9999CC; 
+	color: #FFFFFF; 
+	border: 1px outset; 
+	border-color: #CCCCFF solid;
+	}
+	
+a {
+	font: bold 11px arial, helvetica;
+	text-decoration: none;
+	color: #336699;
+}
+
+a:hover {
+	color: #CC0000;
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration:underline;
+	color: red;
+}
+
+.px12 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px}
+.px10 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px}
+.px9 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px}
+
+.title {  
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 16px; 
+	color: #999999; 
+	font-weight: bold
+}
+.warning {
+	font: bold 15px Arial, Helvetica, sans-serif;
+	color: #003366;
+	}
+.pageheading {
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color: #003366;
+	}
+.articlehead{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-color: #000000;
+ 	color: #333333
+}

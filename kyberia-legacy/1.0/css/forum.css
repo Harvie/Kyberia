@@ -1,0 +1,29 @@
+BODY, P, TD {
+	font-family : Tahoma, Aplos, Helvetica, sans-serif;
+	font-size : 9pt;
+	color : #000000;
+}
+
+.darkbackground {
+	color : #FFFFFF;
+}
+
+A {
+	text-decoration: none;
+	color: #666666;
+	font-weight : bold;
+}
+
+A.darkbackground {
+	color : #CCCCCC;
+}
+
+A:Hover {
+	text-decoration: underline;
+}
+
+H1 {
+	font-size : 16pt;
+	font-weight : bold;
+	color : White;
+}

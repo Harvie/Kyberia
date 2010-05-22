@@ -1,0 +1,17 @@
+<div class='active_users'>
+<table cellspacing='0' cellpadding='0'>
+{get_userlist}
+<tr><td width=100%>
+<span class='important'><center>friends</center></span>
+{foreach from=$active_friends item=node_visitor}
+<div class='active_user'><div class='active_user_img'><a href="javascript:chngto('{$node_visitor.login}')"><img border='0' name='{$node_visitor.login}' width='50' height='50' alt='{$node_visitor.login}' src='{get_image_link id=$node_visitor.user_id}'></a></div></div>
+{/foreach}
+</td></tr>
+<tr><td>
+<br>
+<span class='important'><center>users</center></span>
+{foreach from=$active_users item=node_visitor}
+<div class='active_user'><div class='active_user_img'><a href="javascript:chngto('{$node_visitor.login}')"><img border='0' name='{$node_visitor.login}' width='50' height='50' alt='{$node_visitor.login}' src='{get_image_link id=$node_visitor.user_id}'></a></div></div>
+{/foreach}
+</td></tr>
+</table>

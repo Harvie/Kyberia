@@ -1,0 +1,45 @@
+{if $template_event eq 'preview'}
+<table>
+<tr>
+<td valign='top' rowspan='2' ><img hspace='5' src='{get_image_link id=$user_id}'></td>
+<td width='100%' valign='top'>
+<table width='100%'><tr class='header'>
+<td align='center'>PREVIEW
+
+<tr><td>{$post_vars.node_content|preview}</td></tr>
+</table>
+</table>
+{* end of preview *}
+
+{elseif $template_event eq 'filter_by'}
+{get_threaded_children listing_amount=23232322323 offset=$offset types=$children_types search_type=$post_vars.search_type search=$post_vars.node_content}
+{elseif $node.node_user_subchild_count eq true}
+{get_threaded_children listing_amount=$node.node_user_subchild_count time=$node.last_visit offset=$offset types=$children_types}
+{else}
+{get_threaded_children listing_amount=$listing_amount offset=$offset types=$children_types}
+{/if}
+
+{foreach from=$get_threaded_children item=child}
+<table width=100%>
+<tr>
+<td width='{math equation="(x-y)" x=$child.depth y=$node.vector_depth}%'></td>
+
+<td width='{math equation="100-(x-y)" x=$child.depth y=$node.vector_depth}%'>
+<table class='bordered' width='100%'><tr class='header'>
+<td>
+&nbsp;<a href='/id/{$child.node_creator}'>{$child.login}</a>
+{if $child.user_action neq false}
+&nbsp;[lokacia :: <a href='/{$child.user_actions}/'>{$child.user_action}</a>]
+{/if}
+&nbsp;&nbsp;<input type='checkbox' value='{$child.node_id}' name='node_chosen[]'>
+&nbsp;&nbsp;{$child.node_created|date_format:"%d.%m.%Y. - %H:%M:%S"}
+{if $child.node_name eq ''}
+<div align='center'><a href='/id/{$child.node_id}'>enter node {$child.node_id}</a></div>
+{else}
+<div align='center'><a href='/id/{$child.node_id}'>enter node <b>{$child.node_name}</b></a></div>
+{/if}
+<tr><td>{$child.node_content|stripslashes|imagestrip}</td></tr>
+</table>
+</table>
+<br>
+{/foreach}

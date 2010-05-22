@@ -1,0 +1,11 @@
+{get_nodes_by_type type=$type listing_amount=$listing_amount offset=$offset}
+{foreach from=$get_nodes_by_type item=child}
+
+<table>
+<tr>
+{if $child.node_type eq 6 or $child.node_type eq 13 }
+{$child.node_name}<br>
+{/if}
+</table>
+</table>
+{/foreach}

@@ -1,0 +1,9 @@
+{if $node.node_system_type eq 'private'}
+<textarea class='small' name='access'>{$access}</textarea>
+<br>
+<center><input type='submit' name='event' value='accesslist'></center>
+<br>
+{/if}
+
+
+

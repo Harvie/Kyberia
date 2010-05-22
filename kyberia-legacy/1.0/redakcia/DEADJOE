@@ -1,0 +1,96 @@
+
+*** Modified files in JOE when it aborted on Wed Mar 13 01:11:12 2002
+*** JOE was aborted by signal 1
+
+*** File '(Unnamed)'
+addArt
+
+*** File '../inc/redakce.inc'
+<?php
+include('/home/hromi1/kyberia/inc/kyberia.inc');
+class CLASS_REDAKCE extends CLASS_KYBERIA {
+
+
+function CLASS_REDAKCE() {
+	$this->CLASS_KYBERIA();
+}
+
+function listArticles() {
+	$q="SELECT * FROM articles order by id_article desc";
+	return($this->query($q));
+}
+
+function listRubrikyArray() {
+	$q="SELECT * FROM rubriky";
+	$set=$this->query($q);
+	while($set->next()) {
+		$data[]=$set->getString("nazov");
+	}
+	return $data;
+}
+
+
+
+function addArticle($pole,$title_image) {
+	$text1=AddSlashes($pole[text1]);
+	$text3=AddSlashes($[text3]);
+	$text2=AddSlashes($[text2]);
+	$id_rubrika=$id_rubrika;
+	$id_rubrika_secondary=$id_rubrika_secondary;
+	$title_image=$title_image;
+	$dd= new Diskuse();
+	$diskid=$dd->createDiskuse($id_rubrika);
+	$q="INSERT INTO articles SET datum=NOW(),";
+	$q.="nazov='$pole[nazov]',short_desc='$pole[short_desc]',text1='$text1',text2='$text2',text3='$text3',autor='$pole[autor]',";
+	$q.="id_rubrika='$id_rubrika',";
+	$q.="id_rubrika_secondary='$id_rubrika_secondary',";
+	$q.="id_diskuse='$diskid',title_image='$title_image',hits='0'";
+	$q.=",image1='$image1'";
+	$q.=",image2='$image2'";
+	$q.=",image3='$image3'";
+	echo $q;
+	$this->query($q);
+}
+
+function updateArticle($pole) {
+	$id_rubrika=$pole[id_rubrika]+1;
+	$id_rubrika_secondary=$pole[id_rubrika_secondary]+1;
+	$title_image=$pole[title_image];
+
+	$q="update articles SET datum=NOW(),";
+	$q.="nazov='$pole[nazov]',short_desc='$pole[short_desc]',text1='$pole[text1]',autor='$pole[autor]',";
+	$q.="id_rubrika='$id_rubrika',id_rubrika_secondary='$id_rubrika_secondary'";
+	$q.=" where id_article=$id";
+	$this->query($q);
+}
+
+function deleteArticle($id) {
+	$this->query("DELETE FROM articles where id_article=$id");
+}
+
+function addRubrika($pole,$obrazok) {
+	$rodic=($pole[id_parent])+1;
+	$this->query("INSERT INTO rubriky set nazov='$pole[nazov]',id_parent='$rodic',obrazok='$obrazok',description='$pole[description]'");
+}
+
+function addSkin($nazov,$adresa) {
+	$rodic=($pole[id_parent])+1;
+	$this->query("INSERT INTO skins set nazov='$nazov',adresa='$adresa'");
+}
+
+function addIntro($pole) {
+	$q="INSERT INTO intros set text='$pole[text]',id_forum='$id_forum'";
+	echo $q;
+	$this->query($q);
+}
+
+function addTitle($pole) {
+	$this->query("INSERT INTO titles set title='$pole[title]'");
+}
+
+ 
+// >------------------------------koniec metod---------------<
+}
+?>
+*** Modified files in JOE when it aborted on Fri Mar 15 22:44:40 2002
+*** JOE was aborted by signal 1

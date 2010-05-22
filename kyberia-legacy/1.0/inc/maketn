@@ -1,0 +1,26 @@
+<?
+set_time_limit(0);
+
+include("../../lib/config.php");
+
+$dim = "-W";
+
+$dir = opendir("./");
+while ($file=readdir($dir)){
+	$size = getimagesize($file);
+	if($size[2] == 2){
+		if($size[0] < $size[1]) $dim = "-H";
+		else $dim = "-W";
+		$jpgtnlist[] = "/usr/local/bin/jpgtn -q 80 -p tn ".$file;
+	}
+}
+
+closedir($dir);
+
+for($i=0;$i<count($jpgtnlist);$i++){
+
+	exec("$jpgtnlist[$i]");
+}
+
+header ("Location: ".$home."users/img.php?session=$session&imgtn=true&dirimg=$dirimg");
+?>

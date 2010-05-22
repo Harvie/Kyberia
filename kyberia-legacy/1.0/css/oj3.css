@@ -1,0 +1,28 @@
+
+
+a           { color: #7E2500; font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none }
+a:hover     { color: #6E1500; font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none }
+body      { background-image: url("http://rawthings.com/frohikey/oj3.gif"); background-color: #FFBE31; color: #000000; font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none; margin: 0pt; scrollbar-face-color: #ffbe31;
+                                        scrollbar-shadow-color: #4c4a47;
+                                        scrollbar-highlight-color: #6c6a67;
+                                        scrollbar-3dlight-color: #5c5a57;
+                                        scrollbar-darkshadow-color: #fe9500;
+                                        scrollbar-track-color: #000000;
+                                        scrollbar-arrow-color: #FFFFFF;}
+td { color: black; font-size: 8pt; font-family: Verdana, "Arial CE", "Helvetica CE", Arial, Helvetica; text-decoration: none }
+.border      { padding: 2pt; border: solid 1pt #000000 }
+.noborder       { color: #000000; border: dotted 1pt }
+.menu   { color: black; font-weight: bold; color: white; font-size: 8pt; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; background-color: #4c4a47 }
+.white   { color: black; font-size: 8pt; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; background-color: #ffbe31 }
+.pulldown    { color: #FFFFFF; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: #4c4a47 }
+input        { color: #FFFFFF; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: #4c4a47; border: solid 1pt #000000 }
+select     { color: #FFFFFF; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: #4c4a47; border: solid 1pt #000000 }
+textarea     { color: #FFFFFF; font-size: 8pt; font-family: Verdana, Arial, Helvetica; background-color: #4c4a47; border: solid 1pt #000000 }
+img { border: 0pt }
+.new  { color: #FFFFFF; font-weight: 500 }
+.red  { color: #FFFFFF }
+.icon    { background-color: #4c4a47; vertical-align: top; margin: 1px; padding: 0pt; border: 1pt; width: 40px; height: 50px }
+.sicon   { background-color: #4c4a47; vertical-align: top; margin: 1px; padding: 0pt; border: 2pt; width: 20px; height: 25px }
+.level  { margin: 1pt; border: 0pt; width: 40px; height: 6px }
+.image { width: 87px; height: 33px }
+table { padding: 0pt }
