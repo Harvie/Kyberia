@@ -1,0 +1,81 @@
+===== Třídění informací v knihovnictví =====
+  * http://www.phil.muni.cz/kivi/
+    * http://www.phil.muni.cz/kivi/clanky.php?cl=36 (Desetinné třídění)
+    * http://www.phil.muni.cz/kivi/clanky.php?cl=25 (Desetinné třídění)
+    * http://www.phil.muni.cz/kivi/clanky.php?cl=41 (Ranganathanovo dvojtečové třídění)
+
+===== Postřehy =====
+  * pozn. spravce: k tomuto clanku existuje diskuze [[talk:system_trideni_informaci]]
+
+Paralelně s veškerým úsilím na vytvoření kyberky se může začít pracovat na systému třídění informací.
+
+CRASH - ted me napadlo, ze informace nemusi byt nutne seskupovany stejne jako jejich autori. to ze budeme mit sub-komunity v ramci kyberky este neznamena, ze musime rozbijet informace na sub-informace a ubirat jim tim na hodnote. no nic - pokracuju...
+
+Koren meho notebooku vypada takhle:
+
+<code>arch bin boot dev etc home lib lost+found media mnt opt proc root sbin srv sys tmp usr var</code>
+
+Koren soucasne kyberky se vetvi asi takhle:
+
+<code>
+nodeshell:: politika.spolocnost.media.historia .alt :: (218 children ) [11K] (mrjn) 
+nodeshell:: ::graphics::design::photo :: (14 children ) [1K] (sn0wcrash[Locked_OUT]) 
+nodeshell:: filmz .alt :: (102 children ) [11K] (adam devop) 
+nodeshell:: broken nodes: node id = node parent :: (0 children ) (freezy) 
+nodeshell:: broken nodes: node parent < 0 :: (0 children ) (freezy) 
+nodeshell:: broken nodes: node parent not exists :: (0 children ) (freezy) 
+nodeshell:: Buducnost :: (79 children ) [3K] (urza) 
+nodeshell:: Compz & Net :: (216 children ) [9K] (freezy) 
+nodeshell:: Drogy :: (56 children ) [7K] (kamar) 
+nodeshell:: galerie :: (14 children ) [2K] (Daniel[Locked_OUT]) 
+nodeshell:: Halusky :: (133 children ) [3K] (zix) 
+nodeshell:: Hobblique :: (220 children ) [3K] (marcuz) 
+nodeshell:: Hudba :: (255 children ) [10K] (evadka) 
+nodeshell:: Kultura a Umenie :: (9 children ) [1K] (arcilokaj fari) 
+nodeshell:: Kyberia :: (281 children ) [18K] (Daniel[Locked_OUT]) 
+nodeshell:: kyberia classes :: (1 children ) (Daniel[Locked_OUT]) 
+nodeshell:: L:teratura :: (67 children ) [53K] (dark matter) 
+nodeshell:: maps :: (3 children ) (Daniel[Locked_OUT]) 
+nodeshell:: Nabozenstva, filozofia :: (1690 children ) [20K] (Kriticka priloha) 
+nodeshell:: personal notepads :: (2012 children ) [22K] (Daniel[Locked_OUT]) 
+nodeshell:: Sex a.tak :: (223 children ) [16K] (hroshik) 
+nodeshell:: skinz :: (41 children ) [7K] (Daniel[Locked_OUT]) 
+nodeshell:: templates :: (14 children ) (Daniel[Locked_OUT]) 
+nodeshell:: temporary trash :: (301 children ) [2K] (Daniel[Locked_OUT]) 
+nodeshell:: texty :: (34 children ) [5K] (Daniel[Locked_OUT]) 
+nodeshell:: the edge :: (7 children ) (Daniel[Locked_OUT]) 
+nodeshell:: Veda a technologie :: (103 children ) [8K] (X89) 
+submission:: 23 dôvodov prečo je kyberia.sk najlepším webom na Slovensku :: (53 children ) [186K] (Daniel[Locked_OUT]) 
+submission:: Citadela :: (52 children ) [6K] (Daniel[Locked_OUT]) 
+submission:: eventz :: (0 children ) (Daniel[Locked_OUT]) 
+link:: Blackmore, Susan - Teorie Memů :: (daimonion)
+</code>
+
+Nechci vypadat jako hnidopich, ale je potreba to prepracovat. Jednak je dobre mit nejakou hierarchickou strukturu a za druhe je dobre davat nodam nejake tagy (ktere urcuji, kam este dana noda patri) - system tagu je na kyberce.sk nahrazen systemem hardlinku, ktery osobne take uprednostnuji.
+
+Pripomina mi to pokus roztridit vsechnu moji hudbu do adresaru. Neustale jsem ty adresare prejmenovaval, protoze jeden song obcas vyzadoval prebudovani vsech tech kategorii. Nakonec sem to jakz-takz ustalil na necem jako je tohle:
+
+<code>
+Amateurs Clasical Funny MainStream Punk Rock'n'Roll Soundtrack Trance
+BigBeat-PsychedelicRock Country-Folk HipHop-Rap Metal-HardRock Reggae-Ska-Soul Shamanic-Meditation-Relaxation Techno-Dub-Electro -Unsorted
+BreakBeat-D'n'B-Jungle Dance Jazz-Blues-Swing PsyTrance-Goa Rock Soul-Funk-R'n'B Tekkno 70's-80's-Pop
+</code>
+
+Rozhodne to ale nedostacuje a neni mozne vsechny interprety jednoznacne zaradit. Dokonce bych rekl, ze vetsina songu je uplne blbe zarazena. Premyslel jsem i o ruznych alternativach, jako treba delit interprety podle toho jako brali drogy, nebo jake drogy jsou v dane sub-kulture oblibene (Eva a Vašek by spolu s Alkeholem přišli do kategorie Alkohol, atd...), coz se nakonec ukazalo jako zajimave, ale moc pracne a stejne jsem si nebyl moc jisty, kam bych soupnul Curta Cobaina s Karlem Gottem ;o)
+
+Prave v tomto bode se opet obevuji tagy nebo hardlinky (hardlinky rulz!). Coz nam opet rika, ze nemusime vse dokonale zaradit, ale neni na skodu mit nejaky skelet kategorii, kam alespon zhruba vse "nahazet".
+
+Teoreticky to muze vypadat tak, ze Dianicka Wicca bude zarazena nekde v
+**/vesmir/veda/filozofie/nabozenstvi/pohanska/neopohanska/wicca/dianicka-wicca**
+, ale zaroven bude nalinkovana do
+**/vesmir/veda/filozofie/dalsi_proudy/feminismus/dianicka-wicca**
+
+a nebo uplne jinak...
+
+zajimava by mi prisla i moznost delit veskere prispevky na vnitrni/vnejsi vesmir, nebo podobne. Ciste treba podle autorovo subjektivniho dojmu. Potom informace o dojeni kravy budou oznaceny "**vnejsi vesmir**" a informace o meditacich "**vnitrni vesmir**". Opet ne vzdy to de definitivne rozlisit, proto nektere prispevky mohou byt v kategorii "**proste vesmir**". ;o) Pomohlo by to odlisit, jestli se autor pri psani clanku dival z okna sve kancelare, nebo z okna sveho srdce. Proste aby bylo jasne jak pevne stal autor clanku na zemi. (Ne ze bych mel snad problemy s jednou z techto dvou kategorii), ale i s tim kyberka posledni dobou obcas taky bojuje - rekl bych.
+
+meli bysme zacit premyslet, jak by nam to nejvice vyhovovalo. napriklad wikipedie si zaklada ciste na dostatecnem prolinkovani jinak nepribuznych stranek pomoci ruznych rozcestniku a podobne, to je ale asi zbytecne moc prace a navic mezi wikipedisty dochazi k ruznym sporum o tom co, jak a kde.
+
+Take je potreba rozhodnout jak daleko od rootu budou moct useri vytvaret nody, samozrejme neni moc udrzitelne nechat usery vytvaret nejake prispevky moc blizko rootu. (z aktualniho rozlozeni kyberky bych tipoval, ze to tak driv bylo). Zaroven musi byt moznost pozadat o zalozeni nove kategorie nektereho ze supervizoru, protoze nejsme dokonali a na kyberce se muze objevit neco, co by nas v zivote nenapadlo (treba forum nejakeho poslaneckeho klubu ;o)
+
+Tady bych chtel v budoucnu vytvaret navrh takove hierarchie, ktera by umoznovala kazdemu se svobodne vyjadrit podle svych pocitu.

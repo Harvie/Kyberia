@@ -1,0 +1,96 @@
+====== Oddělení uživatelského rozhraní od aplikační logiky a datové vrstvy  ======
+
+Klasické rozdělení na vrstvy
+  * datová (databáze, uložení dat)
+  * logická (zdrojový kód, aplikace jako taková)
+  * prezentační (uživatelské rozhraní, klienti)
+
+1. a 2. vrstva bězí na serveru (případně decentralizovaně na serverech) a se zbytkem světa - tedy s klienty a s uživatelským rozhraním komunikují skrze veřejné API.
+Toto API umožňuje všechny podstatné operace - čtení i zápis.
+
+Např api požádám: "dej mi obsah této nody" nebo "dej mi seznam uživatelů, kteří mají tuto nodu booknutou" nebo "smaž tuto vazbu mezi nodou a uživatelem" atd.
+
+Podle toho jakým způsobem se API volá a co vrací se dělí API na různé druhy. Např web services, SOAP, nebo RESTful HHTP API.
+
+<graphviz>
+digraph clientserver {
+  subgraph cluster_cz {
+    label = "Kyberia CZ";
+    color=darkgreen
+    node [style=filled];
+    "0:DB:0" -> "0:DB:1" -> "0:DB:2" -> "0:DB:1" -> "0:DB:0"
+    "0:DB:0" -> "0:Backend"
+    "0:DB:1" -> "0:Backend"
+    "0:DB:2" -> "0:Backend"
+    "0:Backend" -> "0:Web Frontend"
+    "0:Backend" -> "0:SSH Frontend"
+  }
+  subgraph cluster_sk {
+    label = "Kyberia SK";
+    color=darkgreen
+    node [style=filled];
+    "1:DB:1" -> "1:DB:0" -> "1:DB:1"
+    "1:DB:0" -> "1:Backend"
+    "1:DB:1" -> "1:Backend"
+    "1:Backend" -> "1:Web Frontend"
+    "1:Backend" -> "1:SMTP Frontend"
+  }
+  "Kyberia source" -> {"0:Backend", "1:Backend"}
+  
+  "0:Backend" -> "1:Backend" -> "0:Backend" [label="nody,maily,..."]
+  "Client #1" -> "0:Web Frontend" [label="req.:1a3b5c@kyberia.sk"]
+  "0:Web Frontend" -> "Client #1" [label="content:1a3b5c@kyberia.sk"]
+  
+  "Client #2" -> "1:SMTP Frontend" [label="mail to:1ee7@kyberia.cz"]
+  "0:Web Frontend" -> "Client #1" [label="mail from Client #2"]
+}
+</graphviz>
+
+===== RESTful HTTP API =====
+
+RESTful HTTP API není konkrétně speficikováno, je to otázka filosofie a architektury. Jednoduše takovéto API vystavuje svoje operace pro čtení a zápis přes HTTP a protokol a jeho metody POST, GET, PUT a DELETE.. jednotlivým funkcím tedy odpovídá smysluplné čitelné a informativní URL a akce je určena metodou http protokolu. Odpověď serveru potom může přijít v takových podobách v jakých to umožníme. Např v XML nebo HTML nebo jako plaintext.
+
+Více o RESTu zde:
+  * http://www.parleys.com/display/PARLEYS/Home#slide=27;talk=31817742;
+  * http://apeia.eu/seed/browse/4028818224541bcf012461bb6cbe0002
+  * http://en.wikipedia.org/wiki/Representational_State_Transfer
+  * http://www.infoq.com/articles/rest-anti-patterns
+
+připadně dotazy na id txo nebo id urza (jeste lepe se muzete ptat primo zde v clanku na wiki pomoci syntaxe pro diskuzi)
+===== Výhody =====
+  * mohou vniknout různá na sobě nezávislá uživatelská rozhraní. Např: můžeme mít "naše" defaultní HTML+javascript, které bude součást systému. K tomu může někdo (urza by se do toho klidně pustil) udělat 3D klidnta jako desktopovou aplikaci. A potom si někdo cizí řekne, že udělá lepší webové rozhraní v HTML5 a jQuery a podobných hračkách a tak bude mít možnost to udělat a pustit na svém serveru (např);
+  * otevřenost vůči světu, možnost spolupráce s dalšími tvůrci/programátory NEZÁVISLE NA JAZYKU a technologii;
+  * mohou vnikat různé automatizované moduly atd.
+  * protože všechny akce jsou přístupné přes API i bez uživatelského rozhraní, lze jednoduše psát testovací moduly, které ověřují funkčnost kódu a pomáhají hledat bugy. např v javě známě jako JUnit
+
+
+===== Server jako backend + Klient jako jednoduchý frontend =====
+Zajimave usili by bylo take nahradit protokol HTTP za nejaky, ktery je vhodnejsi pro neurosocialni sit. takovy protokol by mohl mit rozsireni pro [[Kyberia mail|posilani zprav]], atd... taky by nemusel byt zavisly na hypertextu a nad nim by se daly stavet ruzne interfacy - graficke, textove, mobilni, s obrazky a bez obrazku, ovladane klavesnici, mysi, brckem. imho je soucasny web bloated mozna vic, nez kyberia.sk. prenasi se zbytecna data, tam, kde se mely puvodne jen sdilet myslenky. web se stava zavislym na brutalne vykonych pocitacich a vsechno se centralizuje. je to nejen zpusob, jak nutit lidi, aby si kupovali drazsi linky a pocitace. webove aplikace se stavaji (nebo spis sou) cim dal tim vic platformne zavislymi. mel by vzniknout konkurent webu, ktery bude misto marketingu slouzit vzdelani. mozna je uplne spatne, ze chceme kyberii vystavet na vratkych zakladech soucasneho webu.
+
+jinak receno by mel existovat backend "Kyberia server" a ruzne frontendy "Kyberia client". Kyberia klient by potom mohl bezet jak primo u uzivatele (GTK+ aplikace, CLI aplikace, Pidgin plugin,...), tak na serveru (WebUI, SSH, Telnet), ale prakticky by vsechny druhy klientu plnily stejny ucel - poskytnout rozhrani ke Kyberia serveru. Kyberia.sk nyni pouziva jako backend SQL databazi a jako frontend PHP kod, imho by se to cele melo posunout a uzivatelske rozhrani by melo skutecne byt jenom uzivatelske rozhrani.
+
+navrhuji napsat kyberii tak, aby bylo mozne pak casem opustit potapejici se lod (z naseho pohledu) jmenem web.
+btw moje predstava je takova, ze by se mohla kyberie celkove postavit na podobne syntaxi jako maji ruzne wiki systémy a z toho az pripadne generovat HTML, nebo neco jineho.
+==== Další interfacy ====
+zatim jsem mluvil o webovem interfacu, ktery je pro me naprostym zakladem, zaroven jsem ale k webu skepticky (navzdory tomu, ze se tam presouva cely IT svet). pro zacatek nebude problem udelat nejaky chroot SSH shell, kam se kazdy bude moct prihlasit, stahovat si tam nejake soubory pres SFTP a pripadne se na kyberiu dostat pres nejaky links omezeny na localhost. casem by se hodilo udelat i kyberia klienta, ktery by byl usity presne na miru kyberky a usetril by trafik za vsechny HTML tagy. ;o)
+
+==== Harvie's BBS ====
+Muj SSH BBS system, nyni jsem trochu ve slepe ulicce, ale casem ho prepisu z BASHe do PERLu a jeste pozdeji ho chci implementovat jako textmode interface ke kybce. Viz. screencast: http://www.youtube.com/watch?v=r05H2OYVdbs
+
+===== Kyberia.sk clients =====
+Pro inspiraci... snaha o vytvoreni klientu pro kyberii sk.
+
+==== Kyberia.sk PERL client ====
+
+Dneska jsem ze srandy zkousel napsat klienta pro posilani/prijimani mailu pres kyberia.sk ( https://kyberia.sk/id/4896960/ ) a prisel jsem na jednu vec... mel by existovat zpusob, jak s kyberiou komunikovat bez pouziti HTML tagu. At uz pomoci nejakeho "kyberia serveru", ke kteremu se budou teprve pomoci socketu pripojovat ostatni rozhrani (jako to webove), ostatni kyberky a uzivatele. Nebo je zde moznost udelat minimalisticky web vyuzivajici vyhradne plaintext a nejaky symbolicky jazyk pro odkazy, etc... (ne HTML - spis neco vy stylu Texy), ktery by byl snadno parsovatelny dalsim client-side softwarem, ktery by mohli useri snadno zbastlit dohromady (pripadne by bylo k dispozici i API pro ruzne jazyky).
+
+==== Kyberia.sk Chromium plugin ====
+  * https://chrome.google.com/extensions/detail/bpfljfjdckjnkicbfkdcippkihflncnf
+
+{{https://chrome.google.com/extensions/img/bpfljfjdckjnkicbfkdcippkihflncnf/1262870523.45/screenshot/1?.png?}}
+==== Nástroje a inspirace ====
+
+  * [[http://openid.net/]] 
+  * [[http://oauth.net/ | OAuth]] An open protocol to allow secure API authorization in a simple and standard method from desktop and web applications.
+  * [[http://code.google.com/p/pubsubhubbub/ | pubsubhubbub]] A simple, open, server-to-server web-hook-based pubsub (publish/subscribe) protocol as an extension to Atom and RSS.
+  * [[http://www.oembed.com/ | oEmbed]] oEmbed is a format for allowing an embedded representation of a URL on third party sites. The simple API allows a website to display embedded content (such as photos or videos) when a user posts a link to that resource, without having to parse the resource directly.

@@ -1,0 +1,30 @@
+====== Samočisticí schopnosti ======
+===== Expirace nody =====
+Kazda noda bude mit svoji "trvanlivost", defaultne napr. 6 mesicu, uzivatel bude mit moznost tuto trvanlivost prodlouzit (vedecke poznatky, atd...) nebo zkratit (chaty).
+
+jednou za cas se z databaze DROPnou vsechny nody s timestampem recyklace mensim nez je aktualni cas a vsechny edge (linky a hardlinky) s vyjimkou nody, ktera ma timestamp prazdny, nebo nastaveny na 0. pri takovem promazavani je dobre zjistit, jestli neni nastaveny nejaky nesmyslny systemovy cas (6.6.6666).
+
+zadny z timestampu by nemel pretect v y2k38.
+
+krome toho bude kazda noda mit TIMESTAMP_OFFSET, ktery bude urcovat vychozi nastaveni timestampu pro jeji childy. takze napriklad noda „kam pudem dnes kalit“ bude mit recycle=0 a offset=2, naproti tomu forum, kde se budou prodavat listky na nejakou akci muze mit naopak offset=0, ale recycle nastaveny na den konani teto akce, protoze potom uz se stane jeho existence irelevantni.
+
+veskera posta bude mit defaultne recycle=0 a ve chvili, kdy si ji adresat precte se recycle nastavi na aktualni cas+offset nody, ktera bude reprezentovat postovni schranku daneho uzivatele, samozrejme bude mozne po precteni archivovat tuto zpravu opetovnym explicitnim nastavenim recycle=0.
+
+byl bych rad, kdyby se mohly recyklovat i uvolnena ID nody, ale v takovem pripade by bylo treba recyklaci propagovat do vsech nod, ktere na danou nodu linkuji. imho by se mel zavest nejaky novy symbolicky zapis linku (coz je stejne nutne, abysme mohli renderovat vystup pro frontendy, ktere nepodporuji html) a vsechny linky na ktere se v textu nody linkuje by se mely propagovat do databaze jako edge - mimo jine, aby bylo mozne je rychle najit a oznacit za neplatne, kdyz bude noda zrecyklovana.
+
+===== Upozornění na duplikáty =====
+Kyberia by mela pri pridavani nody vyhledat duplikaty. Prevazne se to tyka delsich textu a URL adres, ktere nevedou primo na root serveru.
+
+Tudiz jsou to pripady, kdy
+  * nekdo copypastne nejakou povidku, nebo delsi praci co uz pastnul nekdo jiny (melo by to jit poznat i s preklepy)
+  * nekdo pastne nejaky link
+    * nemelo by se to tykat linku jako http://google.com/, ale jen delsich jako http://blog.harvie.cz/2010/02/podivnosti/copyright-neni-samozrejmost-odmenovat-umelce-ano/ protoze se da predpokladat, ze na nektere stranky bude odkazovat vice lidi naprosto legitimne
+    * duplicitni URL adresy by se mely take hledat v emedech z youtube a podobne
+===== Varování před postnutím zbytečné zprávy =====
+U zpráv kratších než 10 znaků (konkrétní číslo by se stanovilo pomocí [[pdm]]) bych zobrazil popup ve stylu:
+<note warning>**Vaše zpráva: "Popiči!!" má méně než 10 znaků, skutečně ji chcete odeslat? [NE][ANO]**</note>
+případně pro zprávy, kde X% znaků nejsou písmena:
+<note warning>**Vaše zpráva: ":-P" složená převážně ze speciálních znaků pravděpodobně neobsahuje žádnou cennou informaci, skutečně ji chcete odeslat? [NE][ANO]**</note>
+
+===== Filtrování =====
+viz. [[Neuronová síť]]

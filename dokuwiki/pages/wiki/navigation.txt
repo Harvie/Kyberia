@@ -1,0 +1,18 @@
+  * [[:start|Úvod]]
+  * **[[:Specifikace]]**
+  * **[[http://github.com/Harvie/Kyberia|GIT repozitář]]**
+**[[this>doku.php?do=recent|Poslední změny]]**
+  * [[:Kontakt]]
+=== Externí linky ===
+  * [[http://shop.kyberia.cz/|shop.Kyberia.cz]]
+  * [[https://phorum.kyberia.cz/|phorum.Kyberia.cz]]
+  * [[http://apeia.eu/|Apeia.eu]]
+  * [[http://video.google.com/videoplay?docid=2786893074222732218|Bill Hicks]]
+=== Vývojáři / Blogy ===
+  * [[http://blog.harvie.cz/|Harvie]]
+  * [[http://localhost.sk/~hromi/textz/|Hromi]]
+  * pridejte si linky...
+=== Tribes ===
+  * [[https://kyberia.cz/|{{http://kalsey.com/tools/buttonmaker/button.php?outerBorder=666666&innerBorder=ffffff&barPosition=32&leftFill=00CC00&leftText=CZ&leftTextColor=000000&leftTextPosition=10&rightFill=000000&rightText=Kyberia&rightTextColor=00CC00&rightTextPosition=37&.png?}}]]
+  * [[https://kyberia.sk/|{{http://kalsey.com/tools/buttonmaker/button.php?outerBorder=666666&innerBorder=ffffff&barPosition=32&leftFill=00CC00&leftText=SK&leftTextColor=000000&leftTextPosition=10&rightFill=000000&rightText=Kyberia&rightTextColor=00CC00&rightTextPosition=37&.png?}}]]
+  * [[http://kyberia.at/|{{http://kalsey.com/tools/buttonmaker/button.php?outerBorder=666666&innerBorder=ffffff&barPosition=32&leftFill=00CC00&leftText=AT&leftTextColor=000000&leftTextPosition=10&rightFill=000000&rightText=Kyberia&rightTextColor=00CC00&rightTextPosition=37&.png?}}]]

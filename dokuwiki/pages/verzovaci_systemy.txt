@@ -1,0 +1,65 @@
+===== GIT =====
+  * http://zdrojak.root.cz/serialy/pet-duvodu-proc-zvolit-git/
+  * http://www.root.cz/knihy/pro-git/
+    * [[http://progit.org/book/|Pro Git]]
+    * fajn kniha vydana pod Creative Commons, pro vyjadreni podpory je mozne koupit i [[http://www.amazon.com/gp/product/1430218339?ie=UTF8&tag=prgi-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1430218339|paperback]]
+  * http://github.com/
+  * http://www.youtube.com/watch?v=4XpnKHJAok8 - prednaska od Linuse
+==== Jak na GIT? ====
+  * nastavte si git:
+<code>
+$ git config --global user.name "Vase Ctene Jmeno"
+$ git config --global user.email "user@hostname"
+</code>
+
+  * Zaregistrujte se na githubu (bude chtit vas verejny ssh klic, ktery budete pouzivat pro pushovani commitu do repozitare).
+  * napiste mi vas nick, at vas pridam do collaborators
+
+  * za předpokladu, že už máte přístup do Kyberia na GITHubu, postup je následující:
+
+<code>
+[00:50:13] 0 ;) harvie@harvie-ntb Temp $ git clone git@github.com:Harvie/Kyberia.git
+Initialized empty Git repository in /home/harvie/Temp/Kyberia/.git/
+Host key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
+
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (3/3), done.
+[00:50:24] 0 ;) harvie@harvie-ntb Temp $ cd Kyberia/
+[00:50:30] 0 ;) harvie@harvie-ntb Kyberia $ vim README 
+[00:50:46] 0 ;) harvie@harvie-ntb Kyberia $ git commit -a -m 'testovaci commit'
+[master 16b9747] testovaci commit
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+[00:51:02] 0 ;) harvie@harvie-ntb Kyberia $ git push
+Host key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
+
+Counting objects: 5, done.
+Writing objects: 100% (3/3), 282 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:Harvie/Kyberia.git
+   67231e2..16b9747  master -> master
+[00:51:09] 0 ;) harvie@harvie-ntb Kyberia $ 
+</code>
+
+  * všimněte si, že můžete commitovat lokálně, dokud nejste spokojení a až pak pushnout všechny commity na server. git je totiž decentralizovaný a správa verzí (commitů) funguje i lokálně.
+  * pravidelne si stahujte nove verze pomoci "git pull". pokud bude vic lidi pracovat na jednom souboru, je treba resit konflikty (mergovat diffy).
+  * pravidelne commitujte (lokalne) pokazde kdyz neco zmenite. a kdyz uz je vas kod zraly na to, aby ste ho uploadli, tak pushnete svoje commity na server (at o nich ostatni vyvojari vi co nejdrive a nedochazi k nekompatibilnim verzim)...
+  * pokud omylem, uploadnete na GitHUB soubor s hesly, nebo jina senzitivni data, postupujte takto: http://help.github.com/removing-sensitive-data/
+
+==== GitHub nebo Gitorious? ====
+{{ http://imgs.xkcd.com/comics/branding.png }}
+  * http://blogs.gentoo.org/nightmorph/2010/02/16/gitorious-or-github
+  * http://stackoverflow.com/questions/78991/why-is-github-more-popular-than-gitorious
+  * http://toolmantim.com/thoughts/github_vs_gitorious_and_centralised_development_revisited
+
+> nebo http://repo.or.cz/ ? :)
+>> to uz si muzeme rovnou nahodit vlastni repo... github ma super klikatka, to je jedinej duvod, proc se vzdam svoji myslenky, ze repo bude soucasti instalace kyberky...
+
+  * gitorious - podporuje ACL pre repozitare (commit groups), na githube do kazdeho repa moze commitovat iba jeho vlastnik (=> zbytocne vela forkov)
+    * http://gitorious.org/kyberia
+
+> no, jenomze to prave nechceme. Fork si muze udelat naprosto kdokoliv, kdezto o zapis do ACL se musi zadat. GitHub poskytne vice svobody. Jasne, ze se da forkovat i na gitoriousu, ale GitHub umi commity do forku mergnout zpatky do hlavni vetve. IMHO je to vic v souladu s filozofii, kdy si kazdy dela kyberku podle svych predstav na svym placku a pokud udela neco, co se nam bude libit, tak si ho mergneme zpatky, jinak at si dela co chce - nebude nama vubec omezovanej. --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/23 19:32//
+>> samozrejme ze gitorious vie commity do forku mergovat spat do hlavnej vetve. na to je tzv merge request (co nie je nic ine ako pull request v githube). gitorious je co sa tyka prace so zdrojakmi to same co github akurat prava k jednemu repozitaru moze mat viac ludi (na githube jeden repo - jeden committer). github ma navyse issuelist (ktory je imho dost naprd) a wiki (ktoru nam netreba). //stick//
+
+===== SVN =====
+TODO

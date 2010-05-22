@@ -1,0 +1,78 @@
+====== Programovací jazyky, které využijeme ======
+pokud jde o jazyk, tak by bylo dobre pouzit neco, co je urcene na web - ja umim jenom PHP, takze bych pro nej i hlasoval. veci, kde zalezi na vykonu muzeme dohackovat v C, ale zaroven nabidnou i alternativu v PHP, ktera bude vhodna kvuli prenositelnosti treba na freehostingy (chceme vic malych bunek - tudiz jednoduchou instalaci i pouziti). daji se napsat 2 identicke knihovny v PHP s tim, ze jedna z nich bude provadet stejne operace, ale pomoci programu (binarek) napsanych v C/ASM, ktere budou treba v /opt/kyberia/bin. administrator serveru tak bude mit moznost si vybrat jestli chce tuto moznost vyuzit. sam jsem v PHP takovy system uz jednou pouzil a take je beznou praxi, ze program psany treba v C(++) ma ve zdrojaku ASM kod, ktery se da pri kompilaci v zavislosti na cilove architkture povolit, nebo nahradit C kodem pomoci direktiv preprocesoru.
+
+===== PHP 6 =====
+Současná kybca je tusim na PHP 5, PHP 6 resi dost veci, ktere me na starsi verzi vadily, uplne bych PHP nezatracoval, protoze nam poskytne velmi sirokou zakladnu potencionalnich vyvojaru a pripadne nove vznikajici triby budou mit mene problemu pri instalaci a zprovoznovani kybci.
+  * Odkazy
+    * http://www.linuxsoft.cz/php/
+
+==== Facebook HipHop ====
+[[http://wiki.github.com/facebook/hiphop-php/|HipHop]] je PHP akcelerátor postavený na JIT kompilaci do nativního kódu (s mezizastávkou u C++), čímž lze dosáhnout i více než 50% snížení nároků na výkon serveru. HipHop byl vyvinut pro nasazeni na serverech facebooku, nyni ale byl uvolnen jako opensource. IMHO by na HipHop měla zkusit přemigrovat i [[Kyberia.sk]].
+  * http://github.com/facebook/hiphop-php/
+  * http://wiki.github.com/facebook/hiphop-php/
+  * http://developers.facebook.com/hiphop-php/
+  * http://developers.facebook.com/news.php?story=358&blog=1
+  * http://aur.archlinux.org/packages.php?K=hiphop balíčky pro [[operacni_system#archlinux|ArchLinux]]
+  * http://github.com/h4ck3rm1k3/hiphop-php/ (Debian package?)
+    * http://wiki.github.com/facebook/hiphop-php/running-hiphop (install instructions)
+
+==== XCache ====
+Další z jednoduchých "urychlovačů" PHP, momentálně běží na molly i na kyberia.sk. http://xcache.lighttpd.net/
+
+==== Vlastní nativní rozšíření do PHP ====
+Jinak pro zajímavost před napsáním HipHopu FaceBook přepisoval náročné kusy PHP kódu do C, jako rozšíření pro PHP, což se také možná jeví jako schůdná cesta (nemusí jít zrovna o C, máme i další jazyky, které se dají kompilovat do SOček/DLLek).
+
+===== PERL =====
+PERL je o neco rychlejsi, nez PHP a ma moduly na automatické generovani HTML kodu, ale hodil by se spise na backend, obavam se vsak, ze na backend je pomaly. i kdyz vyvoj by byl podobne pohodlny jako u PHP, každopádně bych zvážil jeho nasazení na webové rozhraní, například v podobě mod_perl u Apache, nebo přes cgi.assign u lighttpd.
+
+  * Backendy
+  * Frontendy
+    * Curses::UI (SSH/Telnet) - až opraví podporu UTF-8 širokých znaků
+    * CGI (Web)
+  * Odkazy
+    * http://www.linuxsoft.cz/article_list.php?id_kategory=210
+
+===== Ruby =====
+  * prepojenie na vsetky tu spomenute technologie (bindings pre Mongo, Riak, neo4j, couchdb, ...)
+  * Sinatra framework umoznuje pohodlnu a plnu kontrolu nad REST interfacom
+  * Dobre sa v nom pise ale zaroven sa kod aj dobre cita
+  * Skvely system balickovania modulov (rubygemy) pouzitelny pre systemy ktore nemaju vlastny package management (windows, macosx)
+  * dost popularny aj medzi mladymi ludmi
+
+===== C =====
+C je dost rychle, ale take nachylne na bezpecnostni chyby a u slozitejsiho projektu bychom se mohli snadno ztratit.
+  * Odkazy
+    * http://www.linuxsoft.cz/article_list.php?id_kategory=186
+
+===== Erlang =====
+Toxygen se momentalne zacina ucit erlang, mozna je to rychlejsi a skalovatelnejsi, ale ve vysledku pravdepodobne nebudou vyvojari, kteri by se do takoveho harakiri pustili...
+
+> urza: mě Erlang už delší dobu fascinuje, možná bych se ho taky začal učit..
+>> jenomze stejne to popularite kybci neprospeje a my chceme hodne tribu... --- //[[harvie@email.cz|Harvie]] 2010/02/13 21:12//
+>
+>> situace se asi vyresila nasazenim riaku, ktery je v erlangu, vyuziva jeho vyhody, ale da se pouzivat i z jinych jazyku pres HTTP interface  --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/04/09 19:03//
+
+===== Java =====
+Java je robustní, objektový, "moderní" jazyk vhodný na server. Existuje mnoho knihoven a projektů, které lze využít. Fakt mnoho.. od indexovacího nástroje [[http://lucene.apache.org/java/docs/|Apache Lucene]] přes [[netabulkove_databaze_nosql|grafovou databázi]] [[http://neo4j.org/|neo4j]] až po knihovny na zpracování jazyka atd.
+Minimálně dva zkušení java programátoři jsou již přítomni. (txo, urza)
+===== Kombinace Java + PHP =====
+
+Napadá mě jestli by se nedalo kombinovat víc jazyků. Např java a php. Google hlásí, že nejsem první koho to napadlo, existuje víc postupů-možností-projektů jak na to:
+
+  * [[http://code.google.com/apis/protocolbuffers/docs/overview.html]]
+  * [[http://incubator.apache.org/thrift/]]
+  * [[http://php-java-bridge.sourceforge.net/pjb/]]
+
+  * [[http://www.caucho.com/resin-3.0/quercus/]] //Quercus is Caucho Technology's fast, open-source, 100% Java implementation of the PHP language (requires JDK 1.5).//
+
+například by datová vrstva mohla být v javě a aplikační v php, nebo by i aplikační (nebo vše vlastně) mohlo být rozdělené do konkrétních modulů mezi kterými by jen bylo dobře definované rozhraní
+
+výhody: možnost kombinovat víc možností, víc nástrojů, víc programátorů..
+nevýhody: pravděpodobně rychlost, složitější údržba a hledání chyb..
+
+> Ne, že bych javu neovladal, ale dost sem si pohraval s myslenkou backend v PERLu, webovy interface v PHP a SSH interface opet v PERLu... --- //[[harvie@email.cz|Harvie]] 2010/02/15 12:59//
+
+===== Python =====
+Zaradil by som aj python kedze je dost oblubeny, jednoduchy, vykonny, objektovo orientovany a navyse ma velmi jednoduche a kvalitne C api takze procedury narocne na hw a prostriedky by sa mohli dopisovat v c/c++, alebo je tu moznost volat nativne c-ckove kniznice pomocou pythonovskej kniznice ctypes..
+  * [[http://docs.python.org/c-api/]]
+  * [[http://docs.python.org/library/ctypes.html]]

@@ -1,0 +1,14 @@
+====== PlayGround ======
+LOL         icon_lol.gif
+FIXME       fixme.gif
+DELETEME    delete.gif
+README      readme.gif
+TODO        todo.gif
+DONE        done.gif
+DUPLICATE   duplicate.gif
+
+TODO
+
+DONE
+
+:?::!:

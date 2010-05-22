@@ -1,0 +1,55 @@
+Kazdy uzivatel ktory bude chciet vstupit do druhej kyberie sa bude vramci svojho registracneho formularu prihlasit do jednej z piatich Guild. Tie su urcene nasledovne:
+
+  * guild of Chaos & Circus (gC&C)
+  * [[guild of Culture & Nurture]] (gC&N) 
+  * guild of Exchange & Transport (gE&T)
+  * [[guild of Hackers]] (gHCK)
+  * [[guild of Cryptographers]] (gCRP)
+
+Kazda guilda si urcuje podmienky ktore musi novic splnit v pripade ze sa chce stat pravoplatnym clenom guildy (napr. podmienky vstupu do gCRP su nastavene tak diskordiansky ze sa do nej vlastne ani vstupit neda :) . Kazda guilda si taktiez urcuje podmienky ktore musi kazdy clen splnit v pripade ze chce ostat clenom. Kazda guilda si taktiez urcuje podmienky ktorymi si urcuje vsetky tieto fckin podmienky :)
+
+Nastavenie vsetkych spomenutych kriterii sa implementuje pomocou [[PDM|Modelu Paralelnej Demokracie]].
+
+Procedura vstupu do guildy sa nazyva iniciacia.
+
+Kazda guilda ma dvoch guildmajstrov. Ich vzajomne interakcie su definovane nasledovnym [[GuildGraph|GuildGrafom]] (GM1 je vrchny guildmajster, GM2 je nim zvoleny nasledovnik ):
+
+  * GM2(gC&C) -> GM1(gCRP) - buduci guildmajster gC&C udava sefovi gCRP temu najblizsej Oslavy
+  * GM2(gCRP) -> GM1(gHCK) - buduci guildmajster gCRP zadava sefovi gHCK strategicke poziadavky
+  * GM2(gHCK) -> GM1(gE&T) - buduci guildmajster gHCK zadava sefovi gE&T bezpectnostne poziadavky
+  * GM2(gE&T) -> GM1(gC&N) - buduci guildmajster gE&T zadava sefke gC&N ekonomicke poziadavky
+  * GM2(C&N) -> GM2(gC&C) - buduci guildmajster gC&N zadava sefovi gC&C miesto a cas Oslavy
+
+<graphviz neato>
+graph g {
+  "gC&C" -- {"gC&N"}
+  "gC&N" -- {"gE&T"}
+  "gE&T" -- {"gHCK"}  
+  "gHCK" -- {"gCRP"}
+  "gCRP" -- {"gC&C"}
+}
+</graphviz>
+
+Pomenovanie jednotlivych guild (vertices) nieje nahodne, ale je inspirovane dlhodobo najstabilnejsim socialnym systemom ktore ludstvo pozna - indickym kastovym systemom. Od toho si prebera tu pozitivnu vlastnost ze odzrkadluje akesi zakladne ludske archetypy (tulak, polnohospodar, obchodnik, bojovnik a brahman) no zaroven odmieta ustrednu negativnu vlastnost tohoto zavrhnutiahodneho systemu ktorym je, samozrejme, prislusnost ku kaste na zaklade dedicnosti. 
+
+Prislusnost ku guilde sa teda nededi, ale sa slobodne voli (ako neophytom, tak guildou). V tomto zmysle je guildsystem blizsi skor zapadnej tradicii stredovekych cechov, novovekych lozi a postmodernych politickych stran. Od posledych dvoch menovanych sa vsak lisi v jednom esencialnom ohlade: transparenciou.
+
+Prvi guildmajstri ceskej kyberie su urceni nasledovne:
+
+  * urza - GM1(gCRP)
+  * hromi - GM1(gC&C)
+  * neznama slecna - GM1(gC&N)
+  * neznam(y|a) obchodni(k|cka) - GM1(gE&T)
+  * niekt0 - GM1(gHCK)
+
+Pokial ma niekto vyhrady tak prosim, sem s nimi. Co sa tyka "neznamej slecny" ktora by sa mala ujat vedenia Guildy Kultivacie & Potravy, malo by sa jednat o osobu Zenskeho pohlavia. Tradicia si to vyzaduje.
+
+Ta ista Tradicia taktiez definuje ze v pripade ze nastane stav ze dvaja Guildmajstri, on a ona, spolu utvoria partnersky par, stavaju sa "Strazcami Domeny" a ziskavaju tym pravo veta k akemukolvek rozhodnutiu inych guildmajstrov
+
+> Mam proti tomuto systemu zasadni vyhradu... tohle by nemela byt otazka naseho zajmu a melo by se to resit az bude hotovy system na kazde instanci zvlast, rozhodne bych nechtel, aby kazdy, kdo si nainstaluje nasi kybcu byl donucenej, nebo prednastavenej k pouzivani nejakeho organizacniho systemu 5ti guild. System jako takovy by nemel mit nejakou hardcoded wannabe "ustavu", zvlast pokud ted nedokazu posoudit, jestli to bude fungovat. My bysme tu meli udelat system, kterymu je jedno, jestli v nem bude sidlit jedna guilda, 20 guild, nebo se tomu ani nebude rikat "guilda" a bude to treba "rainbow family". Taky bych byl nerad, aby byli uzivatele predem determinovani na nejaky okruh a treba by jim na zaklade toho odpadly moznosti zapojit se v jinych otazkach. Tim myslim neco ve smyslu, ze mi das samolepku [Hacker] a ja pak budu omezeny v reseni lidskych otazek, nebo naopak neznama slecna nebude moct primo ovlivnovat kyberku po technicke strance. Jak si to konkretne predstavujes? Mozna bych se fakt drzel principu jedna instance kybci -> jedna guilda (tribe) A potom je vsechny dostatecne prolinkovat. --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/23 19:39//
+>>Tvoja vyhrada je prirodzena, no verim ze skor ci neskor uznas zavaznost toho co tu zacinam predkladat. Prosim pokus sa inhibovat aspon na tyzden svoje komentare, nechaj si to prejst hlavou a ja budem medzitym kazdy den pridavat aspon jeden guildsystemu-sa-tykajuci clanok .
+>>> Presto bych te rad pozadal, aby jsi se snazil implementovat guild system nad kyberkou, nikoli kyberku nad guildsystemem. Samozrejme, ze udelame vse pro to, aby bylo nad kyberkou mozne podobne veci implementovat. Dokonce muze byt guildsystem soucasti zakladni distribuce, melo by ale byt mozne ho proste DROPnout z databaze treba pro pripad, ze kyberku budu chtit pouzit pro uplne jiny ucel, nebo budou moji instanci chtit vyuzivat jen 2 nebo 3 lide, cimz pocet 5ti guild ztraci na relevanci. --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/24 09:16//
+>>>>Zda sa ze si este nepochopil ze najklucovejsia cast kyberie nieje ulozena v skriptoch a konfigurakoch, ale v ludskych mysliach.
+>>>>>pochopil. ale taky jsem pochopil, ze kazdy clovek je jiny a tudiz i kazda skupina lidi je jina, prave proto bych nerad, aby skripty a konfiguraky determinovaly chovani nejklicovejsi casti. zaroven nevidim dobry duvod, proc neudelat kyberku tak, aby tam mohlo byt guild 5, 6, nebo zadna. --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/24 15:40//
+>>>>>>Hm, ajked si to dal ono //Where thoughts are beheld rather than verbalized// do topicu, zda sa ze s inhibiciou symbolartikulacnych pnuti mas este mierne problemy takze som Ta zatial vyhodil z toho guildmaster listu. Kedze ho zatial zjavne povazujes za zbytocny tak Ti to dufam nebude vadit. Istotne nikoho nehodlam tahat do niecoho pre co sa nerozhodne sam na zaklade svojho ratia. --- //hromiskopsisko//
+>>>>>>>mas pravdu v tom, ze by nebylo dobre, abych byl predstavenym nejakeho systemu, jehoz principy mi zatim nejsou zname, kazdopadne bych i presto rad vedel o co jde. mam totiz problem s predstavou celeho sveta rozskatulkovaneho do 5ti kategorii, kdyz ani neznam duvody proc tyto byly zvoleny. cimz bych te rad poprosil o vysvetleni toho, jake vysady, omezeni a cestne povinnost by podle tebe mely z guildsystemu vyplyvat. --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/26 00:05//

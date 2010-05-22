@@ -1,0 +1,35 @@
+Parallel Democracy Model (PDM) is a system allowing autoconfiguration and selfadaptation of social bodies according to aggregated collective will of basic components of these bodies (e.g. virtual avatars in case of virtual networks considered as such social bodies). PDM aims to address several fallacies inherent to the most common variant of the Serial Democracy Model (SDM) which is nowaday called "parliamentary democracy".
+
+In case of SDM, decisions to be undertaken are being executed **one after another** by legislative or executive body. For this to happen, the group of decision makers have to meet on one place in and one moment and realise "the vote". Option which gets the biggest number of votes is then "materialized" by means of external institutions.
+
+In case of PDM there is no need for decision-makers to meet in one moment. However, they still have to meet in one place - which can be of virtual nature. Many differents variables related to the functioning of the social body are presented in this place **simultaneously & in parallel from eternity to eternity** and decision-makers are free to add a new possible value to a given variable. Other decision-makers give their votes to the possible values of a given variable and the value of a variable which has the highest number of votes is considered to be "temporary activated value".
+
+Activation of the values is being realized by the set of cron scripts. Execution intervals of this cronscripts can also be subjects of voting within the scope of PDM.
+
+In the most liberal version of PDM, every avatar or citizen is allowed to vote for whatever value of whatever variable and to propose his own values.
+
+What You have to understand is that almost all the basic parameters of the social body (like tax level, immigration rate) can be concieved like integer, float or boolean variables. Therefore the governing of a society is the art of setting the right values of right variables and the ideal society is such a society which is closest to the [[global optimum]] of a search space.
+
+In such a way the social body can reconfigure itself without the caste of [[full-time politicians]].
+\\
+\\
+**Text v slovencine**\\
+\\
+\\
+Parallel Democracy Model (PDM) je systém, ktorý umožňuje auto-konfiguráciu a samo-adaptáciu spoločenských útvarov v závislosti na výslednici kolektívnych vôli základných jednotiek týchto útvarov (napr. avatarov vo virtuálnych priestoroch). Cieľom PDM je vyriešiť niektoré zlyhania, ktoré sú vlastné parlamentnej demokracií - najčastejšie sa vyskytujúcemu variantu takzvaného Serial Democracy Model (SDM).
+
+V prípade SDM sa rozhodnutia, ktoré je treba vykonať, dejú **jedno za druhým** v legislatívnych alebo exekutívnych zložkách. Prebieha to tak, že sa skupina decision-makerov stretne na jednom mieste za účelom realizovania "hlasovania". Možnosť, ktorá dostane najväčší počet hlasov, je potom "materializovaná" prostredníctvom externých inštitúcií.
+
+V prípade PDM nieje potrebné aby sa účastníci stretli v jeden moment. Stále sa síce musia stretnúť na jednom mieste, to však môže byť virtuálne. Na tomto mieste sa prezentujú rôzne premenné (parent node) a k nim nastavitelne hodnoty (child node), ktoré determinuju funkciu spoločenskeho útvaru, a ktoré su prístupne **simultánne, paralelne a na veky vekov**, pričom im môžu účastníci pridávať ďalšie možné hodnoty. Ostatní účastníci dávaju svoje hlasy možným hodnotám danej premennej, pričom tá hodnota premennej, ktorá ma najviacej hlasov, je považovaná za "dočasne aktivovanu hodnotu". 
+
+Aktivácia hodnôt je realizovaná prostredníctvom cron skriptov. Intervaly kedy sa skripty spúšťajú môžu byt tiež predmetom hlasovania v ramci PDM.
+
+V najväčmi liberálnej verzií PDM je každý avatar alebo občan oprávnený hlasovať pre ľubovoľnú hodnotu ľubovoľnej premennej a navrhovať iné hodnoty.
+
+Čo je potrebné pochopiť je fakt, že takmer všetky základne parametre spoločenského systému (napr. dane, imigračné kvóty) môžu byť chápané ako integer, float alebo booleovské hodnoty. Z tohto dôvodu je riadenie spoločnosti umením nastaviť správne hodnoty správnym premenným a ideálna spoločnosť je takou spoločnosťou, ktorá ma najbližšie ku globálnemu optimu v priestore riešení.
+
+Týmto spôsobom je možné dosiahnúť že sa spoločenský útvar rekonfiguruje sám bez potreby kasty profesionálnych politikov. 
+
+> 1. prumerna hodnota se prece muze vypocitat okamzite a zmeny mohou prijit v platnost okamzite po prijeti hlasu... na co cron? cronu bych se vseobecne vyhnul a pouzival bych ho jen a vyhradne na veci, ktere potrebuji vetsi vypocetni cas, uprava jednoho cisla v konfiguraku neni problem...
+> jinak receno predstava se mi libi, ale este to bude chtit procistit...  --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/23 20:20//
+

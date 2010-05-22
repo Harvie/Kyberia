@@ -1,0 +1,10 @@
+====== Kyberia user scripting engine ======
+Kyberia user scripting by měl být pro Javascript a PHP tím, čím je Wiki Markup pro HTML. Jinak řečeno uživatelsky přívětivý a názorný jazyk, který z každého udělá programátora.
+====== HAML ======
+[[http://haml-lang.com/]]
+[[http://en.wikipedia.org/wiki/Haml]]
+
+zde zůstává otázka, zda bysme neměli takový systém vyvinout sami, IMHO to je právě něco, čím se může kyberia lišit a v čem můžeme být lepší!
+
+===== Specifikace K.U.S.E =====
+FIXME

@@ -1,0 +1,15 @@
+====== Vizualizace grafu kyberie ======
+Před definitivním výběrem databázového enginu je nutné najít způsob, jak budeme data z grafu prezentovat. Musíme si ale uvědomit, že nová kyberia nebude odlišovat hardlinky od vztahu (parent/child), tudíž půjde o graf cyklický a musíme tak vyřešit různé cykly, kružnice a rekurze. Templaty na Kyberia.sk toto řeší tak, že hardlinky prostě nerozbalí, to u nás ale nepůjde, protože věříme že hardlink je stejně důležitý jako každý jiný vztah. Ve skutečnosti jsme se dohodli, že na kyberce budou "jenom" linky, přičemž je budem reprezentovat jako vztah parent->child.
+
+**Ve chvíli, kdy vyřešíme tuto otázku, bude mít IMHO smysl udělat větší sraz všech vývojářů.\\
+proto prosím pište vaše návrhy, jak prezentovat cyklický graf:**
+
+===== Rozklikávání nod AJAXem ála Harvieho demo =====
+viděli jste moje demo? Hromi to okomentoval ve smyslu, že pokud je to nutné zlo, tak klidně.
+===== Omezení rekurze na základě blacklistu =====
+Tuším, že se podobnému postupu v [[teorie grafů|teorii grafů]] říká "hledání kostry grafu".
+
+Další (poněkud schůdnější) možností je prostě vypsat (vykreslit) celý graf rekurzivně, tak jako by šlo o strom a dodržet při tom následující pravidla:
+  * Každá vypsaná noda bude přidána na blacklist
+  * Žádná noda na blacklistu nebude vypsána podruhé nebo ještě lépe bude vypsána, ale nebude jí dovoleno se dál větvit, místo větve bude link na místo ve stránce, kde se již rozvětvila, nebo rozbalení AJAX em. (pracovní název = "sterilizace")
+  * bude vypsáno jenom N nod, kde N stanoví uživatel, maximální N se odhlasuje pomocí [[pdm]] (kvůli vytížení serveru).

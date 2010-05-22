@@ -1,0 +1,7 @@
+====== Teorie grafů ======
+  * http://www.algoritmy.net/
+  * http://math.feld.cvut.cz/demlova/
+    * http://math.feld.cvut.cz/demlova/teaching/lgr/predn_lgr.html
+===== Maximální kostra grafu =====
+  * http://www.zdenek-hejl.com/2009/01/link-building-maximalni-kostra-grafu.html
+  * http://cs.wikipedia.org/wiki/Kostra_grafu

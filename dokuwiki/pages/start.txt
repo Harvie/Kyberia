@@ -1,0 +1,119 @@
+===== Kyberia.CZ Draft v0.0 - Join the rEvolution! =====
+Účelem tohoto portálu je dát dohromady návrh nové kyberky při zachování konsenzu. A to jak po stránce technické, tak po stránce lidské. Každý může napsat co by od kyberky v budoucnu chtěl, ale pouze za předpokladu, že to konzistentně zapracuje do návrhu, který již vytvořili další přispěvatelé před ním.
+
+//pozn.: existuje také názor, že by se raději mělo [[http://zdrojak.root.cz/clanky/nez-zacneme-programovat/|co nejdříve začít programovat]]. s tím bohůžel nemohu souhlasit. Přílišné plánování není dobré, ale když bude naprogramovaný databázový engine, tak bude pozdě se o něčem dohadovat, nebo třeba dodělávat nějakou featurku, o které od začátku věděla jen půlka vývojářů.//
+
+//pozn. k pozn.: existuje nazor ze by sa malo najprv planovat a az potom programovat. s tim Bohuzial nemozem suhlasit. rovnako ako internet, aj kyberia je organickym aktom prirody. a kto si Ty, ze si myslis ze mozes planovat prirodu ? //
+
+//pozn. k pozn. k pozn.: mozno keby bola priroda naplanovana tak by nevychadzali bugfixy uz 2 miliony rokov v podobe evolucie //
+
+//pozn. k pozn. k pozn.: Hnojivo vyrobene clovekem prospiva rostlinkam stejne, jako se plisnim a houbam dari v kvalitnim prumyslove vyrobenem agaru, ktery je taktez vysledkem vyzkumu, ktery je projevem lidske mysli. //
+
+<note important>**Aktuality**
+  * 14.5.2010 ~13:10 - Založil jsem GitHub repo... http://github.com/Harvie/Kyberia kdo chce [[verzovaci_systemy#jak_na_git|přístup]]?
+  * 15.4.2010 ~23:27 - Zatím mi ze všech db připadá nejvýhodnější Riak, ovšem musíme rozhodnout o tom jaké [[Vizualizace grafu kyberie|databázové operace]] chceme na kybče optimalizovat.
+  * 7.4.2010  ~00:00 - pod-domena [[http://dvp.kyberia.cz/|dvp.kyberia.cz]] byla propujcena komunitnimu prostoru [[http://dvp.s.cz/|DVP]].
+  * 7.4.2010  ~00:00 - [[http://molly.kyberia.cz/|molly.kyberia.cz]] je online ;-) Ak chcete konto piste mne pls -n.
+  * 1.4.2010  ~10:00 - Server ready, caka sa na linku.
+  * 12.3.2010 ~12:00 - Na vývojový server byl nainstalovaný ArchLinux (x86-64), zatím se dělá zabezpečení (SELinux, LUKS,...).
+  * 3.3.2010  ~22:00 - Mame server.
+    * **dell, 1U, 4jadrovy xeon, tusim 2.5 GHZ, 8G RAM, 2x500G SATA disky**, je čas vybrat [[operační systém]].
+  * 3.3.2010  ~22:00 - Máme přislíbenou linku.
+  * 23.2.2010 ~10:47 - Hromi zazadal o zredukovani pravomoci na odstaveni serveru na jednoho admina a jednoho zastupce - oba zvolene senatem.
+  * 22.2.2010 ~16:00 - boli zverejnene stare zdrojaky kybci v1.0 a v2.0: http://gitorious.org/kyberia
+  * 22.2.2010 ~12:00 - Kybca je zas online.
+  * 22.2.2010 ~00:00 - Adminove deadlocknuli server kyberia.sk jako pohruzku ve snaze zabranit zverejneni zdrojovych kodu.
+  * 10.7.2009 ~08:43 - Po prvnim stretnuti vyvojarskeho tymu sme koupili domenu kyberia.cz
+</note>
+
+==== Klíčové odkazy ====
+  * [[specifikace]] - tady probíhá všechna smysluplná práce (vyjma programování samotného)
+  * [[kritika]] --- //nemela by se kritika psat spis ke konkretnim clankum? --- [[harvie@email.cz|Tomáš Mudruňka]] 2010/02/26 14:23//
+  * [[poselství pro občany kyberia.sk|vyjádření pro občany kyberia.sk]] - zde bychom měli vysvětlit co a proč děláme a že jsme s kyberia.sk na jedné lodi
+  * [[mailing list]]
+    * [[verejny mailing list]]
+
+==== Historie ====
+Před několika lety hodil mladý programátor [[http://pocitace.sme.sk/c/3584996/sloboda-rovnost-a-kyberiask.html|Daniel Hromada]] do vod internetu tak velkou [[https://kyberia.sk|cihlu]], že výsledná vlna ovlivnila životy stovek lidí v čechách i na slovensku. Nedávno masa kyberie přesáhla kritickou hmotnost a nyní dochází ke štěpné reakci, která posune kyberii na kvantovou úroveň internetového nadvědomí. TODO PR Kecy, bla bla bla...
+
+Pred niekolkymi mesiacmi spustil mlady programator Tomas Mudrunka dalsi z tisicok wiki systemov. Keby len tusil ze vysledna vlna ovplyvni zivoty X ludi na Y kontinentoch Z planet, kto vie, mozno by si to cele rozmyslel... ;)
+==== Odlišnosti ====
+<note warning>tento seznam je na uvodni strance a proto ma slouzit nove prichozim navstevnikum, kteri nevi o co jde, proto odkazy na vsechny svoje nove stranky pls pridavejte primarne na rozcestnik [[specifikace]], kde davame vse dohromady a sem davejte jenom veci, ktere jsou zajimave pro nezasvecene uzivatele z kyberia.sk a dalsi nahodne navstevniky. Proste public relations...
+</note>
+
+Od projektu [[https://kyberia.sk/|Kyberia.sk]] by se měla lišit především v následujících bodech:
+  * bezmezný [[description_of_cyberia|idealismus]]
+    * otevřený zdrojový kód
+    * [[Kyberia a ekologie|důraz na ekologii]]
+    * [[Guildsystem]]
+    * [[Další služby|Různé sekundární služby]]
+      * [[dalsi_sluzby#sit_duvery_web_of_trust|Síť důvěry]]
+    * [[Parallel Democracy Model (PDM)]]
+    * [[Epocha|nova kategorizace casu]]
+  * [[Lidský faktor|Kyberia jako místo pro lidi, zaměřené na lidi]]
+  * [[Samočistící schopnosti]]
+  * [[Decentralizace]]
+    * více serverů/instancí/kmenů při zachování jednoty a kyberky jako celku
+    * lepší faceselecting (neplest s facesitingem; lidi v jednom kmenu se budou více znát) -> idiot-proof
+    * autonomie - soukromí + konec elitarstvi adminů
+  * optimalizace databázového schématu
+    * vyřešení [[Uložení grafu v databázi|problému s výkonem]] při selectování přes "cwbe coordinatez"
+    * [[neuronová síť]] místo K-ček
+    * [[noda|noda]] bude úplně všechno (mírně ubyde tabulek v DB)
+    * zvážit použití [[Netabulkové databáze (nosql)|netabulkových databázových systémů]] 
+  * všichni uživatelé si budou moci do jisté míry [[Kyberia user scripting|skriptovat]] nody, boty a podobně
+  * [[Kyberia mail|maily]] budou propojené s XMPP účtem
+  * pro [[Verzovací systémy|správu verzí]] bude použit git místo svn
+    * možná hosting na github.com? (nutná diskuze)
+    * alebo gitorious.com
+  * system pro barterove obchody ( LETS pripadne [[BarterNet]] )
+  * Využití [[Teorie grafů]]
+  * Prijatie aj netextovych dat ak sucasti. Obraz, zvuk, raw data.
+    * img,embed,object,etc s externym zdrojom dat vytvaraju prazdny obsah.
+  * pro podrobné informace viz. [[specifikace]]...
+
+<graphviz>
+digraph vyvoj {
+  "Kyberia.sk" -> "GitHub.com" -> {"Kyberia.SK","Kyberia.CZ"} -> "GitHub.com" -> {"Kyberia.SK","Kyberia.CZ"} 
+}
+</graphviz>
+
+==== Provozní informace ====
+<note>Nainstaloval jsem [[graphviz]] plugin!</note>
+README
+  - tato wiki má sloužit ke kolaboraci a vytváření specifikace, nikoliv k její destrukci, proto prosím nemažte cizí práci (obzvláště delší úseky textu - mějte v úctě cizí snahu vytvořit kyberii) pokud s ní nesouhlasíte a použijte místo toho možnost přeškrtnutí <del>textu</del> (v editoru nebo pomocí tagu del) a samozřejmě připište důvody nebo alternativu. Smazání potom necháme na uvážení autora, případně je možné přeškrtnutý text ponechat, aby bylo jasné, že byla daná otázka v minulosti zavržena. Také je dobré k "nesmazaným" odstavcům připsat %%FIXME nebo DELETEME%%, což zobrazí ikonku, která přitáhne pozornost editora. pevně však věřím, že ve většině otázek bude dosaženo konsenzu na takové úrovni, že budeme svoje myšlenky spíše vzájemně doplňovat, než mazat, škrtat a nahrazovat.
+  - pište prosím pouze "československy". neni to múj manýr, ale rád bych zachoval návrh kyberky konzistentní (pokud vytvoříme něco skutečně hodnotného, bude lepší přeložit vše najednou jako celek). pokud píšete, není to pro vás problém, pokud se chcete s ostatními podělit o již napsaný anglický text, tak ho sem prosím necopypastujte, ale dejte na nej odkaz. Navic treba ja osobne, ackoli jsem za poslednich par let precet relativne spoustu anglickeho textu mam obcas problem dat si dohromady nektere vyznamy a to zvlast, pokud jde o ruzne filozoficke vychytavky a dalsi veci, kterych se tu asi spousta vyroji...
+  - při editaci vyplňte také něco rozumného do políčka "Komentář k úpravám" a v případě, že upravíte "jen pár slov" alespoň zaškrtněte políčko "Drobné změny".
+  - dělte se o svůj názor
+  - ke každému článku/stránce je diskuze (odkaz discussion vedle odkazu na upravení stránky)
+    * jak se diskutuje se dočtete v nápovědě k syntaxi (je to podobná syntaxe jako u odpovědí na maily)
+    * asi jenom dodam, ze nahore na panelu je tlacitko pro pridani krasneho podpisu: --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/23 20:58//
+  - mailing list je dostupny jen po prihlaseni 
+    * od chvile, kdy jsme zacali o wiki mluvit i mimo kruh vyvojaru kyberia.cz byl mailing list docasne uzavren a zalezi na rozhodnuti ostatnich vyvojaru, jestli ho budou chtit zpristupnit, kdo se chce pridat, piste svuj mail a duvody do [[verejny mailing list|verejneho mailing listu]], my vas pripadne schvalime a pridame...
+Děkuji :-)
+
+==== Pár myšlenek ze starého fóra ====
+nase podstata je podstata hackeru. my jsme to hrackarstvi, kde si buh koupi vesmir na hrani. nasim primarnim ukolem neni vytvorit svet. nasim ukolem je vytvorit system, kde komunita ten svet vystavi. system tak jednoduchy, ze jeho matematicke vyjaderni bude 1*1=1. tvorime jediny zakon nove vznikajiciho vesmiru bez hranic. nechceme vytvorit nic vic, nez novy druh papiru, kam KAZDY BUDE SCHOPNY jednoduse otisknout svoje myslenky a vize. v uvahu neprichazi zadny druh omezeni uzivatele, ktery nebude zajistovat svobodu jinych uzivatelu. proto ma byt system co nejprostsi, tak jako je prosty vesmir ve vztahu k vyznamum ktere vznikaji v nem samotnem. tak jak je jednoducha podstata papiru bez ohledu na to, jestli na nej piseme, tiskneme, kreslime, malujeme, nebo z nej zkladame origami. a takova ma kyberia.cz byt.
+
+nazacatku mi dovolte, abych vas pozadal o vase komentare. o kazdem vasem navrhu bych rad diskutoval a budu potesen, pokud se tento dokument stane zakladem nasi spolecne vize.
+
+==== Jak se zapojit do vývoje? ====
+  - přečtěte si provozní informace výše
+  - zjistěte si o co vůbec jde
+  - přečtěte si všechny ostatní stránky na wiki a všechny nápady
+  - pravidelně sledujte stránku "poslední změny"
+  - zaregistrujte se
+  - připište se do mailning listu
+  - přispívejte v souladu s tím, co už vytvořeno bylo
+  - zachovejte konzistenci!
+    - přečtěte si manuál k wiki syntaxi
+    - pište jen česky nebo slovensky
+    - jedna věc tu nesmí být dvakrát
+    - nesmí se tu vyskytovat protichůdné specifikace - to je možné jen formou diskuze, dokud nebude jedna z možností konsenzuálně vybrána
+
+==== Zájemci o subdomény *.kyberia.cz ====
+Bývá zvykem, že u podobných projektů jako je kyberia.cz se zájemcům z řad zakladatelů nabízí subdomény. Kdo by tedy chtel neco.kyberia.cz, může mi (Harviemu) napsat na jabber nebo mail. V zásadě můžu přidat záznamy A,CNAME, nebo třeba zařídit reverzní proxy na nějaký freehosting (stačí URL).
+
+\\
+----
+{{ http://localhost.sk/progress.gif }}

@@ -1,0 +1,70 @@
+===== Předmluva =====
+Původní text napsala Truce, 16.5.2009 v Praze. Tato verze slouží k tomu, aby jsme ji mohli vylepšovat na wiki, pokud bude zájem.
+
+FIXME Trochu zmatecne jsem to rozsekal na sekce, aby se v tom dalo rychleji zorientovat, cimz sem to lehce zprznil a bude treba to este vice sjednotit. pro vsechny pripady je puvodni text dostupny ve starsich revizich.
+
+===== Kyberie Novis =====
+Zamyšlení nad systémem pro vznik a fungování nezávislých gild pod licencí Kyberie
+
+**Integrace funkcí systémů okolního světa - odpověď na Google paranoiu, další alternativa svobodného sw;**
+
+Kyberie jako uz ne jedna buňka, Kyberia.sk sociální síť, ale gilda Kyberie, sdružující společenství, které si budují vlastní silné memetické sítě. 
+
+>predtym ako zacnes bezhlavo pouzivat termin "mem", odporucam si nastudovat ako onen termin chapu ludia co ho sveta vypustili (Dawkins, Blackmoreova atd.). MEM JE ZAKLADNA JEDNOTKA PROCESU IMITACIE a odporucam ho aj v takom zmysle pouzivat, prejde sa tym zbytocnym terminologickym nedorozumeniam. Ked chces hovorit o symbolickych ci semantickych sietach tak na to pouzivaj terminy na to urcene, a netahaj do toho memetiku len preto ze je cool //[[hromi@kyberia.sk|Daniel D. Hromada]] 2010/02/24 14:16//
+
+==== Gilda ====
+Gilda - svaz na ochranu majetku, života a cti členů rodu
+Gilda by měla být technicky co nejvíc nezávislá na importu cizích zdrojů, tj.pasivní, naopak, živá je exportem, aktivitou na poli své samosprávy. Dále pokud jde o zacházení s informacemi a daty, podle vzoru teorie TAZ - vstřebává kvalitu a vyvrhuje odpad.
+Napojení na vnější svět by mělo vést k zodpovědnosti. Je totiž tvořen heterogenní směsí a je na nší planetě v našem ekosystému a nemůžeme být od něj odděleni. 
+To tak zahrnuje nejen spolupráci s vývojáři svobodného SW, ale i společné platby za služby, které volně šířené nejsou. 
+S internetem by se to nemělo přehánět - měl by být nástrojem na ukládání dat a práci s nimi, aspekt přímé sociální interakce je neopomenutelný a není možné ji podrobit systémovými řešeními. Tím mám na mysli: Nechat si poslat od někoho link je kvalitativně jiné, než být odkázán na jeho profil. 
+
+==== Memetická síť ====
+Memetická síť je živá emocemi které jsou nositeli informací, nehmotným sdílením, kdeždo síť sociální jak jsme zjistili má tendenci časem vytvářet vazby závislosti. Nutí lidi se odpojovat, protože jim umožňuje zůstat pasivní (vytváří v nich návyk bezmyšlenkovitého klikání); memetická síť je přesně opačná. Nestaví na sociálních vazbách, ale emoce používá jako transmitter pro šíření myšlenek. V tomto tedy nevázne na slepém bodě zacyklená sama v sobě už z podstaty svého a lidského dizajnu. Sociální vazby je nutné neustále obnovovat, memetické mají absolutní životnost - jediný způsob jak je zrušit je přepsat je. Proto vydrží i méně intenzivní komunikování, nejsou závislé na neustálé obnově a potvrzení. Jediným nebezpečím pro ně je přepsání nudou: opakováním bez vývoje. Pokud ale pracujeme s memy, toto se při práci stát nemůže, protože hledáme stále dál - v opačném případě pouze používáme sociálního aspektu této sítě.
+
+
+Prostý popis funkcí, které budou alternovat nebo integrovat ty běžně používané
+
+  * Přesunuto do [[Další služby]]
+  * Výzkumné projekty - dejme tomu že si chci prostudovat rituál gnostic mass - umístění ústředního dokumentu a linkování souvisejících dokumentů pod něj. Vizuálně přitažlivé by to mělo být - seznamy a linky vizuálně přitažlivé nejsou, a zbytečně zaměstnávají kapacitu mozku: lepší je komplexní náhled na data než jejich seznam.
+
+==== Public relations ====
+Diskutabilní issue vystupování gildy navenek vzhledem k projektům, ale i službám a placenému obsahu. Akademická forma? OZ? A.S., S.R.O. ? každá jedna gilda to může chtít jinak, ale podniknout určité kroky pro přijetí akademického, vědeckého statusu by nebyly marné. 
+
+Gilda číslo 93 hlásí tento a tento projekt - tím že jej zveřejní může získat oficiální podporu. Někde ve stanovách by byl distanc od projektů které nemají oficiální status - a to kvůli možným pirátským aktivitám; těmto se zabránit nedá, ale nebudou mít štempel takže se tím důvěryhodnost Kyberie Gild nezhorší.
+Komise nebude. Ale, seznam podporovaných věcí ano. Seznam nepodporovaných taky. Tím se vyřeší zrušení - udělění štemplu. Co nejmíň byrokracie a omezení. 
+
+Gilda může zveřejnit seznam témat kterými se zabývá. Může uspořádat schůzku s jinou gildou. Může uspořádat kalbu. Je dobré když se zástupci gild schází. Viz hackerske sesny. 
+Gilda může poskytovat služby v IRL. 
+Mluvím taky o veřejném boardu každé gildy (gildainfo.gld). 
+
+  * Přihlašování pomocí so called gildovního open-id.
+  * Některé gildy budou mít víc sdíleného obsahu, jiné míň. Jako servery. Některé mají i výpis adresářů, jiné ti neřeknou ani verzi Apache. Request do soukromé části. 
+
+Kyberia zlaté a nevimjaké stránky považuju za historii. Linked-in profil je možné nalinkovat do profilu, ale není důvod se omezovat pouze na členy gildy v hledání služeb či zaměstnání. Ale byla by dobrá funkce prohledávání, kdo má přidán jaký profil (pokud to vyhledávání povolí). Využívání služeb okolního světa není nežádoucí, uzavírání se ano. Gilda nemá být elitou, ale meme strukturou.
+
+Kyberia by měla být marketingově neexploatovatelná!
+K debatě. Koliduje s možností že gilda nabízí služby? Ne, dokud nepřijde ke slovu vyhledávání a rank. .. takže se musí vytvořit i nějaká pravidla obchodu a propagace. Trh. Súk. Vlastní Vyhledávač zboží a služeb umístěn nad googlem či jiným. 
+
+==== Otevřenost ====
+Měla by být k použití pro lidi co ji chtějí používat: tj. dát dohromady vlastní gildu. Nemá být další sociální sítí s jednoduchou registrací. 
+
+==== Detaily implementace ====
+  * Platforma na které by měla běžet: hmm, matter of trust. Nejsem takový systémák. Nevím. Jaký server kde? Placení za něj a provoz. Nevystopovatelnost. Propojitelnost. 
+  * Vyhledávání, vyhledávače, odolnost vůči DNS attackům, šifrování na bázi gild a na bázi uživatelů - vést je k vytvoření elektronického podpisu? Celé by to mohlo být kompletně zašifrované! nezávislá síť s vlastním záložním protokolem, …..vidím prostor pro různé MatFyz, FEI a CVUT akademické projekty. K debatě.
+  * Zálohování
+    - vlastní, uživatel by měl vědět že zálohuje a měl by tak činit ve vlastním zájmu
+    - zálohy na úrovni systému.
+  * Zálohovací tajné cvičení ;) připravit uživatele na pády a vytvořit si návyky vhodné kamkoliv. Že začínáme šifrovat a zálohvat až po krádeži či ztrátě dat, však. Někde v podmínkách by byl disclaimer že trénink bude .)
+
+  * Veřejná část, jako právní servis a podobně. Věřejné gildy jako např. „senát“, seznam právních podkladů a dokumentů, reklamací, dlužníků a světově proslulých zmrdů k vykynožení. Reference, cestovatelský server s mapami, hospitality klub třeba..
+
+==== Eventz ====
+  * Akce, livesety z akcí, streamy, konference, věci za kterými se oplatí cestovat nebo je aspoň vidět.
+
+==== Agitace :-) ====
+  * Nehledejme systémová řešení tam, kde se máme učit rozhodovat a třídit, nehledejme je pro případy, kde lidská entita používá jako základní rozhodovací proces svou hlavu a emoce.
+  * Rosšiřujme svůj operační rádius práce s informacemi, namísto vývoje nástrojů jak informace proměnit na data, tj. utřídit je zapomenout na ně, s nástroji pro pozdější snadné vyhledání - mohlo by se totiž stát, že bychom zapoměli, co jsme to chtěli vyhledávat.
+
+
+//Written by Truce, 16.5.2009 v Praze (+wiki contributors)//

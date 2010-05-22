@@ -1,0 +1,20 @@
+====== howto: fork kybca ======
+
+==== probuh proc? ====
+  * nikdy neni dost testovacich servru a testeru
+  * perfektni privatni noda (sam sobe admin) 
+  * dam pristup komu chci, kdy chci  
+  * same pozitiva a socialni jistoty
+
+mame zdrojaky, sql strukturu, hosting, 
+jak to ale nainstalovat?
+
+==== hosting (?amp) ====
+  * databaze (db user/pwd, db table)
+  * scp nekam (php, apache)
+
+==== postup (teorie) ====
+  * vytvorit strukturu databazy (tabulky atp.)
+  * uprav subor-db-nastavenia.ini
+  * co jeste?
+ 

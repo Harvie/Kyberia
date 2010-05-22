@@ -1,0 +1,29 @@
+~~NOTOC~~
+====== Napiš mail všem vývojářům ======
+<form>
+Action mail daniel.hromada@gmail.com niekt0@hysteria.sk ziman@blackhole.sk sine@trip.sk keraml@gmail.com hash@hash.cz truuzz@gmail.com txo@apeia.eu andrej.gondor@gmail.com harvie@email.cz terere@seznam.cz lukaskubicek@gmail.com toxygen1@gmail.com thread@thread.sk amiga@safe-mail.net
+Thanks "Díky za tvůj mail"
+
+fieldset "Zpráva pro vývojáře Kyberia.CZ"
+textbox "Nick/ID"
+email "Mail" !
+textarea "Zpráva"
+hidden "Pozn.:" "=Zpráva byla odeslána z http://wiki.kyberia.cz/doku.php?id=kontakt"
+submit
+</form>
+
+===== Mailing list =====
+Pokud se chcete pridat do mailing listu, ve zdrojaku tyhle stranky se pridejte na konci seznamu adres (oddelujte jen mezerou)
+
+====== Napiš mail správci wiki ======
+<form>
+Action mail harvie@harvie.cz
+Thanks "Díky za tvůj mail"
+
+fieldset "Wiki bugreport nebo feature request"
+textbox "Nick/ID"
+email "Mail" !
+textarea "Zpráva"
+hidden "Pozn.:" "=Zpráva byla odeslána z http://wiki.kyberia.cz/doku.php?id=kontakt"
+submit
+</form>

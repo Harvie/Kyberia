@@ -1,0 +1,36 @@
+==== Semantický web ====
+<code>
+(15:56:26) Harvie: ale imho by kyberia.cz znovu vynalezala kolo - ale ne vuci kyberce, ale vuci webu
+(15:56:59) Harvie: jediny, co muzem nove vytvorit sou jazyky, pro psani chytrejch stranek a nahradit facebook/twitter
+(15:57:29) Harvie: jinak www+wikipedia+wordpress+mikroformaty+rss+google = kyberia
+(15:57:59) Harvie: a slovo hypertext beztak vzniklo ze slova hyperspace
+(15:58:18) Harvie: zacinam verit, ze lidi co delali pred rokama web meli na to stejnej pohled jako my na kyberku
+(15:58:44) Harvie: v tomhle bode je treba prijit s novejma cilema
+</code>
+
+Dále jsem narazil na tyhle veci:
+  * http://en.wikipedia.org/wiki/SPARQL (THX2Hromi)
+  * http://en.wikipedia.org/wiki/DBpedia
+  * http://en.wikipedia.org/wiki/Web_crawler (je tam pár rad ohledně psaní crawleru)
+
+Este kusok semantickeho webu: (w3c kixazz)
+  * http://en.wikipedia.org/wiki/Resource_Description_Framework + http://en.wikipedia.org/wiki/RDFS
+  * http://www.w3.org/TR/rdf-mt/
+  * RDF -> XML -> RDF -> ..
+  * Reprezentacia grafov
+
+
+
+==== Google Wave ====
+http://wave.google.com/
+FUUUUUUCK! Where are they??!!!
+
+no kazdopadne me to privedlo na napad, ze vsechny maily na kyberce by se taky daly delat hierarchicky (ted jsou linearne), aby bylo jasny, kdo na co odpovida. vlastne mailbox kazdyho usera by bylo forum, akorat by kazdej user v cizich mailboxech videl vyhradne maily pro nej a od nej. Ve svem mailboxu by kazdy videl vsechny maily.
+
+Taky dobra vec je, ze by nemela mit svoje id jen kazda noda, ale i kazdy odstavec nebo dokonce slovo (resp nez id by jsem to oznacil jako "adresovatelnost").
+
+> nie us az tak daleko ako sa zda. my sa mozeme poucit a realne byt lepsi. Gwave je vela pozlatka, tu ide o backend, adresovatelnost slova vid. linky vyssie + logika, vyroky, referencovanie zdrojov a formy zapisu semantickych struktur. preco sa neposunut niekam dalej od relacnych databaz, resp. neuzatvarat sa v tabulkovom datovom mdeli, ale pouzivat ich na to, na co realne su: strojovo lahko adresovatelne ulozisko udajov lubovolneho datoveho modelu. --- //_o_ //
+
+==== Google FriendConnect ====
+Tohle je taky zajimavy:
+http://www.google.com/friendconnect/home/overview

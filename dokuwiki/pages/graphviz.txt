@@ -1,0 +1,23 @@
+Šikovná věc, která se nám určitě bude hodit při návrhu...
+základní použití (viz. zdrojový kód této wiki stránky):
+
+<graphviz>
+digraph lol {
+  label="Kyberia.CZ masterplan ;o)"
+  "Nový kód" -> {"Kyberia.SK", "Kyberia.CZ" }
+  "Kyberia.SK" -> "Big fucking network"
+  "Kyberia.CZ" -> "Big fucking network" -> sláva -> bohatství
+  bohatství -> sláva
+  ROFL -> Harvie
+  Harvie -> {sláva, bohatství} [label=lol]
+  
+  2 -> "+" -> 23
+  3 -> "+"
+}
+</graphviz>
+
+<graphviz neato>
+graph rofl {
+  láska -- mír -- linux -- láska
+}
+</graphviz>

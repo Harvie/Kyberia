@@ -1,0 +1,72 @@
+====== Noda ======
+
+Mohli bysme si zkusit zadefinovat co je to vlastně ta noda v našem pojetí :)
+
+Zkusím začít v bodech
+
+  * je vrcholom grafu
+  * základní jednotka
+  * může mít nějaký obsah a může být propojena pomocí vazeb na ostatní nody
+  * měla by být dostatečně obecná a univerzální - jak po stránce datové, tak po stránce prezentační
+  * Z vyjádření [[lidsky_faktor|k čemu by ta kyberia měla být]] zatím vyplývá velký důraz na vlastní tvorbu. Noda by teda měla být schopná efektivně pojmout a prezentovat to co užvatelé budou tvořit. Což kromě textu může být i obraz, audio, programy...
+  * Měla by být do určitě míry [[Kyberia user scripting|skriptovatelná]]
+  * S tím souvisí, že tvůrce nody by mohl mít velkou míru kontroly a možnosti nastavovat vše co chce - i kompletně způsob prezentace (nikoliv jen barvy)
+  * Noda by mohla aktivně něco vykonávat?
+  * Rozdělení nod na typy?
+    * Prípadne vytvoriť namiesto typov templaty
+
+
+> jsem proti typum a pro templaty, ktere vsak nesmi byt zavisle jen na HTML  --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/23 19:56//
+>> nerad sa opakujem, ale upriamujem pozornost na to ze ani Smarty templaty na kyberia.sk niesu "zavisle len na HTML"...mozes v nich generovat output lubovolnej formy //[[hromi@kyberia.sk|Daniel Hromada]]//
+>>> Nevím, zda jsi cetl clanek [[client-server architektura]] a zda vis o nasich planech pokud mozno rozdelit kyberku na databazi+backend+frontendy, ale vychazime li z toho, musime resit mnohem vic otazek... backend by totiz nemel generovat ani html ani xterm escapes ani nic jineho. vse by se melo naformatovat az na frontendu, jenomze to by pak znamenalo portovat vsechny sablony pro vsechny mozne frontendy, coz se neda zajistit, pokud si nekdo udela svuj frontend, proto musime mit jazyk, ktery nam umozni sablonu vygenerovat podle jine sablony. jinak receno... html frontend obdrzi metasablonu, do ktere si doplni html tagy podle nejake jednodussi sady tagu a tim dostane sablonu, do ktere si az teprve doplni obsah. --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/23 22:01//
+>>>> ako metasablonovaci jazyk sa da pouzit niektora z wiki syntaxi, pripadne rozumne mala podmnozina HTML/XHTML tagov bez atributov (h1..h6, b, i, u, ...). druha moznost je jednoduchsia na naprogramovanie (pre HTML vystup netreba nic robit, pre term vystup staci par jednoduchych uprav a hlavne je z definicie hned jasne ako ma vystup vyzerat. navyse mame zadarmo podporu mikroformatov. prva moznost je zasa intuitivnejsia pre uzivatela (aj ked tomu nemusi byt vzdy jasne ktora wiki syntax sa prave pouziva.)
+
+> http://en.wikipedia.org/wiki/Resource_%28Web%29 ? --- // _o_ //
+===== Noda jako JSON objekt v Harvieho očích =====
+Jak jsem si hrál s riakem, tak jsem přišel na to, že JSON je fakt dobrá věc a nejvíc to odpovídá tomu, jak jsem si kybču vždy idealizoval (dokonce jsem si dlouho myslel, že takhle funguje i kyberia.sk). Pokud má být všechno noda, je třeba mít jeden jediný datový typ, což velmi usnadňuje návrh v riaku nebo podobné databázi.
+
+Nejdřív vám povím něco o JSONu. je to formát pro serializaci objektů (případně polí, nebo třeba i N-rozměrných asociativních polí a podobných věcí).
+
+Nyní si představte takovouto strukturovanou nodu:
+<code noda>
+{
+  "protected": {
+    "owner":"harvie",
+    "group":"niekt0,hromi,urza,txo,@harvieho_blog",
+    "permissions":"-rw-rw----",
+    "!#password":"toto je zahashované heslo pro vstup do skupiny - nebo pro prihlaseni uzivatele",
+    "expiration":"viz.: samocistici schopnosti kyberie..."
+  },
+  "compulsory": {
+    "title":"Moje uber-cool noda",
+    "text":"to koukate, co sem mel dnes k obedu :-P"
+  },
+  "optional": {
+    "harvieho definice": "kool noda blablabla",
+    "hromiho index": "76577",
+    "meliskov koeficient": "8787",
+    "nalada autora": "+98%",
+    "poznamky": {
+      "nakoupit": ["ryby", "sadlo", "zradlo pro krokodyla","beton","pouta"]
+    }
+  }
+}
+</code>
+
+Noda tedy obsahuje 3 podobjekty
+  * protected - povinná pole (nelze je odstranit. pokud kvůli chybě neexistují, kybča chownne nodu adminovi), které může měnit jenom owner
+  * compulsory - povinná pole, mění je owner a lidi v group
+  * optional - objekt, kam si uživatel může ukládat libovolná pole, podobjekty a podobně, aby s nimi mohl manipulovat v javascriptu či ještě lépe v libovolném jiném jazyce (například vykreslit eventy do kalendáře, atd...). JSON je podporován většinou myslitelných jazyků.
+
+A teď to nejdůležitější!
+  * bude sice nutné udělat nějaký template pro zobrazování takových dat, protože každý může chtít data zobrazovat naprosto jinak (například to vykreslení eventu do kalendáře).
+  * nebude ale nutné udělat zvlášť i templaty pro editaci. stačí udělat dobrý JSON editor, který pohlídá, aby sme needitovali podobjekt "protected" a umožní nám přívětivě přidávat, odebírat a editovat položky v "optional" bez ohledu na to, jaká je jejich struktura nebo obsah. Položky v "protected" a "compulsory" se budou editovat podobně, ale bude využito toho, že zhruba víme, co v nich má být.
+  * Defaultne nemusime vlastne vytvaret ani template pro zobrazeni takove nody, pokud nechceme nejakou extra funkcionalitu. Proste deserializujeme JSON objekt, vymazeme z nej hash hesla, ktery chceme utajit a nejak ho zvizualizujeme (Napriklad pomoci cyklu, Data::Dumper v PERLu nebo print_r() v PHP). S tim, ze jmeno ownera muzeme reprezentovat jako link na jeho usernodu a text muzeme nejak vizualne zvyraznit/odlisit od zbytku nody. Taky uvazuju, jestli by misto pole "text" nemel byt prave podobjekt "optional", protoze se ve vetsine pripadu budou tyto dve promenne spise nahrazovat, nez doplnovat.
+
+Vychytávky:
+  * Speciální znaky v identifikátorech proměnných:
+    * # - ukládá se pouze hash hodnoty zadané v editoru
+    * ! - při zadávání/zobrazování hodnoty se používá password box (heslo maskované hvězdičkami)
+  * Speciální znaky v hodnotách proměnných:
+    * @ v proměnné group - rozvine se na group zadané nody.
+      * eg.: budu mít lidi, kterým věřím a ty budu dávat do group na svém blogu, potom budu mít i nody mimo blog a budu chtít, aby tam měli přístup stejní lidé jako do blogu a to bez toho, abych je musel do všech ručně přidávat, proto do všech těchto nod přidám "@harvieho_blog" a do group dané nody se dostanou lidé z group nody harvieho_blog. Pak budu moct centralne spravovat skupinu svych vernych. Bude samozrejme take mozne vytvorit nodu jen za ucelem vytvoreni skupiny. muze existovat noda, ktera bude drzet v group seznam vsech adminu napriklad...

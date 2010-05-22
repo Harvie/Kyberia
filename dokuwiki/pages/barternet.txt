@@ -1,0 +1,13 @@
+BarterNet je system umoznujuci vymenu tovarov a sluzieb medzi uzivatelmi virtualneho komunitneho systemu a to cele bez nutnosti pouzitia penazi. Jedna sa o generalizaciu klasickych (predpotopnych;) systemov vymenneho obchodu. Od tych sa lisi tym ze nespociva na vyhladavani dvojic A a B pre ktore plati ze A poskytuje X a chce Y zatial co B poskytuje Y a chce X ale na **vyhladavani cyklov v orientovanom grafe** ktoreho vertexy su statky X,Y,Z a pre ktore plati ze hrana medzi X a Y existuje vtedy a len vtedy ked existuje uzivatel ktory chce vymenit X za Y. ID uzivatela je atributom dotycnej hrany.
+
+Zakladna idea BarterNetu bola odprezentovana v aprili 2009 na festivale Multiplace [[Daniel Hromada|Danielom Hromadom]]. 
+Vztahuje sa na nu licencia CC BY-NC-SA.
+
+[[http://localhost.sk/~hromi/pre-sentationz/barternet.odp|OpenOffice prezentacka]] 
+[[http://kyberia.sk/id/4685234|BarterNet Video presentation]]
+
+Celkem popici je taky http://www.hospitalityclub.org/
+
+Alebo aj 
+  * http://shareable.net/ 
+  * http://www.couchsurfing.org/

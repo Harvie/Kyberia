@@ -1,0 +1,54 @@
+> urza
+> Hierarchické členění do kategorií je imho přežitek dobrý pouze na jednu věc: na první seznámení s obsahem. Když přijdu do nějakého nového abstraktního prostoru (dejme tomu že jsem se právě jako nový uživatel dostal na nyx.cz) s velkým množstvím obsahu (na nyxu hlavně fora), tak uvítám možnost si tento obsah projít škatulku po škatulce, nebo aspoň kouknout co za škatulky tu existuje. Well and thats it. Potom už tu hierarchii použiji pouze velmi vyjímečně.
+
+> Daleko víc mi záleží na kontextu a rychlosti než hierarchických kategoriích.
+
+> Ve skutečnosti když se chci v nějakém tom abstraktním prostoru někam dostat tak používám nejčastěji:
+> 1. (quick)bookmarky nebo nějaká rychlá forma toho co je pro mě kontextuálně aktuální - např google chrome na "home page" dává náhledové odkazy na nejnavštěvovanější weby - praktické, rychlé,.. na kyberii mám v bookmarcich jako prvni kategorii "kyberia daily" a krom toho koukám kdo reagoval na mé příspěvky atd.. na nyxu chodím většinou prvně do "history"..atd
+> 2. reagující rychlé hledání - když chci jít někam dál než za těch pár stránek co mám na homepage tak začnu psát do adress baru (i přesto že mám třeba danou stránku uloženou jak v hierarchické bookmark struktuřě v chrome bookmarcích tak třeba i v tagové struktuře na delicious) a očekávám už během psaní nějakou reakci - buď rovnou výsledky během psaní nebo suggestions které berou v potaz můj kontext atd. 
+> 3. pokud chci jít někam kam ani jedna z prvních dvou cest nevede, tak použiji klasické hledání (chci najít na nyxu forum o bdsm? napisu bdsm do search boxu. nejaky web o indickem jidle? google search..atd)
+> 4. teprve pokud selžou tyto 3 možnosti, tak jdu procházet hierarchické struktury ať už struktury for na nyxu nebo moje lokální bookmarky.. a i potom to dělám pokud možno v kombinaci s nějakým hledáním (ctrl f:). A navíc musí ta hierarchická struktura být co k čemu aby to mělo smysl. Na kyberii je toto obzvlášť tristní - klasický search nefunguje vůbec (hanba) a hierarchická struktura je tak rozbitá (existují uplně odtržené a flat větvě) a nesmyslná že když hledám forum ktere nemám v bookmarcích, tak to dělám tak, že se zamyslím kdo by to asi tak mohl mít booknuté a jdu kouknout na bookmarky těch lidí. Skoro vždycky se trefím do 2 pokusů což je mnohem rychlejší než to hledat v hierarchické struktuře.
+
+> A navíc stromová hierarchije má svá omezení, která už není potřeba znovu opakovat. Když už, tak daleko "čistší" se mi jeví struktura obecného grafu. Viz např Txova praktická implementace na apeia.eu vs nepraktické a imho špatně navržené "PUT" na kyberii.
+
+> No tímto celým jsem chtěl jen říct, že si myslím že nemá cenu si lámat hlavu vymýšlením dokonalé hierarchické struktury, ale vůbec ji neřešit, ona se ve vhodných podmínkách (graf, tagy) vytvoří třeba úplně sama používáním atd.
+
+> urza
+> když to řeknu v jedné větě, tak v abstraktním datovém prostoru používam skoro výlučně teleport s nápovědou místo toho abych šlapal po konkrétních cestičkách - proto je mi šumák jak ty cestičky vypadají a můžou se pro mě za mě třeba (samo)organizovat neustále znovu podle toho jak jim to nejvíc vyhovuje :)
+
+
+>> harvie
+>> to je pravda, ale jde právě o to první seznámení. když přijedeš do neznámého města, tak si ho nejdříve pomalu projdeš od nádraží pěšky a když už budeš vědět kam jít, tak teprve budeš používat teleport (nebo metro ;)
+
+>> Každopádně hierarchická struktura musí existovat, teď je jen otázka, jak bude rozčleněná. Stejně jako bude odpověď na jeden příspěvek podřazená tomuto příspěvku, tak budou oba ty příspěvky podřazeny danému fóru a protože kyberia má být fraktál, tak fóra musí být také nějak rozřazena. ne?
+
+>> systémy třídění mohou koexistovat, jako na současné kyberce - máš tam hierarchii, hledání a hlavně hardlinky.
+
+>> ale nepopírám, že základ je kvalitní vyhledávání. kyberia.sk už nemá tuším ani to nekvalitní, co měla před rokem.
+
+>>> urza
+>>> hierarchie sux i tak.. koukni na teorii grafu
+>>>> 
+>>> to ze jedna noda obsahuje druhou je velmi omezene (nic proti fraktalum, taky jsem si s nima jako malej rad hral;)).. naproti tomu kdyz jedna noda ma vztah k druhe (=graf), tak to otvira spoustu elegantnich moznosti
+>>>> 
+>>>> harvie
+>>>> to sou jenom hratky se slovy ;o) a teorie grafu (ackoli ji prilis dobre neznam) rozhodne nepopira, aby se ze vztahu mezi nodami vytvareli nejake pseudo-hierarchicke stromy (byt v nich obcas bude k jedne vetvi vest vice nez jedna cesta)
+>>>> 
+>>>> kyberka momentalne funguje tak, ze mezi vetsinou nod je vztah "rodic - dite", jak by jsi to nazval ty. ty nody jsou si ve skutecnosti rovne a takovych vztahu tam muze existovat vic. ja nic nenamitam proti vztahu, kde bude mit jedna noda 2 rovnopravne rodice (tzv. Hardlink) a nebo bude vytvorena noda, ktera bude obsahovat odkaz na tuto nodu (tzv. Symlink), coz je spis jako vztah "stryc - synovec", nebo "rada od kamarada".
+>>>> 
+>>>> jo a mimochodem, v dnesni bezesne noci jsem prisel na to, ze by meli byt nejakym zpusobem byt odliseny sily synapsi (tloustky hran), mezi jednotlivymi nodami (vrcholy). Napriklad pomoci moznosti k-ckovat kazde takove spojeni. To by bylo velmi uzitecne pri nasazeni ruznych vyhledavacich algoritmu, ktere by se dokazali prizpusobit (ve smyslu razeni vysledku) na zaklade synapsi vedoucich z uzivatelovo zalozek (tak jako google kazdemu uzivateli vraci jine vysledky na zaklade pageranku). samozrejme by mela existovat i moznost vytvaret synapse s nodami, ktere jsou umistene na jinych instancich kyberky.
+>>>> 
+>>>> jak to po sobe ted ctu, tak mi stale pripada, ze znovu vynalezame uz existujici system - world wide web. mozna bysme se meli misto hrani s kyberkou napsat jenom opensource vyhledavaci engine (kde nam ale znacne konkuruje google). zatim vetsina myslenek vyslovenych kolem nove kyberky v nejakem smyslu uz existuje. mozna by stacilo vymyslet novy user-friendly semanticky znackovaci jazyk, ktery by nahradil html, nebo jenom editor, ktery by pouzival stavajici xhtml a jeho mikroformaty, ktere umoznuji presne to, co ocekavame od kyberky.
+
+>>>>> urza
+>>>>> precti si neco o te teorii grafu, bude se ti to libit ;]
+>>>>>
+>>>>> urza
+>>>>> vsechno to co popisujes se tim da implementovat elegantneji (bez nutnosti pojmu jako hardlink, symlink.. atd) plus spoustu dalsich veci..
+
+>>>>>> harvie
+>>>>>> ok, mam to na seznamu ;)
+>>>>>> 
+>>>>>> teorie grafu je ale svym zpusobem taky nejaka hierarchie, nejake usporadani a je naprosto nezbytne, aby kazda noda/neuron v systemu byla spojena este s jednou dalsi. k cemu by byly neurony volne plovouci krevnim obehem naprosto nezavisle na mozku?
+>>>>>> 
+>>>>>> je jedno, jestli to bude vyslovene hierarchie, nebo nejaky blob. kazdopadne potrebujeme navrhnout system/graf, na ktery budou useri moct pripojovat nove nody, protoze pokud to bude naprosto nekoordinovane, bude v tom hrozny bordel. toto vychozi usporadani by imho melo byt soucasti distribuce zdrojovych kodu kyberky (ale samozrejme ne zavazne).

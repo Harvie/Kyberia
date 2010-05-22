@@ -1,0 +1,161 @@
+[[https://kyberia.sk/id/3764224|ID 3764224]]
+
+===== Riak HelloWorld =====
+No na molly uz chodi riak, i php-fcgi, takze kdo si chce zkouset hrat, muze si udelat web:
+
+<file bash web.sh>
+#!/bin/sh
+chmod 701 ~/
+mkdir ~/public_html/
+chmod -R 705 ~/public_html/
+</file>
+
+a vyzkouset si riak:
+
+<file php riak-helloworld.php>
+<tt><h1>Riak Hello World!</h1><pre>
+<?php
+require_once('riak.php');
+
+$client = new RiakClient('localhost', 8098);
+$bucket = $client->bucket('harvie'); //prosim pouzivejte jen buckety zacinajici vasim nickem
+
+//store
+$obj = $bucket->newObject('foo', 'bar baz');
+$obj->store();
+
+//load
+$obj = $bucket->get('foo');
+$obj->exists();
+$obj->getBucket()->getName();
+print_r('key: '.$obj->getKey()."\n");
+print_r('val: '.$obj->getData()."\n");
+
+echo("\nEOF\n");
+</file>
+
+pri hrani by se vam mohl hodit riak-admin, coz byla prvni aplikace, kterou jsem s riakem napsal
+http://molly.kyberia.cz/~harvie/dev/riak-admin.php
+===== Riak Benchmark =====
+No tak jsem zkusil narvat cca 58575(~1.8GB) plaintextovych souboru (mirror archivu historickych BBS z textfiles.com) primo do riaku (do bucketu "textfiles"), coz se zvladlo pod 10min, s tim bych byl jeste spokojeny. horsi uz je, ze velikost databaze riaku se potom vysplhala na ~5.3GB a ze uz nelze provadet nektere operace, ktere jsem doposud pouzival (vypsani vsech nod v cele databazi se clovek proste nedocka,...). bude tedy treba nad touto mnozinou dat provadet pokusy, jestli je vubec skrze riak dokazeme zuzitkovat.
+Casem je zkusim nejak nahodne prolinkovat a uvidime, jestli to k necemu bude...
+
+Pozitivnim faktem ale zustava, ze **pokud vim klic nody kterou chci, riak mi ji vrati prakticky okamzite** a bez odmlouvani, coz je vedle napriklad Map/Reduce architektury jedna z klicovych vlastnosti diky ktere je riak mym velkym oblibencem a nezada si v tomto smeru s jinymi DB.
+
+<file bash store-to-riak.txt>
+time find . | grep -v /$ | tr '\n' '\0' | xargs -0 -P 4 -n 1 echo ~/public_html/dev/riak-store-file.php textfiles
+real  8m0.697s
+user  8m25.260s
+sys 3m21.214s
+
+time find . -print0 | xargs -0 -P 4 -n 1 echo ~/public_html/dev/riak-store-file.php textfiles
+real  9m11.245s
+user  8m27.370s
+sys 3m8.108s
+
+[harvie@molly textfiles]$ find . | wc -l
+58575
+
+[harvie@molly textfiles]$ du -hs .
+1.8G  .
+
+[harvie@molly textfiles]$ du -hs /opt/riak/data/*
+5.3G  /opt/riak/data/dets
+16K /opt/riak/data/ring
+</file>
+
+pro zajimavost este skript kterym sem to cpal do ty DB (imho to neni nejrychlejsi reseni)
+<file php riak-store-file.php>
+#!/usr/bin/env php
+<?php
+if(count($argv) <= 1) die('usage: '.$argv[0]." bucket filename\n");
+
+//Settings
+$db_bucket='harvie';
+$db_host='localhost';
+$db_port=8098;
+
+//Init
+$key=$argv[2];
+$db_bucket=$argv[1];
+
+try {
+
+//Connect
+require_once('riak.php');
+$client = new RiakClient($db_host, $db_port);
+if(!$client->isAlive()) die("No Riak is running on http://$db_host:$db_port/ !\n");
+$bucket = $client->bucket($db_bucket);
+
+$obj = $bucket->newBinary($key,file_get_contents($argv[2]));
+//$obj->setData(file_get_contents($argv[2]));
+$obj->store() || die("Cannot store\n");
+
+/*$obj = $bucket->getBinary($key);
+if(!$obj->exists()) $obj = $bucket->newBinary($key);
+$obj->setData(file_get_contents($argv[2]));
+$obj->store() || die("Cannot store\n");*/
+
+} catch(Exception $e) {
+	echo("err: $argv[2]\n");
+}
+</file>
+===== Riak v PERLu =====
+na webserveru sem povolil PERL, takze PERL CGI aplikace se daji psat stejne pohodlne jako PHP, pozdeji rozchodim PERL pres FastCGI, ale neni kam spechat....
+
+tady je naka ukazka:
+<file perl riak.pl>
+#!/usr/bin/env perl
+use strict;
+use warnings;
+#use Test::More;
+use JSON::XS;
+#use Test::Exception;
+#use AnyEvent::Riak;
+use Data::Dumper;
+require "Riak.pm";
+
+my ($host, $path, $bucket) = ('http://127.0.0.1:8098', 'riak', 'harvie');
+
+#connect
+my $jiak = AnyEvent::Riak->new( host => $host, path => $path );
+
+#list keys (sloooooow)
+	#my $keys = $jiak->list_bucket($bucket)->recv;
+	#print "Keys in $bucket:\n".Dumper($keys->{keys});
+
+#my $bck = $jiak->set_bucket($bucket, { allowed_fields => '*' } )->recv;
+
+my $value = {
+    bucket => $bucket,
+    key    => 'bar',
+    object => { foo => "bar", baz => 1 },
+    links  => []
+};
+
+#my $res = $jiak->store($value)->recv;
+my $res = $jiak->store({
+    bucket => $bucket,
+    key    => 'bar',
+    object => { foo => "bar", baz => 1 },
+    links  => []
+})->recv;
+
+
+
+print "Stored in $bucket:\n".Dumper($res);
+die;
+
+
+#fetch key
+$res = $jiak->fetch($bucket, 'bar' )->recv;
+#delete key
+$res = $jiak->delete($bucket, 'bar' )->recv;
+
+
+$res = $jiak->walk( 'foo', 'baz', [ { bucket => 'foo', } ] )->recv
+#$res->{results}->[0]->[0]->{key}; # "bar", "... walked to bar";
+</file>
+
+preba poznamenat, ze ten PERL driver mi hnul zluci este vic nez ten PHPckovej, ale myslim, ze pude docela snadno vylepsit...
+UPDATE: ohledne vyvoje kyberia.cz jsem odeslal uz aspon 20 bug reportu a feature requestu na vsechny mozna strany a autor PERL driveru vypada, ze vsechny chyby chce skutecne odstranit.

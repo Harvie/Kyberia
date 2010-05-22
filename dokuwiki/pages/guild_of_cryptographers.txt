@@ -1,0 +1,24 @@
+Guilda Kryptografov (gCRP) ma v porovnani s ostatnymi guildami ovela menej clenov (v pociatkoch druhej Kyberie sa jednalo priblizne o 1/23 clenskej zakladne, neskor o 1/42 , neskor o 1/77 atd, funkcia sa urci sama). Jedna sa teda v istom zmysle o najelitnejsiu zo vsetkych guild, dostat sa do nej je takmer nemozne (v istom zmysle plati ze ten kto sa tam chce silou-mocou dostat sa tam nedostane).
+
+Kryptograf(ky|i) su zdatnymi vo vsetkych inych oblastiach ludskej aktivity - su zdatnymi obchodni(k|cka)mi, excelentnymi progator(ka)?mi, odvaznymi bojovni(cka|k)mi, nic z toho im vsak nestaci...
+
+Podobne ako brahmani starovekej Indie su kryptograf(i|ky) v prvom rade moralnymi autoritami. Vykonavaju vsetky ritualy potrebne na to aby bola zachovana rovnovaha sil v spolocnosti ktorej su neodmyslitelnymi clen(ka)?mi. Snazia sa krotit vasne guildy Hackerov ktore sa snazia sublimovat do umeleckeho zazitku Jednoty ktory moze poskytnut len guilda Chaosu&Cirkusu. 
+
+Preto gCRP zohrava vramci [[GuildGraph|GuildGraphu]] rolu interface medzi gHCK a gC&C.
+
+V pripade akychkolvek udalosti spojenych s udalostami nezvratneho charakteru (napr. smrt uzivatela, deaktivacia systemu) maju Kryptograf(i|ky) posledne slovo.
+
+Taktiez maju ako jedini neobmedzeny pristup do vsetkych oblasti Krypty - t.j. ku vsetkym archivom, databazam a kodu ktory pretrval az do obdobia ich posobenia. 
+
+Guildmajster(ka)? - Artif(ex|ica) Maxim(us|a) - udava v moment zimneho slnovratu guilde Chaosu & Cirkusu nosnu temu [[Oslavy|Oslava]] ktora bude guildMajst(rom|erkou) gC&C zahajena v moment letneho slnovratu.
+
+> Pri vsi ucte... kde beres ty cisla? Tusim, ze nikdo se na kyberia.sk momentalne neciti clenem nejake guildy ani tajneho spolku zednaru. na kyberce sk existuji uplne jine druhy skatulkovani:
+> id < 1000
+> lidi s pravy na code, template, ...
+> clenove senatu
+> lidi s pristupem do svn
+> atd...  --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/23 20:08//
+>>cucam ich z prst?u, samozrejme (23ka z Iluminati Trilogy, 42ka z Hitchiker's Guide to Galaxy, 77ka preto ze 7cka je viac sympa ako 6ka a este k tomu je to celok bez 23% )
+>> a propos ono kastovanie pomocou "id" na slovenskej kyberii - nic mi viac nieje na smiech viac ako pravo ono...pretoze ked som programoval v1 -> v2 transformacne skripty ktore hadzali celu tabulku users do tabulky nodes, nedal som tam nikde order by, takze IDcka vsetkych  uzivatelov ktori boli na kyberii v1 boli do v2 preradene pseudonahodne...tolko k vypovednej hodnosti onej  "cifernosti"
+>> atd...  --- //[[hromi@kyberia.sk|Daniel D. Hromada]] 2010/02/23 20:40//
+>>> ad ORDER BY: to je zivot... ;)

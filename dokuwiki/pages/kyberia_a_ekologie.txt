@@ -1,0 +1,5 @@
+{{ http://paleothea.com/Pictures/Gaia.jpg?200 }}
+====== Kyberia a ekologie ======
+Rád bych připomenul, že v případě masivního rozšíření kyberie může mít spotřeba serverů za následek zbytečnou produkci CO<sup>2</sup> a dalších jedovatých látek. Na to bychom měli myslet, když vybíráme technologie, které použijeme. V případě, že kyberie poběží na dvanácti serverech, každý měsíc bude spotřebována energie potřebná na rok strojového času. Použitím lightweight technologií tedy nejen omezíme čas potřebný k vyřízení požadavku, ale také spotřebu serveru a případně dokonce počet serverů.
+
+**Gaia**, jakožto největší hostingová společnost na které kyberia poběží nám jistě bude vděčná za každý článek kyberie, který se nám podaří implementovat co nejúsporněji třeba za použití jazyků jako je C namísto jazyků interpretovaných (PHP) nebo kompilovaných do nenativního kódu (Java).

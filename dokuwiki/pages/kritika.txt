@@ -1,0 +1,68 @@
+====== Kritika projektu kyberia.cz ======
+
+Schopnost reflexe kritickým okem považuji za nutnou ke zdravému růstu. Tato stránka má sloužit k upozornění na problémy, které je potřeba adresovat.
+--- urza
+
+//“He has a right to criticize, who has a heart to help.”//
+--- Abraham Lincoln
+===== Kritika kritiky =====
+
+Vypadá to, že tu máme kritiku kritiky :) - jestli by měla být na jednom místě nebo u konkrétních problémů. Myslím, že "aj aj". Toto bych nechal jako takový rozcestník a místo kde to může být po.hromadě a konkrétní problémy když už se potom začnou řešit tak odsud smazat a přesunout na místo obsahu.
+Jinak to je krásný příklad toho, kde by se hodilo mít jeden content na více místech zároveň.
+--- urza
+> Mě jde o to, že pokud napíšu článek a někdo ho začne kritizovat tady, tak tu budu vznikat nějaký invidualismus, kde 5 lidí bude někde pracovat na myšlence a dalších 5 lidí bude na týhle stránce celou věc kritizovat místo toho, aby se zapojili do dolaďování konkrétní stránky. jeden z hlavních důvodů a výhod nasazení wiki na kyberia.cz je, že si můžeme všichni vzájemně čmárat přímo do svých poznámek, tak nevím proč se toho nedržet. Dělat nějakou stránku, kde bude kritika je zbytečné. Když už, tak můžu ke své námitce připojit tag FIXME a pak použít vyhledávání, abych takové tagy našel v celém projektu, jak je v dokuwiki zvykem. Rozhodně bych ale byl nerad, aby si všichni chodili stěžovat na nějakou stránku za jejími zády. Když si někdo čte něčí nápady, měl by hned vidět i kritiku toho nápadu. Pokud se diskuze k nějaké stránce rozběhne příliš do šířky, dá se využít záložka discussion z panelu nahoře, kterou se dostanete na stránku určenou k rozáhlejšímu komentování stránky aktuální. Zda taková stránka již existuje poznáte dle barvy textu záložky. --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/28 13:29//
+>> Já to za zbytečné nepovažuji. --- urza
+>>> IMHO je to spise matouci, nez zbytecne. --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/03/01 13:06//
+
+===== Rozsáhlost projektu =====
+
+  * [[kyberie_novis|Předmluva (kyberia novis)]]
+  * [[specifikace|Work in progressSS]]
+  * [[start|sekce odlišnosti]]
+
+Plánovaná rozsáhlost projektu kyberia.cz je úctyhodná. Mnoho z dílčích částí popsaných v [[kyberie_novis|kyberia novis]] existuje na internetu jako samostané projekty, které jsou vyvíjeny celým týmem, často s nějakou finanční strategií, která pokrývá náklady na vývoj.
+Jakým způsobem bude zajištěn vývoj (resp zdroje na vývoj) takto rozsáhlého projektu?
+===== Roztříštěnost sil =====
+
+Na projektu kyberia.sk se momentálně pracuje na verzi v3. Která po technické stránce má mnoho společného s plány projektu kyberia.cz. Tato nová verze plánuje také být opensource a také se např. zvažuje použití netabulkových databází (neo4j např).
+
+Proč nespojit síly a nevyvíjet projekt kyberia jako jeden?
+
+Potom jsou tu další projekty jako apeia.eu na kterých pracují další schopní programátoři.
+
+> Kyberia.sk v3 udajne chce konkurovat facebooku a apeia.eu je web jednoho z nasich vyvojaru. je kompletne v jave a sam txo ji oznacuje tusim jako "technology preview", nebo jak to rikal. proste jeste neni hotova. --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/26 19:40//
+
+===== Guildovací sytém =====
+
+**Nejasnost** toho co guildy vlastně jsou a jak je implementovat. Jak souvisí guildy s decentralizačním principem?
+
+**Složitost** z pohledu "obyčejného" uživatele. Např. lidé, kteří tvoří nějaké kvalitní věci, ale nejsou příliš technicky zdatní - pro mě můžou být guildy přliš matoucí a složité. Proč by je neměly guildy odradit a jak to udělat aby je neodradily?
+Guildy tak trochu působí jako nějaká mmorpg hra. Přitáhne geeky? Odradí ženy?
+Guildy se rovněž tváří, že řeší "reálný život" - pokud je to záměr, jaká je strategie k jeho dosažení?
+Proč bude muset uživatel, který trávit 8 hodin v zaměstnání, řešit ještě nějaké "mocenské" struktury ve virtuálním světě?
+
+> jak jsem psal... je zbytecny psat kritiku guildovaciho systemu sem, kdyz existuje stranka o guildovacim systemu, kde uz se to resi! verim, ze nam hromi v blizke budoucnosti cely system odprezentuje vcetne jeho vyhod a nevyhod. i jsem ale proti tomu, aby byl podobny system do kyberky napsan na tvrdo (hardcoded), kyberia by mela byt prostor, ktery umozni vytvareni podobnych systemu, ne jen jednim z nich. --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/26 19:42//
+
+===== Decentralizace =====
+
+Nejasnost konceptu decentralizace.
+Bude existovat obsahově jedna kyberia.cz síť rozvrstvená na různé servery?
+Nebo bude existovat víc samostaných kyberia.cz jednotek, které spolu budou komunikovat a sdílet uživatele/obsah/atd? Jakým způsobem přechod/sdílené uživatelů, obsahu, pravomce atd.
+Budou data uložena duplicitně na všech serverech?
+Pokud si někdo stáhne zdrojáky bude si moct vytvořit stvoji vlastní buňku nebou celou síť?
+Nejasnost jak souvisí decentralizace a guildy.
+
+> decentralizaci sem tu uz trochu popisoval, melo by byt mozne udelat si jak vlastni sit, tak vlastni bunku, podobne, jako u XMPP --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/26 19:42//
+
+===== Výrazné osobnosti =====
+
+Toto nechám na sebereflexi každého samostaně, jen nabídnu otázky:
+
+Jaký je můj přistup k projektu a lidem? Nemají lidé pocit, že mě musí přebíjet? A pokud ano, neodradil jsem někoho?
+
+Budu něco dělat nebo budu jen vymýšlet a ostatní ať to udělají za mě?
+
+> nejdřív bysme měli všichni dlouho vymyslet a az neco vymyslime, tak objektivne zhodnotime nase moznosti a programatorske schopnosti --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/26 19:42//
+
+
+//Peace (and also Love:)// 

@@ -1,0 +1,36 @@
+====== Work in progressSS ======
+==== Technické otázky ====
+(Zlé halušky)
+  * [[Kyberia a ekologie]]
+  * Platforma
+    * [[Programovací jazyky]]
+    * [[Operační systém]]
+    * [[Webový server]]
+    * [[Šablonovací systém]]
+      * [[Kyberia user scripting]]
+    * [[Kyberia plugin API]]
+  * [[Uložení grafu v databázi]]
+  * [[Client-Server architektura|Client-Server architektura (+rozdělení do vrstev a API)]]
+    * [[Kyberia mail]]
+  * [[Další služby]]
+  * [[Šifrování serveru]]
+  * [[Centralizované přihlašování]]
+  * [[Verzovací systémy|Software pro správu verzí]]
+  * [[Kyberie Novis]]
+  * Hacky a postřehy
+    * http://freenetproject.org/
+    * [[Hypertextový hyperprostor]]
+    * [[Gnutella-wiki]]
+    * [[Power.com]]
+    * http://en.wikipedia.org/wiki/Google_platform
+
+==== Humanitní otázky ====
+(Dobré halušky)
+  * [[lidsky_faktor|Lidský faktor]]
+  * [[Systém třídění informací]]
+  * [[Noda|Co je to noda]] 
+  * [[Artworks]] TODO
+  * [[Kyberie Novis]] FIXME: clanek je momentalne napul humanitni a napul technicka haluska -> rozdelit?
+  * [[Description of Cyberia]]
+  * [[Cesta k fraktalizaci kyberie]]
+  * [[Harvieho haluze]] (velmi subjektivní)

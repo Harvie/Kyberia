@@ -1,0 +1,132 @@
+Relační databáze, čili to co všichni známe jako tabulky-sloupce-řádky, propojené pomocí klíčů a dotazovatelné pomocí SQL jazyka, jsou jen jeden ze způsobů jak uložit data. Někdy vhodný, někdy méně. Velmi dlouho se i na ty méně vhodné případy používaly relační databáze, protože nebyla alternativa.
+
+V posledních několika letech se ale situace změnila. Začali se objevovat tzv. nosql ("not only slq") databázové systémy. V létě 2009 byla nosql konference, kde se prezentovali tvůrci těchto systému a některé z nich jsou již dnes ve velmi použitelné fázi, stabilní, solidní, prostě nasaditelně. Některé tyto systémy jsou již mají pár let, některé jsou čerstvé a mladé. V blízké budoucnosti lze očekávat boom těchto systémů.
+
+  * http://www.igvita.com/2010/03/01/schema-free-mysql-vs-nosql/
+  * http://zdrojak.root.cz/clanky/navrh-databaze-nosql-vs-sql/
+  * http://zdrojak.root.cz/n/nosql/
+
+//Next Generation Databases mostly address some of the points: being non-relational, distributed, open-source and horizontal scalable. The movement began early 2009 and is growing rapidly. Often more characteristics apply as: schema-free, replication support, easy API, eventually consistency, and more. So the misleading term "nosql" (the community now translates it with "not only sql") should be seen as an alias to something like the definition above.//
+
+Edit: Prehladová tabulka nosql databází:
+http://grydz.com/grid/show/nosql-open-source-and-commercial-nosql-data-storage-systems
+
+==== Vyměnitelný backend pro ukládání dat ====
+chtel bych, aby existovala knihovna, ktera bude obsahovat 2 funkce: get_node a put_node. ta bude ukladat nebo nacitat nodu a vrati ji jako pole/list (to se jeste urci). tak bude snadne zmenou teto napr. 20 radkove funkce mozne portovat kyberku na ruzna datova uloziste (pgsql, mysql, filesystem, derne pasky, gramofonove desky, ...). urcite se bude hodit take funkce na inicializaci datoveho uloziste, ktera se vyuzije predevsim pri instalaci (vytvoreni databaze a tabulky, vytvoreni adresare, vyzva k zavedeni nove pasky, ...). dale zde bude nejaka funkce, ktera bude implementovat vyhledavani (jen v pripade, ze index databaze nebude ulozen take jako noda). az budeme mit takovy system, budeme moct napsat treba zavadec, ktery nacte kod kyberky z databaze (pokud cela kyberia bude hromada nod). klidne tento databazovy interface muze nody 0-100 mapovat na soubory a zbytek do databaze, tak by se vyresil problem s pomalym spoustenim kodu z db, ale to je ciste technicky/filozoficky detail, zatim muze byt kod normalne v souborech. dulezite je, aby kyberia prakticky vubec nevedela kam se nody ukladaji a nacitaji - staci, ze je bude zapisovat, cist a prohledavat.
+
+toho lze dosáhnout například pomocí ukládání objektů (nebo polí) serializovaných v JSON notaci.
+
+----
+
+Nosql databáze lze rozdělit do několika kategorií podle toho na co se specializují:
+
+====== Key Value / Tuple Store (klíč-hodnota) ======
+
+
+Nazev to definuje docela jasně. Pro programátory: podobné jako hash tabulka.
+Pro vývoj kyberie, asi ne úplně vhodné jako hlavní databázový systém. Nicméně některé tyto dbs jsou dobře použitelné na různé rychlé prototypování atd. Hlavně proto, že jsou samozřejmě schema-free, tedy není potřeba vymýšlet nic dopředu.
+
+Příklady:
+  * Redis [[http://code.google.com/p/redis/]]
+  * Memcached [[http://memcached.org/]]
+  * Tokyo Cabinet
+  * AmazonSimpleDB
+  * MySQL (proč ne?!) http://zdrojak.root.cz/clanky/mysql-v-roli-neschemove-databaze/
+
+====== Document Store (systémy orientované na ukládání dokumentů) ======
+
+Databáze, které se točí kolem ukládání dokumentů. Většinou jsou také schema-free, tzn že nemusíte dopředu definovat "sloupečky". Když v budoucnu přibyde nějaká nová informace, která se bude ukládat, tak se prostě začne ukládat a není potřeba kvůli tomu předefinovávat struktruru databáze.
+
+Vyzdvyhnul bych tyto tři konkrétní řešení:
+
+  * [[http://riak.basho.com/|Riak]]
+Riak je decentralizovatelný (tzn může běžet na víc serverech, žádní není hlavní) dokumentově orientovaný databázový systém. Je schema-free. Je dělaný na to, aby fungoval ve všech měřítcích - od malých prototypových projektů až k velkým farmám. Je na tom prý dobře s výkonem. Rozhraní je pres RESTful HTTP API a data jsou předávána jako JSON. Riak je napsaný v erlangu.
+
+<note>Protože někteří vývojáři už si začínají hrát s Riakem, udělal jsem balíček pro [[operacni_system#archlinux|ArchLinux]], po instalaci yaourtu je možné ho zkompilovat a nainstalovat příkazem **yaourt -S riak**, zdrojový balíček si můžete stáhnout na http://aur.archlinux.org/packages.php?ID=35433
+
+zatím se ale instaluje jen do /opt, až budu mít náladu zjišťovat kam se ma co instalovat, tak ho nainstaluju tam, kam patri... a asi taky udelam nakej init script, aby se to dalo spoustet pri startu...</note>
+
+  * [[http://www.mongodb.org/display/DOCS/Home|MongoDB]]
+MongoDB je podobná jako Riak. Dokumentově orientovaná, schema-free, skálovatelná. Je napsaná v C++. Rozhraní je opět RESTful HTTP API s daty předávanými jako BSON (binary json). MongoDB je ze všech asi nejjednodušší na nasazení. Simple, clear a elegant, tak na mě tento projekt působí.
+
+> http://www.abclinuxu.cz/clanky/programovani/lehky-uvod-do-mongodb
+
+  * [[http://couchdb.apache.org/|CouchDB]]
+
+Apache CouchDB je zase dokumentová databáze. Tzn schema-free, s rozhraním RESTful HTTP / JSON. Nativní dotazovací jazyk je javascript. Jsou ale samozřejmě knihovny pro všechny významné jazyky. Samotný CouchDB je napsaný v Erlangu.
+
+  * [[http://jackrabbit.apache.org/|Apache Jackrabit]]
+
+Apache Jackrabbit is a fully conforming implementation of the Content Repository for Java Technology API (JCR, specified in JSR 170 and 283). A content repository is a hierarchical content store with support for structured and unstructured content, full text search, versioning, transactions, observation, and more.
+
+Viacej info bude vediet dat mandos.
+
+  * [[http://www.simplecloud.org/|SimpleCloud]]
+Zajímavá PHP knihovna, která zvládá nejen Document store.
+
+====== Graph Databases (Grafové databáze) ======
+
+Databáze nativně ukládající grafové (graf jako síť z vrcholů a hran, nikoliv zobrazení funkce) struktury.
+Toto považuji pro kyberii asi jako nejdůležitější kategorii nově vznikajících databázových systémů. Tyto DB umí grafy nativně a přirozeně ukládat. Odpadají všechny ty nechutné problémy s pokusy uložit graf/strom do sql tabulky, která je pro to dost nepřirozená. Navíc některé (neo4j např) jsou fakt neporovnatelně rychlejší než sql databáze s grafy/stromy.
+
+Dotazování probíhá většinou buď pomocí [[http://www.w3.org/TR/rdf-sparql-query/|SPARQL]] nebo tzv. traverzování.
+
+Příklady:
+
+  * Neo4j
+[[http://neo4j.org/]]
+
+Napsaná v javě s portem do mnoha jazyků. Ukládá nody a vztahy (hrany). Obojí (nody i vztahy) mohou obsahovat key-value pair hodnoty.
+Je rychlá, funguje spolehlivě i moc moc velkých objemů dat. Pro použití v opensource projektech je zdarma.
+Dá se indexovat pomocí apache lucine.
+
+  * InfoGrid [[http://infogrid.org/]]
+  * Sones [[http://www.sones.com/home]]
+  * HyperGraphDB [[http://www.kobrix.com/hgdb.jsp]]
+  * [[http://openquery.com/products/graph-engine|The Open Query GRAPH engine (OQGRAPH)]]
+**OQGRAPH Engine for MySQL, MariaDB and Drizzle**
+The Open Query GRAPH engine (OQGRAPH) is a computation engine allowing hierarchies and more complex graph structures to be handled in a relational fashion. In a nutshell, tree structures and friend-of-a-friend style searches can now be done using standard SQL syntax, and results joined onto other tables.
+
+====== Dalsi databze od Apache ======
+  * Apache Cassandra http://incubator.apache.org/cassandra/
+  * Apache HBase http://hadoop.apache.org/hbase/
+
+====== Urzovo vyhodnocení ======
+Trochu víc jsem na to koukal a s něčím si trochu víc pohrál.
+Mě se zdají dva kandidáti velmi vhodní:
+
+  - Riak
+  - neo4j
+
+K Riaku: tu je krátký článek [[http://thechangelog.com/post/382278264/riak-high-performance-document-store-built-on-json-and-r]], tady na jejich stráce o použití pro programátory [[http://riak.basho.com/programming.html]]
+Na riaku je především dobré to, že je dělaný na to aby běžel na více serverech. Takže pokud budeme to s tím decentralizováním a guildováním myslet vážně, tak Riak asi může uštřit dost práce. Druhá výhoda - hlavně oproti konkurenčním dokumentDB (mongoDB a couchDB) je, že podporuje linky mezi daty.  (pro nas vazby mezi nodami) a umi s nimi potom pracovat při dotazování.
+
+K neo4j: s tímto jsem si hrál už dřív. Naprosto super databáze když dojde na grafy. Noda i vztah mohou mít libovolné dvojice klíčů a hodnot. Ale "nevýhoda" je, že by na serveru musela běžet java a minimálně [[client-server_architektura|datová vrstva naší architektury]] by teda musela být napsaná v javě. (neo4j sice obsahuje porty do jiných jazyků, ale to jsou takové ty java friendly jazyky jako python atd).
+
+> Myslim, ze ne vsechny ty grafove databaze zminene vyse vyzaduji javu...
+> Otazkou je, jak je to u nich s decentralizaci... IMHO by kyberia nemela bejt jedna velka decentralizovana databaze , kazdej tribe by mel mit svoji decentralizovanou databazi, aby byl celkovej system vic fail-proof.
+> --- //[[harvie@email.cz|Harvie]] 2010/02/14 17:42//
+
+> Ten riak vyzera vcelku dobre, jave by som sa pokial mozno vyhol. Skusal si nejake vykonostne porovnanie?
+> --- n 
+
+> mne sa z toho vyctu pozdava Riak a MongoDB. neo4j ma okrem javy este jednu nevyhodu a tou je licencia - nainfikovala by cely projekt AGPLv3, co az tak velmi nevadi, otazka je ci to chceme.
+> --- //stick//
+
+>> Ono ta AGPLv3 je mozno az ziaduca, nezda sa mi vhodne aby mohol niekto zobrat kyberiu, upravit a prevadzkovat komercne. Na sietove veci funguje samotna GPL velmi obmedzene.
+>> --- n
+
+>> Tiez sa mi najviac pozdava ten riak, myslim ze by sme sa od neho mohli odrazit, nainstalovat to rovno na masinach ktore mame k dispozicii a maju verejnu ipcku a zacat sa hrat s tym clusteringom, pekne je to popisane tu ( http://riak.basho.com/nyc-nosql/ )...a ked sa to osvedci, nic nam nebrani preprgat to s casom do PERLu pripadne dokonca C++ nech je to kompletne "k obrazu nasmu"
+>> --- hromiskopsisko
+
+>>> prepisanim do PERL/C++ sa nic neziska skor naopak (nehovoriac o tom ze taky prepis by stal obrovske usilie a vzdy by nebol 100%tny). ak by z nejakeho dovodu nevyhovoval erlang tak zvolit mongodb.
+>>> --- //stick//
+
+>>>> Jinak koukam, ze se erlang da kompilovat do nativniho kodu, docela se mi zamlouva, na druhou stranu ma mongo nejake nevyhody, nahore pisete ze je to dost podobny riaku, otazkou zustava, jestli bude vykonnejsi C++ nebo Erlang v tomhle pripade, protoze erlang je asi spis stavenej na nasazeni v clusterech... to mongo to zvlada taky?? --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/28 00:29//
+
+>>>>> jo, hned na hlavnej stranke: Replication and fail-over support, Auto-sharding for cloud-level scalability. rozdiel je ten ze mongo/couch su replication based (tzn. ze sa data replikuju do vsetkych nodov). riak je distribution based (tzn. ze kazdy node ma iba nejaku podmnozinu vsetkych dat, nie vsetky). zjednodusene: ak mame 4 mongo servery, tak mame na nich data ABCD,ABCD, ABCD, ABCD. ak mame 4 servery riak tak mame na nich data (napr.) ABC, BCD, ACD, ABD.  vyhody/nevyhody oboch pristupov su snad zrejme.
+>>>>> --- //stick//
+
+>> me zase zaujal ten OQGRAPH, ale jde jen o prvni pohled, budu si muset poradne precist o vsech kandidatech. --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/26 20:23//
+
+>> pozrel som sa opat na Neo4J a zapacilo sa mi to :-) killer feature je jednoduchy export do RDF, pouzite OWL pripadne SPARQL. takisto bod massive scalability popisany na stranke je fajn.

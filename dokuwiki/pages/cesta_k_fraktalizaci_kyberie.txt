@@ -1,0 +1,6 @@
+Udelal jsem takove schema (at taky mame naky obrazky ;o)
+ale je to spis teoreticka/filozoficka zalezitost, nez nejaka solidni programatorska vize - jinak receno sem se jednou nudil s notebookem na vesnici bez internetu :-)
+
+{{http://data.kyberia.cz/kyberia_jako_fraktal.png}}
+
+textove nody se vlastne taky daj rozdelit na mensi casti... aby tak bylo možné například upravovat/komentovat jednotlivé odstavce, jako například v systému [[http://redraftable.com/|redraftable]].

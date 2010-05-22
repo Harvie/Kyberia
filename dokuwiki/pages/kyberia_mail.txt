@@ -1,0 +1,50 @@
+====== Systém mailů K-Mail ======
+Kyberia je založená na komunikaci a IMHO je potřeba vytvořit systém pro komunikaci v reálném čase a provázat ho se systémy již existujícími
+===== Ustredna otazka =====
+Co sa architektury K-mailu tyka, ustredna otazka znie nasledovne: **Ma byt postova/chatova sprava v systeme reprezentovana ako noda alebo nie?**
+
+Argument pre ANO : postova sprava sa da chapat ako privatna noda vytvorena Odosielatel do ktorej ma pristup jedine Adresat. Vyhodou takto chapanej posty je :
+  * zdielanie posty medzi viacerymi uzivatelmi - sprava urcena adresatom X,Y,Z nieje niecim  ako privatnou nodou do ktorej maju pristup len X,Y,Z 
+  * moznost folderov - sprava sa do nodeshellov linkuje pomocou akehosi "automatizovaneho put"  
+
+Argument pre NIE : neni uplne jasne ako by sa takto navrhnuty system dal prepojit s IMsystemami ako XMPP a hlavne, ci by bol takyto system dostatocne odolny voci zatazi ktora by nastala (tabulka nod by narastla do zavratnych rozmerov)
+> ja sem si to predstavoval jako XMPP server, ktery zalohuje postu do databaze jako nodu, problem by vsak mohl nastat v pripade onech zavratnych rozmeru. tohoto tematu jsem se vsak dotknul ve clanku [[samocistici schopnosti#expirace nody]]...
+
+Zodpovedanie tejto otazky realnym kodom bude momentom spustenia betaverzie ceskej kyberie.
+
+===== Přenos mailů přes HTTP(S) (Deprecated) =====
+Posta - posta mezi jednotlivymi kyberkami se bude posilat na url profilu (usernode) adresata - udela se POST na adresu treba httpS://kyberia.jp/?name=harvie nebo httpS://domena.cn/weby/neco/kyberia/?id=123 (vsimnete si, ze je jedno jestli je dana kyberia primo v rootu webserveru, nebo az v nejakem podadresari a jestli zname ID, nebo jenom jmeno usera)
+
+===== XMPP =====
+XMPP je náš oblíbený protokol, pro neznalé je to něco jako ICQ, ale mnohem lepší. Místo čísla mají uživatelé adresu se zavináčem, která vypadá stejně jako mail. Mezi nejznámější implementace patří Jabber a Google Talk. Google i Seznam.cz dodává XMPP účty ke svým mailovým schránkám. Ode dneška mají XMPP účet také [[http://www.root.cz/zpravicky/facebook-nyni-z-jabber-klienta/|všichni uživatelé Facebooku]], což pravděpodobně donutí ICQ k pláči.
+
+==== K-Mail ====
+IMHO by měla pošta běhat jenom přes XMPP a v databázi být jen zálohovaná, aby se dala zpětně číst, takže by byl k dispozici nějaký javascriptový XMPP klient, mě se líbí například [[http://ajaxbber.sourceforge.net/|ajaxbber]] (potřebuje, aby XMPP server zvládal nějaký hack typu HTTP Polling), výběr je ale daleko širší: http://xmpp.org/software/clients.shtml .
+==== Přihlašování ====
+Dost si hraju s myšlenkou, že by přihlašování na kyberku mělo probíhat pomocí ověření vůči XMPP serveru. Ať už proti cizímu, nebo proti vlastnímu serveru kybci.
+
+  * Prípadná implementácia OpenID by tiež nejedného užívateľa potešila
+  * preskumat http://xmpp.org/extensions/xep-0070.html
+===== SMTP =====
+Měla by existovat případné možnost, jak jednoduše nastavit na kyberia serveru příjem k-mailů z vnějšího světa (od nekyberanů) přes mail id@domena.tld. Protože si někdo třeba bude chtít nastavit zasílání nějakých notifikací na kybču. Tyhle maily by se pak daly cpát do XMPP...
+
+==== SMTP2Kyberia absolutne neni problem ====
+treba pro doruceni zpravy do schranky dovecotu se pouziva na konci master.cf v postfixu takovyto radek:
+
+<file bash /etc/postfix/master.cf>
+...
+dovecot   unix  -       n       n       -       -       pipe
+  flags=DRhu user=vmail:mail argv=/usr/lib/dovecot/deliver -f ${sender} -d ${recipient}
+</file>
+
+z toho vyplyva, ze **/usr/lib/dovecot/deliver** je program, kteremu dokonce muzeme predat nake promenne (napr.: **${sender} ${recipient} ${nexthop} ${user} ${extension}**) jako argumenty, a kteremu pak na standartni vstup prijde zprava. to uz muze byt nejaky trivialni PERL, ktery posle zpravu na XMPP, nebo ulozi do databaze kyberky. takze az nam pobezi postfix, neni problem dorucovat maily kamkoliv...
+
+===== IMAP/POP3 =====
+  * POP3 sem davam jenom, abych vam rovnou rekl, ze ho zavrhuji jako zastaraly ;-)
+  * IMAP se bude implementovat trochu hure nez SMTP, pac SMTP gateway se da nahackovat na par radek v perlu a hodit do kyberky pres [[Kyberia plugin API]].
+    * Toto bol moj plan uz k sucasnej kyberii. Aj SMTP aj IMAP. K IMAP-u je [[http://search.cpan.org/dist/Net-IMAP-Server/|Net::IMAP::Server]] a k tomuto celkom pouzitelne.
+      * OK, vypada pouzitelne... :-) ale nejdriv bych rozjel XMPP, protoze komunikace by mela byt v prvni rade realtimeova...
+      * Taky treba Dovecot se da tusim nakonfigurovat, aby bral mailboxy z MySQL, PgSQL nebo SQLite, ale maily stejne musi byt ulozeny jako soubory na disku, pokud by to nekdo umel, tak je to zdaleka nejjednodussi cesta. Ja osobne s Dovecotem momentalne dost bojuju a vubec si se mnou nechce hrat ;-)
+===== RSS =====
+viz. také [[Decentralizace]].
+Čtení a exporty RSS... FIXME

@@ -1,0 +1,12 @@
+System pojmov ktory ludske bytosti pouzivanie na popis a triedenie toku casu je uholnym kamenom kazdej novej kultury a civilizacie. Klasicky z-Genesis-odvodeny-system tyzdnov trvajucich 7 dni vykazuje urcitu stabilitu, rovnako ako variacie na Juliov nacrt slnecneho kalendaru. 
+
+Nezabudaj vsak nikdy na to ze **"Veci vsak mozu byt kategorizovane aj inac"** a ze uspejes prave vtedy ked v pravy moment rozkategorizujes svet tak ako to este nikto neucinil.
+
+Ako prvy krok tymto navrhujem aby bola ceska kyberia prvym systemom ktory prejde na dataciu pomocou UNIXovej epochy. Usetri sa tym istotne niekolko mikrosekund vypocetneho casu a vzda sa tym hold muzom ktory si poklonu zasluzia minimalne rovnako ako ten ktory sa pred tymi 2010 rokmi vlastne ani nenarodil.
+
+Napisane v roku 40.
+
+> Mel jsem za to, ze kyberka uklada v databazi casy v UNIXovych timestampech tak, jako byva zvykem ve vetsine systemu. Pokud ti jde o zobrazeni, tak stejne z toho nakonec budou jenom zmatky, protoze tim zborime relaci casu na kyberce s casem IRL. Navic nejvic casu stejne asi zabere prevod ze sekund na dny mesice a (prestupny) roky. ale uzivatele by si to mohli povolit v nastaveni jako "cyberpunk date mode" :-)
+> Mozna bych ale pridaval tzv. swatch "internet time"  --- //[[harvie@email.cz|Harvie]] 40/02/13 22:15//
+>>Samozrejme ze som hovoril o zobrazovani. A o tie zmatky presne ide!
+>>> Neboj bro... zmatku bude dost i bez toho :-)  --- //[[harvie@email.cz|Harvie]] 2010/02/14 01:13//

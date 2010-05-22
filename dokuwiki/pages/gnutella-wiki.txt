@@ -1,0 +1,10 @@
+mam maly napad na dalsi projekt, ktery by imho mohl nahradit kyberku.
+
+dvemy slovy "distribuovana wikipedie", nebo jeste lepe "distribuovany web". nad siti gnutella (pripadne nejakou jinou) postavime system pro sdileni informaci ve stylu wikipedie. vymyslime zpusob na prohledavani a indexovani informaci, take se bude hodit spam/warez klasifikace. dale se vyvine standart na formatovani techto dokumentu (zrejme zalozeny na html nebo spise wiki syntaxi). takove soubory si bude moct jednak kazdy stahnout pomoci bezneho klienta gnutella (jako jiny textovy soubor), nebo primo prochazet pomoci naseho klienta. kliknutim na link v jednom souboru se dalsi soubor automaticky stahne, zobrazi a zacne sdilet pomoci daemona beziciho na pozadi (takze cim navstevovanejsi stranka, tim dostupnejsi bude). jedine, co se musi vyresit je zpusob mazani starych verzi dokumentu z eteru a obrana proti spamu (pripadne podvrhovani, ale toho se nebojim - vyzadovalo by to kolizi hashu a tudiz se da zajistit prakticka neprolomitelnost).
+
+jako dalsi krok se nad tim celym da vybudovat nejaka socialni sit s chatem (tusim gnutella vyuziva odkazy na IRC) a dalsima vychytavkama. o sdileni souboru ani nemluvim.
+
+Specifikace site/protokolu gnutella:
+[[http://www9.limewire.com/developer/gnutella_protocol_0.4.pdf]]
+
+pro linux existuje squely klient gtk-gnutella a pro windows javovy frostwire (ktery by se teoreticky dal upravit). oba obsahuji moznost tunelovani pres NAT pomoci ultrapeeru (coz je nutne jen do nasazeni IPv6). uvazoval bych o jejich uprave, kompletni reimplementace take ale nezni uplne zcestne. take by se teoreticky dal napsat jen software vyuzivajici jineho stavajiciho klienta (mutella?) jako backend.

@@ -1,0 +1,10 @@
+====== Decentralizace kyberie ======
+===== Propojení se světem =====
+==== RSS export/import ====
+RSS exporty (posledni nody, posledni K, nejvic K, atd...) kazda jedna noda muze mit RSS export (template), kde se budou ukazovat novy childy.
+RSS importy - framework pro snadne vytvoreni nody, ktera bude vysosavat RSS (opet je potreba RSS importy promazavat pomoci TIMESTAMP_RECYCLE - viz. kapitola databaze)
+
+==== Kyberia neighborhood discovery ====
+kazda bunka by si mela udrzovat v databazi nodu, ktera bude obsahovat url dalsich kyberii po celym svete. Pokud tedy napriklad nekdo posle mail z jedny kyberky na druhou zatim neznamou, kyberky by si mely overit, jestli na druhe strane je opravdu kyberka (napr. pomoci nejakeho nesmyslneho textaku v rootu webu) a pripadne si tuto kyberku hned pridat do seznamu a zaroven si s ni tento list sesynchronizovat (coz by se potom melo dit periodicky) a pridat si nekolik RSS importu s poslednimi udalostmi z teto bunky. Jak uz jsem rikal kyberie by se mely rozeznavat podle nejakeho nahodne, ale vtipne vygenerovaneho textaku a navic podle nejakeho algoritmu napr. php skript, ktery secte 2 nahodne cisla zadane v URL, aby se zamezilo omylum, pokud se nejakym zpusobem tento textak dostane na jiny web. textovy soubor, ktery se bude rozpoznavat podle md5sumu (nebo jineho hashe) bude take mozne vygooglovat (na titulni strane na nej bude nenapadny odkaz). pomoci takoveho pozadavku na google bude pak mozne vyhledavat dalsi kyberky po celem svete. na to se ale nesmime spolehat a mely bychom vyuzit i dalsi zpusoby (napr. pri posilani tech mailu etc...)
+
+Pomoci discovery v kombinacy s RSS exporty a importy budeme moct ukazovat treba na uvodni strance nejvic Kckovany nody z celyho sveta (pripadne by to chtelo pri exportovani vyfiltrovat jen nody, kam se clovek dostane bez prihlaseni).

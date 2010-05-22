@@ -1,0 +1,84 @@
+====== Další služby Kyberia.CZ ======
+===== Generické řešení =====
+idea: jedna z moznosti jak toho vseho dosahnout je umoznit vytvareni techto dalsich sluzeb (kalendar, file sharing,..) nejak genericky, tak aby se nemuseli programovat prilis moc natvrdo v kodu, ale aby se dali vytvaret na urovni nod pomoci html+js+api plus pripadne nejakeho "sablonovaciho" nastroje. (Tak trochu bokem do pozornosti davam [http://en.wikipedia.org/wiki/Haml|haml] )
+Napriklad na ten kalendar by stacilo vytvorit "sablonu" pro nodu kalendar ktera si vytahne ktere nody jsou s ni spojene hranou "event" a v z techto nod si vezme informace od/do/popis a nejak je zobrazi. K Nodam "event" zase budou vazbou "participate" pripojeni uzivatele kteri se ucastni.
+Tento zpusob reseni ma i nevyhody: napr zdlouhavost takovy system pripravit, rychlost,.. tezsi itegrovatelnost do systemu atd..
+a cele je to vubec osemetne aby to nedopadlo jako sablonovaci system na kyberia.sk, ktery ma sice potencial toto vsechno taky resit.. ale pouzivaji ho tam vsehovsudy 3 lidi.
+
+> Jasne, tak nak sem to myslel (i kdyz si este musim precist co je ten HAML zac...). Tohle sou veci, co uz by se mely implementovat nad kybcou (IMHO stejne jako [[guildsystem]]) a myslím, že to nebude problém.
+> Kybca by mela umoznovat psani takovych programku a vychytavek, kybca by mela byt predevsim prazdny svobodny (a pokud mozno neomezeny) prostor, nad kterym pude tvorit. Kdyz se povede vytvorit neco uzitecneho (kalendar, guildsystem,...) prida se to do distribuce, stejne jako ma kyberia.sk v distribuci SQL soubor se zakladnima templatama, etc... Pokud jde o to, ze na kybce nikdo nepouziva templaty je to jednak tim, ze se z kybci stava normalni diskuzni forum a hlavne tim, ze aby admini si nemuzou dovolit dat lidem takova prava. Z sablon (aspon z nekterych druhu) se pokud vim da spoustet PHP kod a to by znamenalo, ze pujde obejit jakekoli zabezpeceni. Dan mluvi o otevrenosti, ale k cemu to potom bude, kdyz nekdo zacne pres PHP shazovat server, DROPovat celou databazi nebo si cist/posilat cizi postu? pak ani nema smysl implementovat nejake prihlasovani a muzem kazdemu dat rovnou roota a pristup k administraci databaze... --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/03/10 09:14//
+
+===== Eventz =====
+Kalendář, kam by se daly hardlinkovat nody k různým datumům, takže bude přehled, kam se kdo chystá. Asi by to taky chtělo nějaký geografický filtr. Budou se zadávat GPS souřadnice akce (+budou v nabídce velká města, abysme to nemuseli psat rucne), Já si potom zadám svojí polohu (nové prohlížeče to údajně budou zvládat automaticky po schvaleni uzivatelem) a vzdalenost v km, jakou jsem ochotny urazit, takze pokud budu v praze a zadám rozsah 20 km, nezobrazí se mi akce v brně,...
+===== Síť důvěry (Web of Trust) =====
+Klademe velký důraz na šifrování, proč by tedy kyberia neměla být certifikační autoritou? Kromě sítě důvěry týkající se klíčů na šifrování můžeme ověřovat identity i za jinými účely. Teoreticky by bylo možné přidat do systému možnost vyjádřit důvěru libovolné nodě. (zápornou důvěru (nedůvěru) bych opět raději neiplementoval, ale důvěra by měla jít revokovat)
+
+  * [[http://cs.wikipedia.org/wiki/Síť_důvěry]]
+  * http://en.wikipedia.org/wiki/Web_of_trust
+
+Například si udělám nodu ve které bude uložený můj (OTR|GPG|HTTPS|SSH) klíč a lidé, kteří mě znají osobně a ví, že je to skutečně můj klíč, kliknou na link "vyjádřit důvěru", čímž podepíšou, že jsem nodu skutečně vytvořil já. (prakticky to bude jenom seznam usernod, které dané nodě věří). Pokud tedy například budu důvěřovat Hromimu a ten bude důvěřovat nodě obsahující Urzovo OTR klíč, budu mu moct věřit i já bez toho, abych Hromiho kontaktoval. Stejně tak může mít Toth nodu ve které píše, že umí mluvit svahilsky a všichni lidé, kteří osobně slyšeli Totha mluvit svahilsky (nebo mu to z jiného důvodu věří) mohou této nodě vyjádřit důvěru tím, že se přidají na seznam jejích signatářů (pravděpodobně na Tothovu žádost pomocí mailu) a pokud některému z nich důvěřuji i já, budu moct věřit Tothovi, že umí svahilsky i přesto, že jinak bych mu to nevěřil.
+
+Důležité je, že noda musí při úpravě svého textu/dat (titulek, owner,... se může měnit bez porušení důvěry) všechny důvěry smazat. Případně je také možné, že důvěra bude reprezentovaná jako child noda vytvořená konkrétním uživatelem obsahující bezpečný kontroliní součet podepsané nody. Tato důvěra se potom zobrazí buď červeně nebo zeleně, podle toho jestli bude content nody tímto kontrolním součtem odpovídat. Trochu jinak by se asi řešilo vyjadřování důvěry usernodám, které mohou svůj obsah měnit. IMHO by balo žádoucí, aby se uživatel mohl rozhodnout, kterým datům chce vyjádřit důvěru (např.: mohu usernodě Toxygen podepsat pouze hodnotu "name", čímž zajistím, že id 12345 bude ověřený jako osoba, která běžně vystupuje pod jménem Toxygen. Může si měnit content, fotky, ale dokud se nebude chtít přejmenovat, můžou si být moji přátelé jisti, že to je skutečně ten Toxygen o kterém mluvím, když napíšu v mailu "Toxygen").
+
+Jak už jsem psal v článku [[samocistici schopnosti#expirace nody|expirace nody]], bude každé nodě možné nastavit expiraci, tudíž bude možné zajistit, že bude důvěra po přednastaveném čase revokována i v případě, že kontrolní součet bude stále platit, což je vhodné například pro ověření informací nestálých v čase (eg.: "Já jsem teď v Praze").
+
+Určitě by bylo fajn, kdyby se dala síť důvěry také nějak mapovat a vizualizovat. Například zakreslit do grafu který uživatel se kterému zaručil za kolik nod (váha/tloušťka hrany).
+
+Content nody s důvěrou, která se zaručí za to, že v contentu její parrent nody je GPG klíč, který patří userovi který ji vytvořil (ale jen za předpokladu, že si nezmění ani id ani nick) by mohl tedy vypadat třeba takhle:
+  {"WoT":{
+    "user-id":   "31a0839c9efe931850d6fbd7e4b22a4d6f07494c1b52053c5b05d31e06fda96c",
+    "user-name": "7466a0955ae876ef237eed383b20b3ae510ace521a30a1e5af0f364b10196e63",
+    "content":   "6dffc8153c1443802dfff68845f0bf6de2fcdda02f19c49511cdbe40e902cc01"
+  }}
++ by se to celé mohlo podepsat pomocí GPG
+
+===== Podpora SSL a GPG =====
+==== Klientské certifikáty ====
+Mohlo by být šikovné přihlašování pomocí uživatelského certifikátu.
+Např. v PHP je k tomu použit interface v podobě proměnných $_SERVER['SSL_CLIENT_VERIFY'] a $_SERVER['SSL_CLIENT_S_DN_CN'].
+==== GPG klíče ====
+Ideální by bylo, kdyby každý uživatel při registraci buď musel zadat svůj veřejný GPG klíč, nebo by mu byl vygenerován pár klíčů. Potom by ale bylo nutné nějak vyřešit jak pohodlně uložit klíč na klientské straně (html5 local storage, cookies?). Klíče by se pak používaly k posílání šifrovaných správ, šifrování nod (například by se mohlo chránit celé fórum tak, že se klíč od fóra dá jen některým lidem). A hlavně by se klíče používaly k podepisování sítě důvěry. Ideální by bylo, pokud by se jediný soubor dal používat jako SSL client cert na prihlaseni i jako klic na sifrovani.
+
+Je nutné poznamenat, že soukromý GPG klíč by měl zůstat u klienta, v rozšíření prohlížeče, v javascriptu nebo nejhůře v paměti serveru, nikdy by se ale neměl dostat do databáze, nebo na disk (šifrovaný swap je OK). GPG tam bude mj. proto, že kyberce nemusím ve všem věřit. Když chcete někomu dát svobodu, dovolte mu, aby vám nemusel věřit.
+==== SSL+GPG ====
+napr. web servery umi vyexportovat klientsky certifikat do promenne: http://redmine.lighttpd.net/projects/lighttpd/wiki/Docs:SSL
+  ssl.verifyclient.exportcert = "enable";
+takze by se treba nejak dal pouzit k sifrovani. je to take vyhodne v tom, ze muzeme rovnou zamitat pristup klientum, kterym jsme osobne nepodepsali certifikat.
+
+par linku:
+  * http://php.net/manual/en/features.http-auth.php
+  * http://php.net/manual/en/book.openssl.php
+  * http://php.net/manual/en/book.gnupg.php
+  * http://php.net/manual/en/ref.gnupg.php
+
+(na druhou stranu bych to nerad resil primo v PHP, protoze tohle by mela byt otazka backednu. kdyz si jeden frontend neco zasifruje, tak druhy by to uz nemusel precist)
+
+==== Kompromis ====
+Pak je zde ještě řešení, že každý user bude mít v databázi veřejný klíč (dostupný všem) a privátní klíč zašifrovaný (pass)frází znalost této fráze bude postačovat k přihlášení na kyberku (přihlašovací heslo se tedy bude měnit změnou passphrase privátního klíče). Fráze zadaná do přihlašovacího formuláře bude následně uložena v cookies a zašifrována klíčem kyberky, který bude mít každá instalace odlišný. Tak bude moct uživatel využívat server-side GPG relativně bezpečně a stejně tak bude bezpečné přihlašování (možná je to ještě lepší postup než uložení hashe hesla).
+
+===== Kalendář v profilu usera =====
+s nastavitelnou mírou soukromí
+
+===== Sdílení bookmarků =====
+  * Bookmarky a sdílená browse historie - nejen jako del.icio.us ale i jako nástroj pro denní obsah - muzika na youtube, přečtené články, tříditelné do kategorií; embedd, resp. náhledové funkce a diskuse pod linky. 
+    * U některých možný mirror: Nytimes mají placený obsah, Youtube videa disabluje díky aut.právům; takový obsah je dobré ukládat.
+    * V malé společnosti se opět dostává ke slovu sdílení zažitého a viděného. Kontext děl v kontextu konkrétní osoby nenahradí žádnou mega ratingovou databázi. To je první level. Druhý je sledování obsahu na bázi podobnosti, na úrovni neznámých userů, třetí je to co známe z velkých serverů spojujících množství dat, vytváření statistik atd.
+    * Knižní imdb. S informací o tom kdo co četl, čte, a s vypsanými oblíbenými pasážemi. Může pomoct při studiu, rychločtení apod.
+
+===== DropBox, File Storage, Javascript Desktop =====
+  * Dropbox - virtuální plocha
+    *Share disku přes dropbox - zašifrovaný seznam dat na disku usera, s funkcí request - jako DC hub + torrent, pokud není request první. Možné komenty k seznamu pod jednotlivé položky a upozornění na věci, které user doporučuje si requestnout všem.
+    * Zařazení i do kategorií - filmy se zimní náladu nebudu stahovat v létě….a básně nečtu když mám náladu na jiný žánr. Ukázky - via youtube, vimeo nebo jiný či vlastní video server.
+===== Kreslící plátno (když slova nestačí) =====
+  * SVG-Edit http://svg-edit.googlecode.com/
+    * Javascriptový editor SVG
+    * Vyzkoušejte: http://svg-edit.googlecode.com/svn/tags/stable/editor/svg-editor.html
+  * Můj plugin do dokuwiki: http://www.dokuwiki.org/plugin:svgedit
+    * http://www.youtube.com/watch?v=M-QW6a1ZFHA
+    * integrace, která umožní ukládat a upravovat obrázky přímo v textu stránky/nody s využitím všech výhod, které systém nabízí. Podobnou integraci bych chtěl napsat i do kybči.
+
+===== Smiley detector =====
+Spočítat všechny smajlíky v nodě, ohodnotit každý na stupnici -10 až 10 podle nálady. Nodu barevně označit jako neutrální, naštvanou nebo potěšenou (+více pododstínů).
+
+===== (MMO)RPG =====
+Nějak by se dala do kybči zaimplementovat možnost psát jednoduché RPG hry ( např. v open gamebook engine syntaxi http://gbook.wz.cz/ ), případně engine rozšířit o nějakou možnost chatu v jednotlivých místnostech, nebo další vychytávky.

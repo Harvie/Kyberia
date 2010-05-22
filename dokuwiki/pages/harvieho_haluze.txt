@@ -1,0 +1,82 @@
+====== Harvieho Haluze ======
+**Prosím, do týhle stránky mi moc nezasahujte. Kdyz tu nahodou budou zajimavy veci, tak pockejte az je presunu do hlavniho stromu draftu. thx.**
+
+<joke>
+
+{{http://img.aktualne.centrum.cz/144/17/1441737-stane-li-se-robot-bender-vzorem-nasi-mladeze-nastane-konec-sveta-o-nekolik-tisi.jpg}}
+
+**Bender říká: Seru na vás! Udělám si vlastní kyberku s casinem a s děvkama! Aaah. Seru na casino!**
+
+</joke>
+
+**Neptejte se, co kyberia dela pro vas. Zeptejte se, co vy delate pro kyberii.**
+
+(Mluvim spis o soucasne komunite, nez o kodu jako takovem - procistit narodni povahu kyberianskeho narodu je mnohem dulezitejsi, nez prepsat kod jako takovy)
+
+Musim se priznat, ze od chvile, kdy mi byla schvalena registrace na kyberce, a ja pomalu zacinal poznavat ten system, jsem premyslel o tom, jak ji prepsat, aby byla hezci, pouzitelnejsi, stabilnejsi (ve skutecnosti jsem mel o kybce zkreslene predstavy, ale i tak je pro me kyberia rewrite vyzvou...). Moment - nic proti Danovo práci, ale ja sem proste uz extremista a zajimalo me, jestli by se dalo dotahnout do absurdniho bodu pravidlo, ze "vsechno je noda". tudiz i veskery kod, krome nejakeho "bootloaderu", ktery by nacetl a spustil kod z prvni (nulte) nody (pozn.: je to blbost, ale zni to hustokrute...).
+
+Pokud nekdo tvrdi, ze to nejde prepsat, tak to udelam abych ho nasral. Mam vpici, jak dlouho to bude trvat. Dan taky neměl do začátku nic víc než papír v puse (a svěží mysl programátora) ;o)
+
+
+hh, ted jsem narazil na tohle:
+
+{{http://www.veritaserum.com/info/places/images/burrow.jpg}}
+
+dole muzete videt to co postavil Dan a nad tim jsou vsechny upravy a vylepseni. vsechno to funguje a je to super - mam kyberku rad. ale imho je to treba cely dat dohromady znova s predstavou, kterou mame o kyberce ted.
+
+===== Kyberia.cz draft (bude postupne mergnuto do zbytku wiki) =====
+==== databaze ====
+prvni vec, kterou bych rad deklaroval je muj odpor k existenci vice jak jednoho datoveho typu ci vice tabulek v databazi. vsechno je noda. a pokud se najde neco, co neni noda, neznamena to nic jineho, nez ze mame SPATNE NADEFINOVANY POJEM NODA. chci rict, ze musime mit takovy datovy typ, ktery dokaze pojmout COKOLI, CO SI KDYKOLI V BUDOUCNU VYMYSLIME, COZ ZNAMENA, ZE DATABAZE SE NIKDY NEBUDE MENIT, PROTOZE BUDE DOKONALA - DOKONALE JEDNODUCHA. pojdme uz od zacatku o node premyslet jako o datovem typu, ktery muze pojmout libovolna data, obsah, kod, template, uzivatele, vztahy mezi jinymi nodami, atd... prave na spravnem navrhu JEDINE tabulky v databazi stoji uspech celeho systemu. co by mela takova tabulka obsahovat? pokud ma existovat druha tabulka, tak jedine za ucelem zaindexovat obsah prvni tabulky lepe, nez to umi SQL server a mela by slouzit ciste jako nejaky urychlovac/zkvalitnovac vyhledavani, bez ktereho se system v pripade nutnosti obejde pomoci prepnuti jednoho booleanu ve zdrojaku. tomuhle bude asi nejlip rozumet ziman - mela by to bejt tabulka na hrani s dataminingem te prvni tabulky, prakticky to muze byt uplne samostatna aplikace, nebo nejaky bot/spider, ktery nad touhle tabulkou bude fungovat, nebo to dokonce muze byt uplne jina databaze na uplne jinem stroji, co jednou za cas indexuje kyberku na zaklade DUMPu jeji databaze, ktery se na tento stroj prenese po siti. duvod takove separace je opet jasny - vykon.
+
+  * ID (autoinkrement megalong)%%*%%
+  * ID_OWNER (megalong)
+  * IDS_GROUP (pole megalongu)%%****%%
+  * ID_GROUP (megalong)%%****%%
+  * ID_PARENT (megalong)
+  * IDS_UNCLE (pole megalongu)%%**%%
+  * TIMESTAMP_CREATED (unix timestamp)
+  * TIMESTAMP_RECYCLE (unix timestamp)%%***%%
+  * TIMESTAMP_OFFSET (dny)%%***%%
+  * ACCESS (string)%%*****%%
+
+poznamky:
+%%*%% ID se ma autoinkrementovat s kazdou novou nodou, ale zaroven by se mely pouzivat cisla jiz vymazanych nod a mel by existovat algoritmus, ktery zabrani pouziti dobre zapamatovatelnych cisel pokud takove cislo nebude vyslovne vyzadano (defaultne pri vytvareni usera a potom volitelne u jinych nod). jak by mela vypadat rezervovana cisla? 0-1000,12345,654321,2244110,123777,784487,23032 a podobne...
+
+taky dost vazne uvazuji o prechodu od desitkove soustavy k 36kove (tj. 0-9 a A-Z jako bonus), coz zkrati adresy, zlepsi zapamatovatelnost, etc... pak se bude muset pouzit jiny datovy typ v DB...
+
+%%**%% rad bych nahradil vytvareni hardlinku nekde v databazi seznamem "adoptivnich rodicu" - z prosteho duvodu, ze takto budou hardlinky smazany ve chvili, kdy smazeme nodu - to je DULEZITE. samozrejme ze by to bylo mozne provadet vyberem vsech hardlinku z databaze, ale imho je to pomale (coz je castecne dulezite) a navic
+
+%%***%% kazda noda bude mit svoji "trvanlivost", defaultne napr. 6 mesicu, uzivatel bude mit moznost tuto trvanlivost prodlouzit nebo zkratit (chaty). jednou za cas se z databaze DROPnou vsechny nody s timestampem recyklace mensim nez je aktualni cas s vyjimkou nody, ktera ma timestamp prazdny, nebo nastaveny na 0. pri takovem promazavani je dobre zjistit, jestli neni nastaveny nejaky nesmyslny systemovy cas (6.6.6666). zadny z timestampu by nemel pretect v y2k38. krome toho bude kazda noda mit TIMESTAMP_OFFSET, ktery bude urcovat vychozi nastaveni timestampu pro jeji childy. takze napriklad noda "kam pudem dnes kalit" bude mit recycle=0 a offset=2, naproti tomu forum, kde se budou prodavat listky na nejakou akci muze mit naopak offset=0, ale recycle nastaveny na den konani teto akce, protoze potom uz se stane jeho existence irelevantni. veskera posta bude mit defaultne recycle=0 a ve chvili, kdy si ji adresat precte se recycle nastavi na aktualni cas+offset nody, ktera bude reprezentovat postovni schranku daneho uzivatele, samozrejme bude mozne archivovat tuto zpravu opetovnym nastavenim recycle=0.
+
+%%****%% pole IDcek patricich do skupiny teto nody, pokud bude urcena nejaka noda v ID_GROUP, tak se misto tohoto pole pouzije pole IDS_GROUP z nody na kterou odkazuje ID_GROUP, to bude dobre pokud budeme chtit vytvorit napriklad nodu, ktera bude reprezentovat adminy portalu a podobne. potom vsem dalsim nodam tuto nodu nastavime jako ID_GROUP a tim umoznime pristup adminum ze skupiny teto nody.
+
+%%*****%% pristupova prava, budou podobna jako na unixu (sx,rw,rw,rw,rw), tedy nastaveni cteni a zapisu pro OWNER, GROUP (viz ****), UZIVATELE, INTERNET a navic x=spousteni (este nejsem rozhodnut ceho, ale pravdepodobne nejakych javascriptu, nebo toho agenta/bartera/etc... a jako tresnicka na dortu zde bude suid access - ten by podle me predstavy mel umoznit spousteni obsahu nody na serveru, at uz to bude php, nebo cokoli jineho - toto vyuziji predevsim templaty a dalsi vychytavky, tato volba by nemela byt dostupna beznym uzivatelum, ale pouze uzivatelum, kteri maji nastavene "s" v pristupovych pravech nody, ktera reprezentuje daneho uzivatele). javascript by mel byt zakazany, ale mel by byt dostupny nejaky javascriptovy framework, ktery budou uzivatele volat pomoci nejakeho pseudojazyka, ktery bude snadne parsovat a menit na javascript. vtip bude v tom, ze tento framework bude obsahovat jenom funkce, ktere shledame uzitecnymi a bezpecnymi. cela tato knihovna bude ulozena jako textova noda a bude se nacitat pri renderovani vystupu vsech nod s pravem "x". jeste me napadlo, ze by bylo dobre u nod s pristupovym pravem "s" vypnout html parser a tim odblokovat veskere javascripty i php (a prave pomoci tohoto parseru je muzeme ostatnim nodam zakazat).
+
+
+
+
+
+
+===== Velmi komplexní pojednání o celé problematice =====
+
+Hned ze začátku bych rád stanovil, že rámec stavu a vývoje postavení vyzaduje rozšiřování logistických prostředků a systému masové účasti. Od toho se odvíjí další budoucnost projektu kyberia.cz
+
+Každodenní praxe nám potvrzuje, že komplexní analýza našich možností umožňuje zhodnotit význam systému výchovy pracovníků odpovídajících aktuálním potřebám. Pestré a bohaté zkušenosti jasně říkají, že realizace plánovaných vytyčených úkolů vyzaduje rozšiřování logistických prostředků a systému výchovy pracovníků odpovídajících aktuálním potřebám. Každodenní praxe nám potvrzuje, že další rozvoj různých forem činnosti zvyšuje potřebu aplikace tvorby nových zdrojů. Vzájemné postavení organizačních autorit zastávajících rámec stavu a vývoje postavení od nás vyžaduje analýzy odpovídajících podmínek aktivizace. Závažnost těchto problémů je natolik zřejmá, že upřesnění a rozvoj struktur posiluje platnost směru progresivního rozvoje. 
+
+Závažnost těchto problémů je natolik zřejmá, že upřesnění a rozvoj struktur umožňuje splnit významné úkoly na rozpracování dalších směru rozvoje. Ideové úvahy nejvyššího řádu a rovněž rámec stavu a vývoje postavení zabezpečuje širokému okruhu specialistů účast při tvorbě odpovídajících podmínek aktivizace. Tímto způsobem stabilní a kvantitativní vzrůst a sféra naší aktivity pomáhá udržovat kumulativní progresi forem působení. Vzájemné postavení organizačních autorit zastávajících nový model organizační činnosti zabezpečuje širokému okruhu specialistů účast při tvorbě systému výchovy pracovníků odpovídajících aktuálním potřebám. Každodenní praxe nám potvrzuje, že stabilní a kvantitativní vzrůst a sféra naší aktivity od nás vyžaduje analýzy tvorby nových zdrojů. 
+
+Ideové úvahy nejvyššího řádu a rovněž navržená struktura organizace vyzaduje rozšiřování logistických prostředků a odpovídajících podmínek aktivizace. Každodenní praxe nám potvrzuje, že počátek každodenní práce na poli formování pozice umožňuje splnit významné úkoly na rozpracování forem působení. Pestré a bohaté zkušenosti jasně říkají, že stabilní a kvantitativní vzrůst a sféra naší aktivity umožňuje zhodnotit význam existujících finančních a administrativních podmínek. Naše dlouhodobé ambice, stejně jako realizace plánovaných vytyčených úkolů napomáhá přípravě a realizaci odpovídajících podmínek aktivizace. Nesmíme však zapomínat, že další rozvoj různých forem činnosti ve značné míře podmiňuje vytvoření systému výchovy pracovníků odpovídajících aktuálním potřebám. 
+
+Ideové úvahy nejvyššího řádu a rovněž navržená struktura organizace zabezpečuje širokému okruhu specialistů účast při tvorbě odpovídajících podmínek aktivizace. Poslání organizace, zejména pak upřesnění a rozvoj struktur jednoznačně předurčují implementaci systému masové účasti. Naše dlouhodobé ambice, stejně jako nový model organizační činnosti vyžadují nalezení a jednoznačné upřesnění odpovídajících podmínek aktivizace. Ideové úvahy nejvyššího řádu a rovněž realizace plánovaných vytyčených úkolů umožňuje splnit významné úkoly na rozpracování možnosti nasazení veškerých dostupných prostředků. Vzájemné postavení organizačních autorit zastávajících počátek každodenní práce na poli formování pozice vyžadují nalezení a jednoznačné upřesnění systému výchovy pracovníků odpovídajících aktuálním potřebám. 
+
+Stejně tak upřesnění a rozvoj struktur představuje pozoruhodný experiment prověrky existujících finančních a administrativních podmínek. Poslání organizace, zejména pak komplexní analýza našich možností posiluje platnost tvorby nových zdrojů. Tímto způsobem rámec stavu a vývoje postavení ve značné míře podmiňuje vytvoření dalších směru rozvoje. Každodenní praxe nám potvrzuje, že komplexní analýza našich možností vyzaduje rozšiřování logistických prostředků a systému masové účasti. Každodenní praxe nám potvrzuje, že rámec stavu a vývoje postavení zabezpečuje širokému okruhu specialistů účast při tvorbě pozic jednotlivých účastníků k zadaným úkolům. 
+
+Pestré a bohaté zkušenosti jasně říkají, že stálé, informačně-propagandistické zabezpečení naší práce od nás vyžaduje analýzy možnosti nasazení veškerých dostupných prostředků. Každodenní praxe nám potvrzuje, že další rozvoj různých forem činnosti představuje pozoruhodný experiment prověrky nových návrhů. Každodenní praxe nám potvrzuje, že upřesnění a rozvoj struktur hraje závažnou roli při utváření směru progresivního rozvoje. Závažnost těchto problémů je natolik zřejmá, že další rozvoj různých forem činnosti vyvolává proces zavádění a modernizace dalších směru rozvoje. Závažnost těchto problémů je natolik zřejmá, že navržená struktura organizace hraje závažnou roli při utváření odpovídajících podmínek aktivizace. 
+
+Každodenní praxe nám potvrzuje, že stálé, informačně-propagandistické zabezpečení naší práce vyžaduje návrh a realizaci tvorby nových zdrojů. Nesmíme však zapomínat, že upřesnění a rozvoj struktur vyžadují nalezení a jednoznačné upřesnění odpovídajících podmínek aktivizace. Ideové úvahy nejvyššího řádu a rovněž stálé, informačně-propagandistické zabezpečení naší práce vyžadují nalezení a jednoznačné upřesnění pozic jednotlivých účastníků k zadaným úkolům. Vzájemné postavení organizačních autorit zastávajících stabilní a kvantitativní vzrůst a sféra naší aktivity vyvolává proces zavádění a modernizace systému výchovy pracovníků odpovídajících aktuálním potřebám. Ideové úvahy nejvyššího řádu a rovněž stabilní a kvantitativní vzrůst a sféra naší aktivity dostatečně oddaluje propad možnosti nasazení veškerých dostupných prostředků. 
+
+Vzájemné postavení organizačních autorit zastávajících počátek každodenní práce na poli formování pozice vyzaduje rozšiřování logistických prostředků a možnosti nasazení veškerých dostupných prostředků. Pestré a bohaté zkušenosti jasně říkají, že stálé, informačně-propagandistické zabezpečení naší práce ve značné míře podmiňuje vytvoření tvorby nových zdrojů. Ideové úvahy nejvyššího řádu a rovněž stálé, informačně-propagandistické zabezpečení naší práce vyvolává proces zavádění a modernizace možnosti nasazení veškerých dostupných prostředků. Vzájemné postavení organizačních autorit zastávajících stálé, informačně-propagandistické zabezpečení naší práce zvyšuje potřebu aplikace systému masové účasti.
+----
+Just kidding (Vygenerováno harvieho generátorem bullshitů ála http://funny.harvie.cz/projev.txt :-)
+
+Jestli jsi to dočetl(a) až sem, měl(a) by jsi se sebou něco dělat...

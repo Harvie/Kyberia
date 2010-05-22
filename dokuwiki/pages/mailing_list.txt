@@ -1,0 +1,20 @@
+====== Napiš mail všem vývojářům ======
+<form>
+Action mail harvie@email.cz
+Thanks "Díky za tvůj mail"
+
+fieldset "Zpráva"
+textbox "Nick/ID"
+email "Mail" !
+textarea "Zpráva"
+submit
+</form>
+
+====== Mailing list všech vývojářů ======
+
+**
+daniel.hromada@gmail.com, niekt0@hysteria.sk, ziman@blackhole.sk, sine@trip.sk, keraml@gmail.com, hash@hash.cz, truuzz@gmail.com, txo@apeia.eu, andrej.gondor@gmail.com, harvie@email.cz, terere@seznam.cz, lukaskubicek@gmail.com, toxygen1@gmail.com
+**
+
+přidávejte se a odebírejte se podle libosti (každý jen sám sebe samozřejmě)...
+tato stránka není přístupná bez registrace.

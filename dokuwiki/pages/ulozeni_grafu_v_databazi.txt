@@ -1,0 +1,26 @@
+[[netabulkove_databaze_nosql|Existují databáze, které umí ukládat grafy nativně a rychle.]]
+
+
+Z toho, co říkla niekt0 jsem vyrozumněl, že největší brzdou kyberia.sk je select s LIKE (na tzv. cwbe coordinatez), který selektuje nody a podnody pomocí jediného dotazu. Možná by stálo za to uvažovat o jiném systému uložení dat. Urza sice říkal, že stromová struktura sux, ale stejně se nevyhneme potřebě data jako strom interpretovat alespoň v diskuzních fórech, atp.
+
+> ako system ukladania pouzit graf (uz tu viac veci k takejto polohe smeruje), pomocou stromu iba reprezentovat vybrane podgrafy? (strom je sympatickejsi co sa tyka prehladavania a selektovania oproti nejakemu perverznemu rekurzivnemu grafu) // _o_ //
+
+Nejlepší, co jsem zatím našel je tohle:
+  * http://www.codeproject.com/KB/database/Trees_in_SQL_databases.aspx
+    * prakticky jde o to, že my prakticky nikdy nepotřebujeme selectovat celé cwbe (cesta k node = seznam vsech parentu), ale vždycky většinou hledáme jenom výskyt jednoho čísla v celém poli (hledame napr. vsechny podnody jednoho fora), které je nyní neprozíravě uloženo jako řetězec, pokud by se pro každou položku pole udělal extra záznam v druhé tabulce databáze, bylo by možné selecty provádět rychleji. ale zatím nechci potvrzovat, že je to absolutně nejlepší řešení, možná vymyslím ještě něco absolutně odlišného... //(lol hh koukam na svuj redundantni nadbytecny sloh, ve kterem se furt neustale neco opakuje)//
+
+až budu mít víc času, tak ten návrh vypracuji tak, aby více odpovídal nehierarchickému třídění.
+
+Pár zajímavých linků je ještě tady:
+  * http://interval.cz/clanky/metody-ukladani-stromovych-dat-v-relacnich-databazich/
+  * http://php.vrana.cz/traverzovani-kolem-stromu-prakticky.php
+  * http://php.vrana.cz/traverzovani-kolem-stromu-presuny-uzlu.php
+
+Navíc tyto systémy by se daly s úpravami použít i nad daty, která nebudou striktně stromově organizovaná.
+
+Další systém interpretace dat, o kterém jsem uvažoval je něco ve stylu youtube warp:
+
+  * http://www.youtube.com/warp.swf?v=r05H2OYVdbs
+  * http://www.youtube.com/warp_speed
+
+warp se mi líbí, ale je to trochu nepřehledné a flash je docela pomalý. v práci jsme dělali něco podobného v javascriptu a to by už bylo zajímavější. Představte si diskuzi na kyberce, tak jak je teď, akorát vidíte jenom parenty. Kliknutím na parenta se z databáze vyselektují všechny děti (a navíc se zobrazí pole pro vytvoření nového), kliknutím na dalšího parenta nebo dítě se všechny ostatní rozbalené nody zabalí a rozbalí se vybraná noda. v případě, že je kliknuto na childa zmizí rodič a child se stane parentem (tak funguje kyberia vlastně i teď, jenom bez ajaxu). Na druhou stranu je moje podmínka v tom, aby vše fungovalo i bez javascriptu - jinak řečeno to musí chodit ve všech použitelných prohlížečích od lynxu, přes mobilní telefony, po google chrome (tudíž se omlouvá jen nekompatibilita s IE, které dělá problémy asi dokonce záměrně).

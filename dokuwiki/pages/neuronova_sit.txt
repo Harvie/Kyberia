@@ -1,0 +1,108 @@
+====== Neuronová síť ======
+Jde o systém, kde každá noda bude mít místo tzv. "Kček" známých z kyberky tzv. "váhu" (osobně bych byl pro to, aby se této proměnné nadále říkalo K, i když jde o něco trochu jiného).
+
+IMHO může jediná číselná hodnota nahradit následující funkce současné kybči:
+  * Kčka
+  * Fooky
+  * Booky
+    * Niekt0 mi nevěří, ale daly by se vyhradit určité číselné rozsahy, váhy, které budou znamenat, že je noda booknuta.
+      * Případně se dají použít záporná čísla... Váha je vždy kladná, proto se dá brát absolutní hodnota proměnné jako váha a signo stejné proměnné jako indikátor booknutí.
+  * Friendnutí
+    * Proč má kybča zvlášť Friendnutí a booknutí usera? prakticky by to mohlo být to samé...
+
+===== User interface =====
+Hrozně nerad bych, aby uživatelé někam vyplňovali desetinná čísla, jeden z největších důvodů, proč kyberia.sk není občas moc user friendly je ruční zadávání různých čísel (občas je to ale asi nejlepší způsob). Každopádně by se hodnota K mohla násobit 100 nebo 1000, aby uživatel byl ušetřen desetinných čísel a měla by být možnost vybrat některé nejpravděpodobnější hodnoty z dropdown menu, bez ručního zadávání.
+===== Algoritmy =====
+TODO - popsat algoritmy, podle kterych se budou zpracovavat vahy jednotlivych nod. V tom ma nejvic jasno niekt0, tak to necham na tobe :-)
+
+>narazil jsem onehda na takovy clanek, mohlo by necem mozna inspirovat (i kdyz to neni uplne to voting co budeme mit my, par dobrych myslenek tam je) [[http://blog.linkibol.com/post/How-to-Build-a-Popularity-Algorithm-You-can-be-Proud-of.aspx|How to Build a Popularity Algorithm You can be Proud of]] --- //urza//
+>> Pekny matematicky vzorce sou taky tady: http://cs.wikipedia.org/wiki/PageRank  --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/19 17:45//
+
+
+Takto si predstavujem implementaciu neuronov do sucasneho K systemu:
+(originalna predstava, netvrdim ze jedina nutne spravna) --//n//
+
+System pridelovania K-cok by zostal cachovany tak ako je teraz.
+Teda uzivatelia mozu K-ckovat prispevky pre ktore sa rozhodli,
+v "K" za zobrazuju prispevky ktore dostali K za urcite obdobie.
+po uplynuti isteho casu z "K" vypadavaju, ale K im ostavaju.
+
+V sucasnosti je zavedeny limit na pouzitie K za den. Ten by pri novom
+systeme podla mna uz nebol nutny.
+
+Co by pribudlo:
+Kazdy uzivatel by mal moznost nastavit tzv. "vahu" (!) k inym nodam.
+Teda by to bol vlastne vztah uzivatelova noda - ina noda.
+Pri zobrazovani "K" by sa tieto nastavene vahy brali (volitelne) do vypoctu
+vysledneho poctu K jednej nody.
+
+Teda napr. Petra zaujimaju veci z nody Hack1ng, ale nie z nody Narcisov.
+Nastavi si teda vahu k Hackingu napr. na 3, a na narcisov 0.01.
+V K budu prispevky napr. prispevok z Narcisov, fotka istej prominentky s
+666 Kckami, a novy zero-day exploit s 5 Kackami. Kedze sa do vypocitavanie
+vysledku zapocitaju aj vahy, exploit (5*3=15K) nakoniec porazi nadheru
+osobne (666*0.01=7K). Dolezite je aby sa vahy brali rekurzivne,
+teda pre vsetky nody vektoru danej nody.
+Teda napr. noda je Technika->kompy->Hacking->prispevok->,
+uzivatel ma nastavene vahy k kompy (1.5) a Hacking (3), tak celkova vaha
+bude 1*1.5*3*1=4.5.
+Toto je dolezite aby sa predislo zobrazovaniu flamevarov, ked podovna
+diskusia nie je pre Petra zaujimava.
+
+Tento system predstavuje PERSONALIZOVANE (!) K.
+Teda zavisle od toho, kto sa pyta, ziazane na konkretneho uzivatela(nodu).
+Rizikom je, ze uzivatelia sa zacnu uzatvarat do vlastneho sveta,
+ze budu vznikat vzajomne nekompatibilne frakcie ktore nebudu zdielat spolocnu
+halucinaciu. Pozitivom je ze kazdy bude vidiet to co vidiet chce, to co povazuje
+za hodnotne. A vzhladom na to ze ziadne absolutne kriterium spravnosti
+neexistuje (sic je to moj subjektivny nazor;), a kazdy bude mat moznost
+namixovat si svoju kombinaciu, mohli by prestat debaty ci hodnotnejsie
+toto prso alebo tato esej, ked prso ma 10x viac K. (co je plne pochopitelne,
+kedze ho dokaze zhodnotit minimalne 10x viac ludi). Zaroven nam toto riesenie
+dava moznost pozret sa na svet "ocami niekoho ineho", (v praxi si predstavujem
+ze toto by bolo mozne, napr. ak su 2ja useri priatelia, pripadne ak si uzivatel
+nastavi public profil). Dotiahnute az na hranu, bolo by mozne sa pozerat na K cez
+vahy akejkolvek nody.
+Tym by sa zaroven dala riesit aj poziadavka na "viac kategorii K", (funny, sience, atd),
+kedy by sa vytvorili jednoucelovy useri, ktorym by sa nastavili/priebezne nastavovali
+vahy, a mali by verejny profil.
+
+> //Zaroven nam toto riesenie
+dava moznost pozret sa na svet "ocami niekoho ineho"// toto se mi velmi libi, pekny napad ---urza
+
+Aby sa predislo zneuzivaniu nastavovania vah, uzivatelia by mali moznost si este
+navyse nastavit vahu k ostatnym uzivatelom (vsetkym), a tato vaha by sa zohladnila
+na celkovom vysledku. (a daju sa tym zaroven riesit chronicky flejmeri)
+
+Otazne zostava, ci zohladnovat nastavene vahy medzi nodami, pripadne u hardlinkov.
+Osobne si myslim ze je to dobry napad, napr. pri hardlinku prispevku do nejakeho fora by sa
+dalo nastavit s akou vahou sem prispevok patri.
+
+> stale se na to divate pohledem stromu a hradlinku? v grafu nejsou zadne hardlinky potreba, jen se vytvori od 
+nody vice vazeb "rodic" ---urza
+>> Popisane riesenie potrebuje koren. (aj ked nie nutne jeden). V cyklickom grafe by s tym asi bol problem. Stromovitosti by som sa nerad vzdaval kym to nebude nazaj nutne, je to velmi silna vlastnost, ale ak to prinesie vyhodu tak ok.-- n
+>> ne, to ty se na to stale divas tak, ze rodicovstvi je neco jinyho nez hadlink ;-) nody nemaj biologicky rodice, tudiz jde vzdycky jenom o adopci, pokud by sme zavadeli nakou dedicnost, jako rikal txo, tak by to bylo neco jineho. --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/22 00:48//
+>>> a co tak misto "rodic" tu vazbu pojemnovat "belongs to" ("patří do") :) ? ---urza
+>>>> ja bych tomu rikal "edge"...  --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/22 14:59//
+>>>
+>>>> aby to nevypadalo ze jen propaguji grafovou strukturu :) ..ja chapu i vyhody stromu s hardlinkama a kdyz se rozhodneme pro strom, tak super.. ale graf postkytuje imho vetsi flexibilitu do budoucna a tak.. co tak kdybysme si nekde sepsali vyhody/nevyhody a porovnali to? ---urza
+>>>>> ja bych jenom chtel, abys chapal, ze kdyz budeme mit graf, tak bude uz jen na uzivatelich, jaky zpusobem vytvori edge, uzivatele diskuzniho fora budou vytvaret strom, uzivatele portalu ve stylu wikipedie vytvori spis nejaky vajemne prolinkovany blob. v praxi pocitam, ze kybca bude tohle mixovat dohromady a v jednom zdanlive chaotickem cyklickem grafu najdeme i useky, ktere budou mit tvar stromu, protoze budou mit edge jen se svymi "parenty" v diskuzi, napriklad nejaky flame bude strom, ktery nikdo nebude mit zajem linkovat este nekam jinam...  --- //[[harvie@email.cz|Tomáš Mudruňka]] 2010/02/22 14:59//
+
+
+Takze celkovy postup pri vypocte K ktore prispevok dostal v pohlade usera:
+(pseudokod)
+
+1: ratio=1
+2: foreach node_id in node_vector do
+3:  ratio=ratio * vaha(view_node,node_id)
+4:  ratio = ration * vaha(node_id,node_id.parent)
+5: done
+6: K_prispevku=K_prispevku* ratio
+
+S tym ze krokom 4. si nie som isty,
+islo by to aj bez neho.
+
+Takto implementovany algoritmus by fakticky nahradil "fook",
+nakolko je ekvivalentny nastaveniu vahy na 0. (navyse by bol rekurzivny,
+co v sucasnosti nie je). Nenahradil by ale book, ktory funkcne chapem
+ako "pointer" na nodu, ku ktorej sa chces neskor vratit, nie nutne pozitivnej.

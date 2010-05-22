@@ -1,0 +1,3 @@
+Neni to asi nejpopularnejsi nazor, ale imho by se mel udelat nejaky centralni system prihlasovani, nebo vyuzit stavajici. Taky by se dalo prihlasovat XMPP (Jabber nebo GoogleTalk) uctem. Nebude tezke to realizovat a navic se tim vyresi maily.
+
+POZOR! to ovsem neznamena, ze kdo bude mit ucet, tak se dostane vsude. dale na kazde kyberce bude WHITELIST a pripadne budou whitelistovany i jednotliva fora (access se bude zadat postou/jabberem). Tim odpadne pamatovani si 50ti hesel, ale zaroven nebude system nejak moc open.

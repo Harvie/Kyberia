@@ -1,0 +1,19 @@
+GuildGraph (GG) je jadrom [[Guildsystem|Guildsystemu]] kyberie. Cielom GG-inspirovanych systemov je [[Nashova_rovnováha|nastolenie Nashovej rovnovahy]].
+
+Jedna sa o cyklicky orientovany graf s piatimi vrcholmi ktore reprezentuju 5 guild a 10 hranami ktore definuju vzajomne interakcie medzi Guildami. Kauffmanova teoria komplexnych systemov [[http://books.google.fr/books?id=FxvENHL0qzYC&printsec=frontcover&dq=at+home+in+the+universe&source=bl&ots=7lVKqQVWX3&sig=BbRQblXPXopwADFM0K2IhgNs7xY&ei=efmDS_SHD8ny4ga80uzsAQ&sa=X&oi=book_result&ct=result&resnum=1&ved=0CAwQ6AEwAA|prezentovanej v tejto knihe]] naznacuje ze optimalny pocet hran sa nachadza niekde medzi 2x5 < E < 3x5 , tj. medzi 10 a 15. 
+
+<graphviz neato>
+graph g {
+  "gC&C" -- {"gC&N"}
+  "gC&N" -- {"gE&T"}
+  "gE&T" -- {"gHCK"}  
+  "gHCK" -- {"gCRP"}
+  "gCRP" -- {"gC&C"}
+}
+</graphviz>
+
+Inac povedane, ak bude pocet aktivnych medziguildovych interakcii mensi ako 10, system spadne do atraktoru z ktoreho sa bez externeho kopanca nedostane. Ak bude vacsi ako 15 nastane chaos. Niekde medzitym sa nachadza Zivot.
+
+Inu a 5 guild prosto preto ze [[http://en.wikipedia.org/wiki/Discordianism#Law_of_Fives|Eris je pica]]
+
+GG je pricinou preco kyberia dominuje a este chvilu bude.

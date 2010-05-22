@@ -1,0 +1,5 @@
+Nashovou rovnováha je v teorii her taková situace, kdy žádný z hráčů nemůže jednostrannou změnou zvolené strategie vylepšit svoji situaci. Současně se jedná i o koncept řešení nekooperativních her více hráčů. Své jméno získala po Johnu Nashovi , který dokázal, že každá konečná hra má alespoň jedno takové řešení.
+
+Viac na; http://cs.wikipedia.org/wiki/Nashova_rovnov%C3%A1ha
+
+[[GuildSystem]] kyberie mozno chapat ako snahu o nastolenie nashovej rovnovahy medzi zakladnymi zlozkami (guildami) celku (komunity).

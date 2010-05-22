@@ -1,0 +1,25 @@
+====== Co je to kyberie? ======
+<note warning>Tento článek může obsahovat subjektivní názory vývojářů!</note>
+
+===== Douglas Rushkoff - Cyberia =====
+"Where thoughts are beheld rather than verbalized, and where phenomena like morphic resonance and the fractal reality become consciously experienced. This is the description of Cyberia."
+
+Dovolil jsem si volný amatérský překlad:
+
+Tam kde nejsou myšlenky vyřknuty, ale viděny, a kde je možné přímo prožívat a žít úkazy jako morfická rezonance nebo fraktální realita - tam je Kyberie.
+
+Přečtěte si knihu:
+  * http://www.rushkoff.com/downloadables/cyberiabook/
+  * http://project.cyberpunk.ru/lib/cyberia/cyberia.pdf
+
+===== Harvie =====
+**Decentralized neuro-social network for sharing love and informations while still being secure and private designed to create internet superconsciousness.**
+
+Nejde mi o to porazit facebook - i když by to byl každopádně vítaný vedlejší efekt. Líbí se mi představa datasférického "nadvědomí", které časem bude lidi tlačit ke sjednocení do většího organismu (biologického "nadvědomí"), což bude velmi prospěšné pro znovusjednocení gaiy a obnovení/vytvoření jejího (nad)vědomí.
+
+abych podal vysvětlení co přesně si pod těmi termíny představit:
+  * internet superconsciousness
+    * zapojení lidí jako buněk do většího organismu (počet a rozsah takových organismů se stanoví tak, aby byla zachována **inviduální** svoboda)
+    * http://www.transhumanismus.cz/blog.php?time=070219#4063
+  * neurosocial network
+    * datová struktura (nebo soubor takových strutktur) která umožní co nejlépe uložení (nebo projekci) všeho, co nese lidský mozek, do počítače tak, aby byl umožněn co nejvěrnější přenos všech informací,hodnot,myšlenek a (po)citů na binární datové médium tak, aby takový obraz lidského mozku mohl být posléze zapojen do sítě, kde se vytvoří návaznosti a vzájemné interakce s obrazy mozků jiných lidí (a později i strojů).

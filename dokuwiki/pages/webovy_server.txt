@@ -1,0 +1,40 @@
+====== Webový server ======
+
+===== Microsoft IIS 5.0 s ASP.NET pod WINE =====
+  * jasně nejlepší řešení
+  * odpadne spousta konfigurace
+  * officiální support
+  * kvalitní placený software
+    * žádný levičácký linuxácký hippiezácký stallmanovský výmysly!
+  * levná správa
+    * množství nezaměstnaných certifikovaných odborníků
+  * Approved by Bill brother!
+
+===== LigHTTPd =====
+
+  * můj favorit http://www.lighttpd.net/
+  * malý (v rámci možností)
+  * rychlý (používám ho na virtualbox serveru na 800MHz stroji)
+  * bezpečný (~stejně jako apache)
+    * navíc se v něm nevyzná každý začínající "sKiddie LAMP Cracker"
+  * proti apachi přehlednější konfigurace (krátký soubor, hierarchická syntaxe podobná PERLu, JSON nebo PHP)
+    * po instalaci prakticky stačí odkomentovat potřebné moduly a konfigurační direktivy (případně trošku doladit podle představ)
+    * jednoduchá konfigurace "virtuálních domén"
+  * všechny zásadní pluginy z apache mají pro "lightyho" alternativu
+    * trochu jiná syntaxe rewritů, než má apache (kvůli kompatibilitě by stejně kyberia neměla být závislá na rewritech)
+
+===== Apache HTTPd 2.x =====
+  * klasika
+  * proti lighttpd je zbytečně obtloustlý
+
+===== Apache HTTPd 1.3.37 =====
+  * již není nadále podporován ze strany apache, proto by jsem se mu vyhnul
+
+===== tHTTPd =====
+  * až přespříliš minimalistický
+  * skvělý pro statický obsah
+  * bohužel opensource verze nepodporuje **fast-**cgi
+
+===== BusyBox HTTPd =====
+  * minimalistický, ale funkční
+  * výkonem a bezpečností si nejsem jistý

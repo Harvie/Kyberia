@@ -1,0 +1,44 @@
+<note>Momentálně je na vývojovém serveru nainstalovaný ArchLinux.</note>
+====== GNU/Linux ======
+===== ArchLinux =====
+  * http://www.archlinux.org/
+  * http://wiki.archlinux.org/
+    * http://wiki.archlinux.org/index.php/The_Arch_Way
+    * http://wiki.archlinux.org/index.php/Arch_Linux
+    * http://wiki.archlinux.org/index.php/FAQ
+    * http://wiki.archlinux.org/index.php/Arch_Compared_to_Other_Distributions
+  * V současnosti IMHO nejlepší **binární** distro
+    * Arch je ideově podobný jako Gentoo, ale binární
+  * 99.999% Vanilla
+    * vše funguje jako v učebnici
+  * Široká uživatelská základna
+    * Dokonalá dokumentace na wiki
+    * https://kyberia.sk/id/4975149
+  * Arch vyladěný pro server (nutno zvážit, jestli je to nutné)
+    * http://www.archserver.org/
+  * Arch už má balíčky s [[programovaci_jazyky#facebook_hiphop|PHP HipHopem]]
+  * Srovnání s Debianem
+    * Arch je optimalizovaný pro i686, Debian je zbytečně optimalizovaný pro zastaralé i386 (i686 je maximálně kernel)
+    * Debian dodává tolik vlastních patchů, že je to většinou víc škody než užitku
+      * ArchLinux řeší všechny problémy přímo s upstream vývojáři, je tedy zachována vanilla čistota a kompatibilita
+    * Udělat Debianí balíček je dost zdlouhavé, mi budeme asi potřebovat balíčky s některou tou grafovou databází a podobně.
+      * Balíčky pro ArchLinux dělám už déle a je to pro mě rutina, takže můžu dostat minimálně do repozitáře AUR cokoli co budeme potřebovat
+        * (jsem zásadně proti instalaci čehokoliv mimo balíčkovací systém)
+    * Debian drží spoustu programů u zastaralých verzí
+      * Na Debianu nemá smysl cokoliv programovat, protože na moderních OS to pak sotva rozchodíte
+      * Arch není teoreticky tak stabilní, protože používá stabilní upstreamové verze ihned jak projdou přes unstable do testingu a pak do stable, což trvá dlouho jen u kruciálních balíčků.
+      * ArchLinux bohužel zatím nemá žádný skutečný security response team, ale pamatujete jak roky běhaly díky debianím "zabezpečením" tisíce SSH serverů se skoro stejnejma certifikátama? ArchLinux je i tak dost rychlý a Rolling releasy i tak všechno včas opraví. Já na testovacím serveru mám Arch asi rok a všechno chodí jak má. Na NTB mám Arch již pár let...
+
+{{ http://rlv.zcache.com/i_run_an_arch_linux_server_tshirt-p235999193687683681q6vv_400.jpg }}
+
+
+====== *BSD ======
+nevim... proti ArchLinuxu neshledavam zadne extra vyhody...
+====== Open Solaris ======
+uvazoval bych o nem pouze v pripade, ze bysme chteli celou kybcu zalozit na jave...
+====== Minoritní OS ======
+Kyberia by mela byt aspon trochu anvantgardni, ne?
+===== GNU/HURD =====
+Kdyby sme meli hafo vyvojaru, tak bych byl pro ArchHurd ;-)
+===== Plan 9 =====
+I'm gonna send him to outer space ;)
