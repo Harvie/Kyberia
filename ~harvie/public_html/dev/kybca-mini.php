@@ -1,4 +1,4 @@
-<?php include('http_auth.php'); ?>
+<?php require('http_auth.php'); ?>
 <?php if(!isset($_GET['noheader'])) { ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 <title>Kyberia-NG-Mini (Harvie 2o1o)</title>

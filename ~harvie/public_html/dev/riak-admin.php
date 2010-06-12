@@ -1,4 +1,4 @@
-<?php include('http_auth.php'); ?>
+<?php require('http_auth.php'); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 <title>Riak PHP Admin (Harvie 2o1o)</title>
 <style>h1 a {color:black;} a {color:blue;}</style>
