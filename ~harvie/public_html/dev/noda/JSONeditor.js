@@ -26,10 +26,10 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 JSONeditor={
 	start:function(treeDivName,formDivName,json,showExamples){
-		/*if(this.examples.length<6){
+		if(this.examples.length<6){
 			var e=this.treeBuilder.JSONstring.make(this)
 			eval("this.examples[5]={JSONeditor:"+e+"}")
-		}*/
+		}
 		this.treeDivName=treeDivName
 		var t=this.treeBuilder, $=t.$
 		treeBuilder=t
@@ -51,6 +51,7 @@ JSONeditor={
 		json=json||{}
 		t.hasRunJSONbuildOnce=false
 		t.JSONbuild(treeDivName,json)
+		t.openAndClose($("tree_0_1")); //added by harvie
 	},
 	loadExample:function(x){
 		treeBuilder.hasRunJSONbuildOnce=false
