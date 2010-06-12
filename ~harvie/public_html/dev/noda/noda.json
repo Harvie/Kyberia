@@ -1,23 +1,21 @@
 {
-  "protected": {
-    "owner":"harvie",
-    "group":"niekt0,hromi,urza,txo,@harvieho_blog",
-    "permissions":"-rw-rw----",
-    "!#password":"toto je zahashované heslo pro vstup do skupiny - nebo pro prihlaseni uzivatele",
-    "expiration":"viz.: samocistici schopnosti kyberie..."
-  },
-  "compulsory": {
-    "title":"Moje uber-cool noda",
-    "text":"to koukate, co sem mel dnes k obedu :-P"
-  },
-  "optional": {
+	"protected":{
+		"owner":"harvie",
+		"group":"niekt0,hromi,urza,txo,@harvieho_blog",
+		"permissions":"-rw-rw----",
+		"!#password":"toto je zahashované heslo pro vstup do skupiny - nebo pro prihlaseni uzivatele",
+		"expiration":"viz.: samocistici schopnosti kyberie..."},
+	"compulsory":{
+		"title":"The Rainbow Family of Living Light (demo)",
+		"text":"The Rainbow Family of Living Light (commonly shortened to the Rainbow Family) are a loosely affiliated group of individuals committed to principles of non-violence and egalitarianism. They put on events known as Rainbow Gatherings.\n\nFounded in 1972 in the United States, the Rainbow Family have held annual gatherings on National Forests during the first week of July each year. (They also hold regional gatherings.) The Gatherings are non-commercial and all who wish to attend peacefully are welcome to come for free. There are no leaders, and traditionally the gatherings take place for a week, with a primary focus on the Fourth of July in the US, when attendees pray, meditate, or observe silence in a group effort to focus on World Peace. Thus, the name Rainbow Family of Living Light is a reflection of both the emphasis on welcoming people of all races, religions, ethnicities, and social status, as well as a spiritual focus towards peace.\n\nThose who attend Gatherings come from all walks of life, and work together for a variety of goals, among which intentional communities, ecology, spirituality, and an expanded tolerance for others are traditional themes. Those who attend refer to one another as Rainbows, or often as Brothers or Sisters reinforcing the emphasis upon a belief that all people are not only related as part of the human community, but are just as important as members of one's own nuclear family, and given the respect implied in such relationships. Group Councils are the only form of government, and attendance is open to all interested parties, with decisions being reached through consensus. Money is not exchanged, and instead there is a bartering system for all wants, although a magic hat is passed around for necessities, such as additional food, that benefit all who attend."},
+	"optional":{
 		"wtf?":"vysvetleni naleznete zde: http://wiki.kyberia.cz/doku.php?id=noda",
-    "harvieho definice": "kool noda blablabla",
-    "hromiho index": "76577",
-    "meliskov koeficient": "8787",
-    "nalada autora": "+98%",
-    "poznamky": {
-      "nakoupit": ["ryby", "sadlo", "zradlo pro krokodyla","beton","pouta"]
-    }
-  }
+		"harvieho definice":"kool noda blablabla",
+		"hromiho index":"76577",
+		"meliskov koeficient":"8787",
+		"nalada autora":"+98%",
+		"poznamky":{
+			"nakoupit":["ryby","sadlo","zradlo pro krokodyla","beton","pouta"]
+		}
+	}
 }
