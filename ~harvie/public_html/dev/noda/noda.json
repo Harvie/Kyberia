@@ -1,0 +1,23 @@
+{
+  "protected": {
+    "owner":"harvie",
+    "group":"niekt0,hromi,urza,txo,@harvieho_blog",
+    "permissions":"-rw-rw----",
+    "!#password":"toto je zahashované heslo pro vstup do skupiny - nebo pro prihlaseni uzivatele",
+    "expiration":"viz.: samocistici schopnosti kyberie..."
+  },
+  "compulsory": {
+    "title":"Moje uber-cool noda",
+    "text":"to koukate, co sem mel dnes k obedu :-P"
+  },
+  "optional": {
+		"wtf?":"vysvetleni naleznete zde: http://wiki.kyberia.cz/doku.php?id=noda",
+    "harvieho definice": "kool noda blablabla",
+    "hromiho index": "76577",
+    "meliskov koeficient": "8787",
+    "nalada autora": "+98%",
+    "poznamky": {
+      "nakoupit": ["ryby", "sadlo", "zradlo pro krokodyla","beton","pouta"]
+    }
+  }
+}
