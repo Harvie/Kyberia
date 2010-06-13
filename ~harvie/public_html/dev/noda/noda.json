@@ -1,5 +1,5 @@
 {
-	"poznamky (WoCoGo)":"Trocha informaci: http://wiki.kyberia.cz/doku.php?id=noda\n\nJednotlive podobjekty nody:\n- protected: muze upravit jen admin;\n- compulsory: nelze odstranit\n- optional: libovolna data (objekty, pole...) ktera chce uzivatel nebo template\n\nTechnicke detaily:\n- nicky bude treba prevest na nejake symbolicke reference, pro pripad zmeny usernamu...\n- nazvy vsech promennych se v produkcni verzi zkrati\n- v produkcni verzi se pravdepodobne misto JSON prejde na BSON",
+	"poznamky (WoCoGo)":"Trocha informaci: http://wiki.kyberia.cz/doku.php?id=noda\n\nJednotlive podobjekty nody:\n- protected: muze upravit jen owner (omezeno dalsimy pravidly);\n- compulsory: nelze odstranit, muze upravit jen owner a masteri\n- optional: libovolna data (objekty, pole...) ktera chce uzivatel nebo template, prava pro zapis jako compulsory\n\nTechnicke detaily:\n- nicky bude treba prevest na nejake symbolicke reference, pro pripad zmeny usernamu...\n- nazvy vsech promennych se v produkcni verzi zkrati\n- v produkcni verzi se pravdepodobne misto JSON prejde na BSON",
 	"protected":{
 		"owner":"harvie",
 		"#!password":"{SHA256}b21e516926d05b61a4b305a92fa03a76ab731f33e902c7a421ad39b1d91afae6",
