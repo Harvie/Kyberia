@@ -22,6 +22,11 @@
 		"code":null
 	},
 	"optional":{
+		"__child_restrictions":{
+			"disable":["images","audio","video"],
+			"lenght_limit":512,
+			"regex":"!(paroubek|fico|toth)"
+		},
 		"wtf?":"vysvetleni naleznete zde: http://wiki.kyberia.cz/doku.php?id=noda",
 		"harvieho definice":"kool noda blablabla",
 		"hromiho index":76577,
