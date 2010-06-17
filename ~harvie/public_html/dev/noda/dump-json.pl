@@ -10,5 +10,8 @@ open FILE, "noda.json" or die "Couldn't open file: $!";
 my $noda = join("", <FILE>); 
 close FILE;
 
-print Dumper(decode_json($noda));
+my $obj = decode_json($noda);
+
+#print "owner: $obj->{'protected'}->{'owner'}\n";
+print Dumper($obj);
 
