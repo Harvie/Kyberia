@@ -1,7 +1,16 @@
 #Kyberia.CZ
-Decentralized neuro-social network for sharing love and informations while still being secure and private (unlike Faceb**k) designed to create internet superconsciousness. This is an official repository of Kyberia.CZ project. (We are not diaspora - really!)
+Decentralized neuro-social network for sharing love and informations while still being secure and private (unlike Faceb**k) designed to create internet superconsciousness. (We are not diaspora - really!)
 
   * http://wiki.kyberia.cz/
+
+##ASCII Art :-)
+<pre>
+ __  __         __                __           ______ _______ 
+|  |/  |.--.--.|  |--.-----.----.|__|.---.-.  |      |__     |
+|     < |  |  ||  _  |  -__|   _||  ||  _  |__|   ---|     __|
+|__|\__||___  ||_____|_____|__|  |__||___._|__|______|_______|
+        |_____|                        http://wiki.kyberia.cz/
+</pre>
 
 ##Installation
   * Install PERL (+modules) and configure webserver to handle .pl files
