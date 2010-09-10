@@ -1,0 +1,12 @@
+{
+	"defaults":{
+		"id":"reference",
+		"tpl":"source"
+	},
+	"storage_backend":{
+		"engine":"filesystem.pm",
+		"options":{
+			"directory":"./data/"
+		}
+	}
+}

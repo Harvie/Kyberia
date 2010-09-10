@@ -1,0 +1,39 @@
+{
+	"poznamky (WoCoGo)":"Trocha informaci: http://wiki.kyberia.cz/doku.php?id=noda\n\nJednotlive podobjekty nody:\n- protected: muze upravit jen owner (omezeno dalsimy pravidly);\n- compulsory: nelze odstranit, muze upravit jen owner a masteri\n- optional: libovolna data (objekty, pole...) ktera chce uzivatel nebo template, prava pro zapis jako compulsory\n\nTechnicke detaily:\n- nicky bude treba prevest na nejake symbolicke reference, pro pripad zmeny usernamu...\n- nazvy vsech promennych se v produkcni verzi zkrati\n- v produkcni verzi se pravdepodobne misto JSON prejde na BSON",
+	"protected":{
+		"owner":"harvie",
+		"#!password":"{SHA256}b21e516926d05b61a4b305a92fa03a76ab731f33e902c7a421ad39b1d91afae6",
+		"acl":{
+			"ancestors":["harvieho_blog"],
+			"read":["*","!toth"],
+			"post":["*","!melisko","!troll"],
+			"master":["niekt0","hromi","urza","txo"],
+			"code":[]
+		},
+		"recyclation":{
+			"expiration":1276570773,
+			"child_offset":365
+		}
+	},
+	"compulsory":{
+		"title":"The Rainbow Family of Living Light (demo)",
+		"text":"The Rainbow Family of Living Light (commonly shortened to the Rainbow Family) are a loosely affiliated group of individuals committed to principles of non-violence and egalitarianism. They put on events known as Rainbow Gatherings.\n\nFounded in 1972 in the United States, the Rainbow Family have held annual gatherings on National Forests during the first week of July each year. (They also hold regional gatherings.) The Gatherings are non-commercial and all who wish to attend peacefully are welcome to come for free. There are no leaders, and traditionally the gatherings take place for a week, with a primary focus on the Fourth of July in the US, when attendees pray, meditate, or observe silence in a group effort to focus on World Peace. Thus, the name Rainbow Family of Living Light is a reflection of both the emphasis on welcoming people of all races, religions, ethnicities, and social status, as well as a spiritual focus towards peace.\n\nThose who attend Gatherings come from all walks of life, and work together for a variety of goals, among which intentional communities, ecology, spirituality, and an expanded tolerance for others are traditional themes. Those who attend refer to one another as Rainbows, or often as Brothers or Sisters reinforcing the emphasis upon a belief that all people are not only related as part of the human community, but are just as important as members of one's own nuclear family, and given the respect implied in such relationships. Group Councils are the only form of government, and attendance is open to all interested parties, with decisions being reached through consensus. Money is not exchanged, and instead there is a bartering system for all wants, although a magic hat is passed around for necessities, such as additional food, that benefit all who attend.",
+		"template":"jsonedit",
+		"code":null
+	},
+	"optional":{
+		"__child_restrictions":{
+			"disable":["images","audio","video"],
+			"lenght_limit":512,
+			"regex":"!(paroubek|fico|toth)"
+		},
+		"wtf?":"vysvetleni naleznete zde: http://wiki.kyberia.cz/doku.php?id=noda",
+		"harvieho definice":"kool noda blablabla",
+		"hromiho index":76577,
+		"meliskovo koeficient":8787,
+		"nalada autora":"+98%",
+		"poznamky":{
+			"nakoupit":["ryby","sadlo","zradlo pro krokodyla","beton","pouta"]
+		}
+	}
+}
