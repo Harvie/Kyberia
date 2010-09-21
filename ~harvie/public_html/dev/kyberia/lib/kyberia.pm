@@ -5,11 +5,16 @@ use warnings;
 package Kyberia::Config;
 	use JSON;
 
+	our $data; #we'll cache the config data to this variable
 	sub get {
-		open FILE, "config/kyberia.json" or die "Couldn't open file: $!";
-		my $noda = join("", <FILE>);
-		close FILE;
-		return(decode_json($noda));
+		my $self = shift;
+		if(!defined($data)) {
+			open FILE, "config/kyberia.json" or die "Couldn't open file: $!";
+			my $noda = join("", <FILE>);
+			close FILE;
+			$data = decode_json($noda);
+		}
+		return($data);
 	}
 
 
