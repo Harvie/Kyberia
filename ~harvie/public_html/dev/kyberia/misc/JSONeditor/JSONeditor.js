@@ -88,7 +88,7 @@ JSONeditor.treeBuilder={
 		folderNodeOpenFirst:'',
 		folderNodeLastFirst:'',
 		folderNodeOpenLastFirst:'',
-		path:'treeBuilderImages/',
+		path:'misc/JSONeditor/treeBuilderImages/', //CHANGE PATH TO IMAGES HERE!!! ~Harvie
 		nodeWidth:16
 	},
 	$:function(x){return document.getElementById(x)},
