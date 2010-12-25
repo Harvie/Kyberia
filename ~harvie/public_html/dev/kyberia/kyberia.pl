@@ -2,7 +2,8 @@
 #http://wiki.kyberia.cz/doku.php?id=noda
 use strict;
 use warnings;
-use CGI;
+use CGI::Fast;
+use CGI::Carp qw(fatalsToBrowser); #errors to browser
 use HTML::Template; #we can use HTML::Template::Expr if we will need more complexity
 use Data::Dumper;
 
@@ -13,7 +14,7 @@ require "storage_backends/".Kyberia::Config->get()->{'storage_backend'}->{'engin
 #print Dumper(Kyberia::Config->get()); die;
 
 # new cgi object
-my $q = CGI->new;
+while(my $q = CGI::Fast->new) {
 # send the obligatory Content-Type
 print $q->header('text/html');
 
@@ -42,3 +43,4 @@ $template->param(NODE_JSON => $node_data_json);
 #print the template output
 print $template->output;
 
+}
